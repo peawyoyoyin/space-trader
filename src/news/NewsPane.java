@@ -45,6 +45,7 @@ class NewsFeedWrapper extends ScrollPane{
 	public NewsFeedWrapper() {
 		super();
 		this.newsFeed = new NewsFeed();
+		this.setMinWidth(250);
 		this.setMaxHeight(500);
 		this.setVbarPolicy(ScrollBarPolicy.NEVER);
 		this.setHbarPolicy(ScrollBarPolicy.NEVER);
@@ -79,6 +80,7 @@ class NewsCell extends VBox {
 		super();
 		this.setPadding(new Insets(5));
 		this.setSpacing(5);
+		this.setMinWidth(250);
 		this.setMinHeight(50);
 		this.setStyle("-fx-background-color: lightgray;");
 		Label author = new Label(news.getAuthor());
