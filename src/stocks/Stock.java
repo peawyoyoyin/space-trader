@@ -49,6 +49,10 @@ public class Stock {
 		return this.name;
 	}
 	
+	public int getPrice() {
+		return this.price;
+	}
+	
 	public void increasePrice(int amount) {
 		int tempPrice = this.price + amount;
 		if(tempPrice > this.maxPrice) {
