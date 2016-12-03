@@ -40,7 +40,7 @@ public class StartPane extends GridPane {
 		GridPane.setMargin(textExit, new Insets(20,0,20,200));
 		
 		textStart.setOnMouseClicked(e -> {
-			
+			StartScreen.getInstace().changePane(StartScreen.getInstace().getNewGamePane());
 		});
 		
 		textSetting.setOnMouseClicked(e -> {
