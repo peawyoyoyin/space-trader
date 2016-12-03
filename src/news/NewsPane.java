@@ -1,6 +1,7 @@
 package news;
 
 import javafx.animation.AnimationTimer;
+import javafx.animation.FadeTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -11,6 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
+import javafx.util.Duration;
 
 class NewsPaneTop extends StackPane {
 	public NewsPaneTop() {
@@ -44,6 +46,7 @@ class NewsFeedWrapper extends ScrollPane{
 		super();
 		this.newsFeed = new NewsFeed();
 		this.setMaxHeight(500);
+		this.setVbarPolicy(ScrollBarPolicy.NEVER);
 		this.setHbarPolicy(ScrollBarPolicy.NEVER);
 		this.setContent(newsFeed);
 	}
@@ -60,7 +63,7 @@ class NewsFeed extends VBox {
 	public NewsFeed() {
 		super();
 		this.setSpacing(5);
-		this.setMaxWidth(230);
+		this.setMaxWidth(250);
 	}
 	
 	public void addNews(News news) {
@@ -83,20 +86,10 @@ class NewsCell extends VBox {
 		Label content = new Label(news.getContent());
 		content.setWrapText(true);
 		this.getChildren().addAll(author, content);
-		new AnimationTimer() {
-			long start = -1;
-			@Override
-			public void handle(long now) {
-				// TODO Auto-generated method stub
-				if(start == -1) {
-					start = now;
-				}
-				setOpacity((now-start)/(0.8*1e9));
-				if(now-start > 1e9) {
-					this.stop();
-					setOpacity(1);
-				}
-			}
-		}.start();
+		
+		FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.8), this);
+		fadeTransition.setFromValue(0);
+		fadeTransition.setToValue(1);
+		fadeTransition.play();
 	}
 }
