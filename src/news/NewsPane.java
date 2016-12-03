@@ -1,5 +1,6 @@
 package news;
 
+import javafx.animation.AnimationTimer;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -57,5 +58,20 @@ class NewsCell extends VBox {
 		Label content = new Label(news.getContent());
 		content.setWrapText(true);
 		this.getChildren().addAll(author, content);
+		new AnimationTimer() {
+			long start = -1;
+			@Override
+			public void handle(long now) {
+				// TODO Auto-generated method stub
+				if(start == -1) {
+					start = now;
+				}
+				setOpacity((now-start)/(0.8*1e9));
+				if(now-start > 1e9) {
+					this.stop();
+					setOpacity(1);
+				}
+			}
+		}.start();
 	}
 }

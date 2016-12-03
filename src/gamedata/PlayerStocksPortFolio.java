@@ -68,7 +68,7 @@ class StockTradeData {
 	public double getBoughtPrice() {
 		return this.boughtPrice;
 	}
-	
+		
 	public int getInstock() {
 		return this.inStock;
 	}
