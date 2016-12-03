@@ -1,8 +1,13 @@
 package stocks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Stock {
 	private String name;
 	private int price;
+	
+	private List<Integer> priceHistory;
 	
 	private int minPrice;
 	private int maxPrice;
@@ -15,6 +20,7 @@ public class Stock {
 		this.price = basePrice;
 		this.minPrice = minPrice;
 		this.maxPrice = maxPrice;
+		this.priceHistory = new ArrayList<Integer>();
 		this.buyable = true;
 		this.sellable = true;
 	}
@@ -44,17 +50,19 @@ public class Stock {
 	}
 	
 	public void increasePrice(int amount) {
-		this.price += amount;
-		if(this.price > this.maxPrice) {
-			this.price = this.maxPrice;
+		int tempPrice = this.price + amount;
+		if(tempPrice > this.maxPrice) {
+			tempPrice = this.maxPrice;
 		}
+		this.setNewPrice(tempPrice);
 	}
 	
 	public void decreasePrice(int amount) {
-		this.price -= amount;
-		if(this.price < this.minPrice) {
-			this.price = this.minPrice;
+		int tempPrice = this.price - amount;
+		if(tempPrice < this.minPrice) {
+			tempPrice = this.minPrice;
 		}
+		this.setNewPrice(tempPrice);
 	}
 	
 	public void setPrice(int price) {
@@ -63,6 +71,14 @@ public class Stock {
 		} else if(price < this.minPrice) {
 			price = this.minPrice;
 		}
+		this.setNewPrice(price);
+	}
+	
+	private void setNewPrice(int price) {
+		this.priceHistory.add(this.price);
 		this.price = price;
+		if(priceHistory.size() > 5) {
+			priceHistory.remove(0);
+		}
 	}
 }
