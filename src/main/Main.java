@@ -4,6 +4,7 @@ package main;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import startScreen.StartScreen;
 
 public class Main extends Application {
@@ -12,6 +13,7 @@ public class Main extends Application {
 		try {
 			StartScreen startScreen = StartScreen.getInstace();
 			Scene scene = new Scene(startScreen, 1120, 630);
+			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setTitle("Project-Progmeth"); // Set the stage title
 			primaryStage.setScene(scene); // Place the scene
 			primaryStage.setResizable(false);
