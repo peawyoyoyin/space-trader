@@ -3,12 +3,14 @@ package gamedata;
 public class PlayerData {
 	String playerName;
 	int money;
+	PlayerStocksPortFolio stocksPortfolio;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
 	public PlayerData() {
 		this.playerName = PLACEHOLDER_NAME;
 		this.money = 0;
+		this.stocksPortfolio = new PlayerStocksPortFolio();
 	}
 
 	public String getPlayerName() {
