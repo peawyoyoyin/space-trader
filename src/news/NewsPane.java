@@ -5,17 +5,42 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 
-public class NewsPane extends ScrollPane{
+class NewsPaneTop extends StackPane {
+	public NewsPaneTop() {
+		super();
+		Label name = new Label("News Feed");
+		this.getChildren().add(name);
+		this.setPrefHeight(40);
+	}
+}
 
+public class NewsPane extends BorderPane {
+	NewsFeed newsFeed;
+	public NewsPane() {
+		super();
+		this.setTop(new NewsPaneTop());
+		NewsFeedWrapper newsFeedPane = new NewsFeedWrapper();
+		this.newsFeed = newsFeedPane.getNewsFeed();
+		this.setCenter(newsFeedPane);
+	}
 	
+	public NewsFeed getNewsFeed() {
+		return this.newsFeed;
+	}
+}
+
+class NewsFeedWrapper extends ScrollPane{
+
 	private NewsFeed newsFeed;
 	
-	public NewsPane() {
+	public NewsFeedWrapper() {
 		super();
 		this.newsFeed = new NewsFeed();
 		this.setMaxHeight(500);

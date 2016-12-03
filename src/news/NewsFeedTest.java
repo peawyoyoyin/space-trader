@@ -25,7 +25,7 @@ public class NewsFeedTest extends Application {
 			public void run() {
 				// TODO Auto-generated method stub
 				try {
-					Thread.sleep(1500);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
