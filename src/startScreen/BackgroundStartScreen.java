@@ -23,7 +23,7 @@ public class BackgroundStartScreen extends Canvas {
 				getGraphicsContext2D().setFill(Color.RED);
 				getGraphicsContext2D().fillRect(0, x, 1120, 1);
 				x++;
-				if (x > 630) {
+				if (x > 60) {
 					this.stop();
 				}
 			}
