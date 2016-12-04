@@ -31,5 +31,4 @@ public class LoadGamePane extends GridPane {
 		this.add(container, 0, 1);
 		GridPane.setVgrow(container, Priority.ALWAYS);
 	}
-
 }
