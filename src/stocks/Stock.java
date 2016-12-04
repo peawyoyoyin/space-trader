@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Stock {
+	
+	public static final Stock STOCK_PLACEHOLDER = new Stock("Placeholder",15,0,50);
+	
+	static {
+		Stock.STOCK_PLACEHOLDER.setPrice(20);
+		Stock.STOCK_PLACEHOLDER.setPrice(17);
+		Stock.STOCK_PLACEHOLDER.setPrice(10);
+		Stock.STOCK_PLACEHOLDER.setPrice(12);
+	}
+	
 	private String name;
 	private int price;
 	
@@ -17,18 +27,22 @@ public class Stock {
 	
 	public Stock(String name, int basePrice, int minPrice, int maxPrice) {
 		this.name = name;
-		this.price = basePrice;
 		this.minPrice = minPrice;
 		this.maxPrice = maxPrice;
 		this.priceHistory = new ArrayList<Integer>();
 		this.buyable = true;
 		this.sellable = true;
+		this.setNewPrice(basePrice);
 	}
 	
 	public boolean isBuyable() {
 		return this.buyable;
 	}
 	
+	public List<Integer> getPriceHistory() {
+		return priceHistory;
+	}
+
 	public boolean isSellable() {
 		return this.sellable;
 	}
@@ -79,10 +93,18 @@ public class Stock {
 	}
 	
 	private void setNewPrice(int price) {
-		this.priceHistory.add(this.price);
 		this.price = price;
+		this.priceHistory.add(this.price);
 		if(priceHistory.size() > 5) {
 			priceHistory.remove(0);
 		}
+	}
+
+	public double getMaxPrice() {
+		return this.maxPrice;
+	}
+
+	public double getMinPrice() {
+		return this.minPrice;
 	}
 }
