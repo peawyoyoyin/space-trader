@@ -1,5 +1,6 @@
 package startScreen;
 
+import constants.ConfigConstant;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -13,12 +14,12 @@ public class NewGamePane extends GridPane {
 		super();
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("Start Game");
-		textName.setFont(Font.font(72));
+		textName.setFont(ConfigConstant.START_SCREEN_FONT);
 		this.add(textName, 0, 0);
 		GridPane.setMargin(textName, new Insets(20,0,0,80));
 		
 		Text textBack = new Text("Back");
-		textBack.setFont(Font.font(56));
+		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20,0,80,80));
 		
@@ -30,12 +31,12 @@ public class NewGamePane extends GridPane {
 		this.add(container, 0, 1);
 		
 		Text textNew = new Text("New Game");
-		textNew.setFont(Font.font(56));
+		textNew.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
 		container.getChildren().add(textNew);
 		VBox.setMargin(textNew, new Insets(20,0,20,200));
 		
 		Text textLoad = new Text("Load Game");
-		textLoad.setFont(Font.font(56));
+		textLoad.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
 		container.getChildren().add(textLoad);
 		VBox.setMargin(textLoad, new Insets(20,0,20,200));
 		

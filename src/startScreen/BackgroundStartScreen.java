@@ -14,7 +14,7 @@ public class BackgroundStartScreen extends Canvas {
 		getGraphicsContext2D().setFill(Color.LIGHTGREY);
 		getGraphicsContext2D().fillRect(0, 0, 1120, 630);
 
-		AnimationTimer animater = new AnimationTimer() {
+		AnimationTimer animator = new AnimationTimer() {
 			int x = 0;
 
 			@Override
@@ -28,9 +28,9 @@ public class BackgroundStartScreen extends Canvas {
 				}
 			}
 		};
-		animater.start();
+		animator.start();
 	}
-
+	
 	public void drawBackground() {
 		getGraphicsContext2D().setFill(Color.LIGHTGREY);
 		getGraphicsContext2D().fillRect(0, 0, 1120, 630);

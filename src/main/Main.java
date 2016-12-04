@@ -1,6 +1,7 @@
 package main;
 
 
+import constants.ConfigConstant;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -12,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			StartScreen startScreen = StartScreen.getInstace();
-			Scene scene = new Scene(startScreen, 1120, 630);
+			Scene scene = new Scene(startScreen, ConfigConstant.startScreenWidth, ConfigConstant.startScreenHeight);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setTitle("Project-Progmeth"); // Set the stage title
 			primaryStage.setScene(scene); // Place the scene
