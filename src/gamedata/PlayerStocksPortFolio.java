@@ -24,7 +24,7 @@ public class PlayerStocksPortFolio {
 			}
 		}
 		return null;
-	}	
+	}
 }
 
 class StockTradeData {
@@ -46,7 +46,7 @@ class StockTradeData {
 		if(this.inStock == 0) {
 			this.boughtPrice = this.stock.getPrice();
 		} else {
-			//new boughtPrice is average calculated from old boughtprice
+			//new boughtPrice is average calculated from old boughtPrice
 			this.boughtPrice = (this.boughtPrice*this.inStock + this.stock.getPrice()*amount) / this.inStock+amount;
 		}
 		this.inStock+=amount;
