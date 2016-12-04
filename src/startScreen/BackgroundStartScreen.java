@@ -2,6 +2,7 @@ package startScreen;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class BackgroundStartScreen extends Canvas {
@@ -11,8 +12,10 @@ public class BackgroundStartScreen extends Canvas {
 		// TODO Auto-generated constructor stub
 		this.setWidth(1120);
 		this.setHeight(630);
-		getGraphicsContext2D().setFill(Color.LIGHTGREY);
+		Image bg = new Image("res/startScreen/bg.png");
+		getGraphicsContext2D().setFill(Color.GREEN);
 		getGraphicsContext2D().fillRect(0, 0, 1120, 630);
+		this.getGraphicsContext2D().drawImage(bg, 0, 0);
 
 		AnimationTimer animator = new AnimationTimer() {
 			int x = 0;
