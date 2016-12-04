@@ -14,7 +14,6 @@ public class StartPane extends GridPane {
 	public StartPane() {
 		super();
 		// TODO Auto-generated constructor stub
-		
 		Text textName = new Text(gameName);
 		textName.setFont(ConfigConstant.START_SCREEN_FONT);
 		this.add(textName, 0, 0);
