@@ -49,6 +49,7 @@ public class StartPane extends GridPane {
 		
 		textUpdating.setOnMouseClicked(e -> {
 			StartScreen.getInstace().changePane(StartScreen.getInstace().getUpdatingPane());
+			StartScreen.getInstace().getUpdatingPane().startUpdate();
 		});
 		
 		textExit.setOnMouseClicked(e -> {
