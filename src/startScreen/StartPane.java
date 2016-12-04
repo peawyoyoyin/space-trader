@@ -8,13 +8,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class StartPane extends GridPane {
-
-	private String gameName = "Gamename";
-
 	public StartPane() {
 		super();
 		// TODO Auto-generated constructor stub
-		Text textName = new Text(gameName);
+		Text textName = new Text(ConfigConstant.GAME_NAME);
 		textName.setFont(ConfigConstant.START_SCREEN_FONT);
 		this.add(textName, 0, 0);
 		GridPane.setMargin(textName, new Insets(20,0,0,80));

@@ -8,6 +8,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import stocks.Stock;
+import sun.java2d.cmm.ColorTransform;
 
 public class StocksScreen extends BorderPane {
 	

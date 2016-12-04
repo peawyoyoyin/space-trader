@@ -4,6 +4,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 
 public class ConfigConstant {
+	
+	public static final String GAME_NAME = "GAME NAME";
+	
 	public static int startScreenHeight = 630;
 	public static int startScreenWidth = 1120;
 	public static final Font START_SCREEN_FONT = Font.font("Verdana", FontPosture.REGULAR, 72);
