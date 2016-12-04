@@ -1,5 +1,6 @@
 package startScreen;
 
+import constants.ConfigConstant;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
@@ -15,7 +16,7 @@ public class StartPane extends GridPane {
 		// TODO Auto-generated constructor stub
 		
 		Text textName = new Text(gameName);
-		textName.setFont(Font.font(72));
+		textName.setFont(ConfigConstant.START_SCREEN_FONT);
 		this.add(textName, 0, 0);
 		GridPane.setMargin(textName, new Insets(20,0,0,80));
 		

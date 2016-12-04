@@ -1,5 +1,6 @@
 package startScreen;
 
+import constants.ConfigConstant;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -13,12 +14,12 @@ public class LoadGamePane extends GridPane {
 		super();
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("Load Game");
-		textName.setFont(Font.font(72));
+		textName.setFont(ConfigConstant.START_SCREEN_FONT);
 		this.add(textName, 0, 0);
 		GridPane.setMargin(textName, new Insets(20,0,0,80));
 		
 		Text textBack = new Text("Back");
-		textBack.setFont(Font.font(56));
+		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20,0,80,80));
 		
