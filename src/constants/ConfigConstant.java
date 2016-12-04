@@ -9,6 +9,9 @@ public class ConfigConstant {
 	public static final Font START_SCREEN_FONT = Font.font("Verdana", FontPosture.REGULAR, 72);
 	public static final Font START_SCREEN_ITEM_FONT = Font.font("Verdana", FontPosture.REGULAR, 56);
 	
+	public static final String UPTODATE_TEXT = "Game Client is Up to Date";
+	public static final String SERVER_NOT_FOUND_TEXT = "Server Not Found";
+	
 	public static int gameScreenHeight;
 	public static int gameScreenWidth;
 	

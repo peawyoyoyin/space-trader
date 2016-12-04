@@ -101,7 +101,7 @@ public class UpdatingPane extends GridPane {
 							@Override
 							public void run() {
 								// TODO Auto-generated method stub
-								textStatus.setText("Up to date already");
+								textStatus.setText(ConfigConstant.UPTODATE_TEXT);
 							}
 						});
 					} else {
@@ -130,7 +130,7 @@ public class UpdatingPane extends GridPane {
 						@Override
 						public void run() {
 							// TODO Auto-generated method stub
-							textStatus.setText("Server not found");
+							textStatus.setText(ConfigConstant.SERVER_NOT_FOUND_TEXT);
 						}
 					});
 
