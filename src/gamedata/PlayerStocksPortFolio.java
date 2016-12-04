@@ -24,11 +24,8 @@ public class PlayerStocksPortFolio {
 			}
 		}
 		return null;
-	}
-	
+	}	
 }
-
-
 
 class StockTradeData {
 	private Stock stock;

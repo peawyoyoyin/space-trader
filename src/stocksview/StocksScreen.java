@@ -45,6 +45,7 @@ class StockCell extends GridPane {
 	private Label stockNameLabel;
 	private Label stockPriceLabel;
 	private StockChangeLabel stockChangeLabel;
+	private Label instockLabel;
 	private Stock stock;
 	
 	public StockCell() {
@@ -57,9 +58,11 @@ class StockCell extends GridPane {
 		this.stockNameLabel = new Label("Stock Name");
 		this.stockPriceLabel = new Label("15.00");
 		this.stockChangeLabel = new StockChangeLabel();
+		this.instockLabel = new Label("0");
 		this.add(stockNameLabel, 0, 0, 2, 1);
 		this.add(stockPriceLabel, 2, 0);
 		this.add(stockChangeLabel, 3, 0);
+		this.add(instockLabel, 4, 0);
 	}
 	
 	public StockCell(Stock stock) {
@@ -72,9 +75,11 @@ class StockCell extends GridPane {
 		this.stockNameLabel = new Label(this.stock.getName());
 		this.stockPriceLabel = new Label(Integer.toString(this.stock.getPrice()));
 		this.stockChangeLabel = new StockChangeLabel();
+		this.instockLabel = new Label("0");
 		this.add(stockNameLabel, 0, 0, 2, 1);
 		this.add(stockPriceLabel, 2, 0);
 		this.add(stockChangeLabel, 3, 0);
+		this.add(instockLabel, 4, 0);
 	}
 }
 
