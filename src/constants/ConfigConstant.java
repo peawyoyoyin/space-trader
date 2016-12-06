@@ -4,7 +4,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 
 public class ConfigConstant {
-	
 	public static final String GAME_NAME = "GAME NAME";
 	
 	public static int startScreenHeight = 630;

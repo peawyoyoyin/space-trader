@@ -6,7 +6,7 @@ public class GameData {
 	private PlayerData playerData;
 	
 	public GameData() {
-		this.instance = new GameData();
+		GameData.instance = new GameData();
 		this.playerData = new PlayerData();
 	}
 	

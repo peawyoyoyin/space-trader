@@ -2,34 +2,45 @@ package input;
 
 import java.util.List;
 
+import javafx.scene.Node;
 import javafx.scene.input.KeyCode;
 
 public class Input {
-	private List<KeyCode> keyPress;
-	private List<KeyCode> keyDown;
+	private static List<KeyCode> keyPress;
+	private static List<KeyCode> keyDown;
 	
-	public boolean isKeyDown(KeyCode keycode) {
-		return this.keyDown.contains(keycode);
+	public static void Initialize(Node node) {
+		node.setOnKeyPressed(event -> {
+			Input.receiveKeyPress(event.getCode());
+		});
+		
+		node.setOnKeyReleased(event -> {
+			Input.receiveKeyRelease(event.getCode());
+		});
 	}
 	
-	public boolean isKeyPressed(KeyCode keycode) {
-		return this.keyPress.contains(keycode);
+	public static boolean isKeyDown(KeyCode keycode) {
+		return keyDown.contains(keycode);
 	}
 	
-	public void receiveKeyPress(KeyCode keycode) {
-		if(!this.keyDown.contains(keycode)) {
-			this.keyDown.add(keycode);
-			this.keyPress.add(keycode);
+	public static boolean isKeyPressed(KeyCode keycode) {
+		return keyPress.contains(keycode);
+	}
+	
+	public static void receiveKeyPress(KeyCode keycode) {
+		if(!keyDown.contains(keycode)) {
+			keyDown.add(keycode);
+			keyPress.add(keycode);
 		}
 	}
 	
-	public void receiveKeyRelease(KeyCode keycode) {
-		if(this.keyDown.contains(keycode)) {
-			this.keyDown.remove(keycode);
+	public static void receiveKeyRelease(KeyCode keycode) {
+		if(keyDown.contains(keycode)) {
+			keyDown.remove(keycode);
 		}
 	}
 	
-	public void inputUpdate() {
-		this.keyPress.clear();
+	public static void inputUpdate() {
+		keyPress.clear();
 	}
 }
