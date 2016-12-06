@@ -13,8 +13,8 @@ public class BackgroundStartScreen extends Canvas {
 		this.setWidth(1120);
 		this.setHeight(630);
 		Image bg = new Image("res/startScreen/bg.png");
-		getGraphicsContext2D().setFill(Color.GREEN);
-		getGraphicsContext2D().fillRect(0, 0, 1120, 630);
+//		getGraphicsContext2D().setFill(Color.GREEN);
+//		getGraphicsContext2D().fillRect(0, 0, 1120, 630);
 		this.getGraphicsContext2D().drawImage(bg, 0, 0);
 
 		AnimationTimer animator = new AnimationTimer() {

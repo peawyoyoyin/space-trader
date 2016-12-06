@@ -18,7 +18,7 @@ public class StocksScreen extends BorderPane {
 	
 	public StocksScreen() {
 		super();
-		this.setStyle("-fx-background-color: black;");
+		this.setStyle("-fx-background-color: gray;");
 		this.stocksList = new StocksList();
 		this.stocksGraph = new StockGraph(Stock.STOCK_PLACEHOLDER);
 		this.stockTradePanel = new StockTradePanel();

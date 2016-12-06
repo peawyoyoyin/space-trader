@@ -21,7 +21,7 @@ public class StockGraph extends StackPane {
 		super();
 		
 		this.setMaxHeight(200);
-		this.setStyle("-fx-background-color:black;");
+		this.setStyle("-fx-background-color:gray;");
 		
 		Axis<Number> xAxis = new NumberAxis();
 		xAxis.setTickLabelsVisible(false);
@@ -39,7 +39,7 @@ public class StockGraph extends StackPane {
 		
 		this.lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
 		this.lineChart.lookup(".chart-horizontal-grid-lines").setVisible(false);
-		this.lineChart.lookup(".chart-vertical-grid-lines").setVisible(false);
+//		this.lineChart.lookup(".chart-vertical-grid-lines").setVisible(false);
 		
 		this.getChildren().add(this.lineChart);
 		this.stock = null;

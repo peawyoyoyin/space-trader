@@ -25,5 +25,5 @@ public class ConfigConstant {
 	public static int newsFeedScreenHeight;
 	
 	public static String serverURL = "http://127.0.0.1:7777/";
-	public static String version = "# progmeth-project";
+	public static String version = "# progmeth-project";	
 }
