@@ -1,6 +1,8 @@
 package game;
 
-public class Bullet extends Entity implements Collidable,Render{
+import javafx.scene.canvas.GraphicsContext;
+
+public class Bullet extends Entity implements Collidable,Renderable{
 
 	private int speed;
 	private int direction;
@@ -29,6 +31,12 @@ public class Bullet extends Entity implements Collidable,Render{
 			this.destroyed = true;
 			ship.hit(damage);
 		}
+	}
+
+	@Override
+	public void render(GraphicsContext gc) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

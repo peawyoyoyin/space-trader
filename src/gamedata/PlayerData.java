@@ -4,6 +4,8 @@ public class PlayerData {
 	String playerName;
 	int money;
 	PlayerStocksPortFolio stocksPortfolio;
+	int sectionX;
+	int sectionY;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
@@ -11,6 +13,8 @@ public class PlayerData {
 		this.playerName = PLACEHOLDER_NAME;
 		this.money = 0;
 		this.stocksPortfolio = new PlayerStocksPortFolio();
+		this.sectionX = 0;
+		this.sectionY = 0;
 	}
 
 	public String getPlayerName() {
