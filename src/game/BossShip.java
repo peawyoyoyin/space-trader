@@ -11,13 +11,6 @@ public class BossShip extends Ship {
 	}
 
 	@Override
-	public boolean isCollidingWith(Collidable other) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
 	public void render(GraphicsContext gc) {
 		// TODO Auto-generated method stub
 		

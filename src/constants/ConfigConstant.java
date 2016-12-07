@@ -14,8 +14,8 @@ public class ConfigConstant {
 	public static final String UPTODATE_TEXT = "Game Client is Up to Date";
 	public static final String SERVER_NOT_FOUND_TEXT = "Server Not Found";
 	
-	public static int gameScreenHeight;
-	public static int gameScreenWidth;
+	public static int gameScreenHeight = 630;
+	public static int gameScreenWidth = 620;
 	
 	public static int stocksScreenWidth;
 	public static int stocksScreenHeight;

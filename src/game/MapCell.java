@@ -17,11 +17,26 @@ public class MapCell {
 	}
 	
 	public void update(GraphicsContext gc) {
-		for (Entity entity : entities) {
-			entity.update();
-			if(entity instanceof Renderable) {
-				((Renderable) entity).render(gc);
+		for (int i = 0; i < entities.size(); i++) {
+			entities.get(i).update();
+			if(entities.get(i) instanceof Renderable) {
+				((Renderable) entities.get(i)).render(gc);
+			}
+			if(entities.get(i) instanceof Bullet){
+				for (Entity entity2 : entities){
+					if(entity2 instanceof Ship && entity2 != ((Bullet) entities.get(i)).getShooter() && entities.get(i).isCollideWith(entity2)){
+						entities.get(i).destroyed = true;
+						((Ship) entity2).hit(((Bullet) entities.get(i)).getDamage());
+					}
+					
+				}
+			}
+			if (entities.get(i).isDestroyed()) {
+				entities.remove(i);
+				i--;
 			}
 		}
+		
 	}
+	
 }

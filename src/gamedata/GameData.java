@@ -1,12 +1,11 @@
 package gamedata;
 
 public class GameData {
-	private static GameData instance;
+	private static GameData instance = new GameData();
 	
 	private PlayerData playerData;
 	
 	public GameData() {
-		GameData.instance = new GameData();
 		this.playerData = new PlayerData();
 	}
 	

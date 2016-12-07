@@ -1,20 +1,24 @@
 package input;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 
 public class Input {
 	private static List<KeyCode> keyPress;
 	private static List<KeyCode> keyDown;
 	
-	public static void Initialize(Node node) {
-		node.setOnKeyPressed(event -> {
+	public static void Initialize(Scene scene) {
+		Input.keyPress = new ArrayList<>();
+		Input.keyDown = new ArrayList<>();
+		scene.setOnKeyPressed(event -> {
 			Input.receiveKeyPress(event.getCode());
 		});
 		
-		node.setOnKeyReleased(event -> {
+		scene.setOnKeyReleased(event -> {
 			Input.receiveKeyRelease(event.getCode());
 		});
 	}

@@ -2,7 +2,7 @@ package game;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class Trader extends Entity implements Renderable{
+public class BombEffect extends Entity implements Renderable{
 
 	@Override
 	void update() {

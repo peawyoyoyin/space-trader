@@ -1,18 +1,20 @@
 package game;
 
-import javafx.scene.input.KeyCode;
+import constants.ConfigConstant;
+import gamedata.GameData;
 
-public abstract class Ship extends Entity implements Collidable, Renderable {
+public abstract class Ship extends Entity implements Renderable {
 
-	private int hp;
-	private int maxHp;
-	private int speed;
-	private int maxSpeed;
-	private int accelerate;
-	private int turnRate;
-	private int direction;
+	protected int hp;
+	protected int maxHp;
+	protected double speed;
+	protected int maxSpeed;
+	protected double accelerate;
+	protected int turnRate;
+	protected int direction;
 
-	public Ship(int x, int y, int hp, int maxHp, int speed, int maxSpeed, int accelerate, int turnRate, int direction) {
+	public Ship(double x, double y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
+			int direction) {
 		this.x = x;
 		this.y = y;
 		this.hp = hp;
@@ -46,13 +48,14 @@ public abstract class Ship extends Entity implements Collidable, Renderable {
 			this.speed = this.maxSpeed;
 		}
 	}
-	public void back(){
+
+	public void back() {
 		this.speed = this.speed - this.accelerate;
 		if (this.speed < -this.maxSpeed) {
 			this.speed = -this.maxSpeed;
 		}
 	}
-	
+
 	public void turn(boolean left) {
 		if (left) {
 			this.direction -= this.turnRate;
@@ -71,9 +74,12 @@ public abstract class Ship extends Entity implements Collidable, Renderable {
 			this.destroyed = true;
 		}
 	}
-	
-	public void shoot(){
-		
+
+	public void shoot() {
+		MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(),
+				GameData.getInstance().getPlayerData().getSectionY());
+		mc.getEntities().add(new Bullet(this.x+Math.cos(Math.toRadians(this.direction)) * 30, this.y+Math.sin(Math.toRadians(this.direction)) * 30, GameData.getInstance().getPlayerData().getBulletSpeed(),
+				this.direction, GameData.getInstance().getPlayerData().getBulletDamage(), this));
 	}
 
 	public void healMaxHp() {
@@ -85,17 +91,6 @@ public abstract class Ship extends Entity implements Collidable, Renderable {
 		// TODO Auto-generated method stub
 		this.x += Math.cos(Math.toRadians(this.direction)) * speed;
 		this.y += Math.sin(Math.toRadians(this.direction)) * speed;
-		if (InputUtility.getKeyPressed(KeyCode.W)) {
-			forward();
-		}else if (InputUtility.getKeyPressed(KeyCode.S)){
-			back();
-		}
-		if (InputUtility.getKeyPressed(KeyCode.A)) {
-			turn(true);
-		} else if (InputUtility.getKeyPressed(KeyCode.D)) {
-			turn(false);
-		}
 	}
-	
 
 }
