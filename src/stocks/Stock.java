@@ -6,12 +6,18 @@ import java.util.List;
 public class Stock {
 	
 	public static final Stock STOCK_PLACEHOLDER = new Stock("Placeholder",15,0,50);
+	public static final Stock STOCK_PLACEHOLDER_2 = new Stock("Placeholder2", 20, 0, 30);
 	
 	static {
 		Stock.STOCK_PLACEHOLDER.setPrice(20);
 		Stock.STOCK_PLACEHOLDER.setPrice(17);
 		Stock.STOCK_PLACEHOLDER.setPrice(10);
 		Stock.STOCK_PLACEHOLDER.setPrice(12);
+		
+		Stock.STOCK_PLACEHOLDER_2.setPrice(21);
+		Stock.STOCK_PLACEHOLDER_2.setPrice(19);
+		Stock.STOCK_PLACEHOLDER_2.setPrice(18);
+		Stock.STOCK_PLACEHOLDER_2.setPrice(20);
 	}
 	
 	private String name;
@@ -33,6 +39,7 @@ public class Stock {
 		this.buyable = true;
 		this.sellable = true;
 		this.setNewPrice(basePrice);
+		StockHolder.getInstance().getStocks().add(this);
 	}
 	
 	public boolean isBuyable() {

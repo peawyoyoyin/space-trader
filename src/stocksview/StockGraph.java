@@ -52,6 +52,7 @@ public class StockGraph extends StackPane {
 	}
 	
 	public void setStock(Stock stock) {
+		System.out.println("setStock");
 		this.stock = stock;
 		this.updateGraph();
 	}

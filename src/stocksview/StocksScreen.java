@@ -12,6 +12,8 @@ import sun.java2d.cmm.ColorTransform;
 
 public class StocksScreen extends BorderPane {
 	
+	public static final StocksScreen instance = new StocksScreen();
+	
 	private StocksList stocksList;
 	private StockGraph stocksGraph;
 	private StockTradePanel stockTradePanel;
@@ -29,6 +31,10 @@ public class StocksScreen extends BorderPane {
 	
 	public StocksList getStocksList() {
 		return this.stocksList;
+	}
+	
+	public StockGraph getStockGraph() {
+		return this.stocksGraph;
 	}
 }
 

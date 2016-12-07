@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import stocks.Stock;
 
 public class StocksScreenTest extends Application {
 	
@@ -11,9 +12,9 @@ public class StocksScreenTest extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		StackPane root = new StackPane();
-		StocksScreen stocksScreen = new StocksScreen();
-		stocksScreen.getStocksList().addStockCell(new StockCell());
-		stocksScreen.getStocksList().addStockCell(new StockCell());
+		StocksScreen stocksScreen = StocksScreen.instance;
+		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER_2));
+		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER));
 		root.getChildren().add(stocksScreen);
 		
 		Scene scene = new Scene(root,250,500);

@@ -31,6 +31,10 @@ public class StockCell extends GridPane {
 		this.add(stockPriceLabel, 2, 0);
 		this.add(stockChangeLabel, 3, 0);
 		this.add(instockLabel, 4, 0);
+		
+		this.setOnMouseClicked(event -> {
+			System.out.println("C");
+		});
 	}
 	
 	public StockCell(Stock stock) {
