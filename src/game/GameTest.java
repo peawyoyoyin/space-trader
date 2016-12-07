@@ -23,21 +23,23 @@ public class GameTest extends Application {
 
 		GamePane gamePane = new GamePane(constants.ConfigConstant.gameScreenWidth,
 				constants.ConfigConstant.gameScreenHeight);
-		PlayerShip ship = new PlayerShip(500, 500, 100, 100, 0, 5, 0.05, 1, 1);
-		PlayerShip ship2 = new PlayerShip(0, 0, 5, 5, 0, 0, 0, 0, 0);
+		PlayerShip ship = new PlayerShip(500, 500, 100, 100, 0, 5, 0.05, 5, 0);
+		BossShip bShip = new BossShip(100, 100, 500, 500, 0, 5, 2, 1, 0);
+		
 		MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(), GameData.getInstance().getPlayerData().getSectionY());
+		MapCellHolder.instance.setPlayerShip(ship);
 		mc.getEntities().add(ship);
-		for (int i = 0; i < 10; i++) {
-			mc.getEntities().add(new Bullet(i*10, i*10, 20, 45, 5,ship2));
-		}
+		mc.getEntities().add(bShip);
+
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
 		
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
+				MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(), GameData.getInstance().getPlayerData().getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
 				Input.inputUpdate();
-				System.out.println(ship.getHp());
+
 			}
 		};
 		animation.start();

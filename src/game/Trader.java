@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class Trader extends Entity implements Renderable{
 
 	@Override
-	void update() {
+	public void update() {
 		// TODO Auto-generated method stub
 		
 	}

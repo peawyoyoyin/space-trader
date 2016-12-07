@@ -78,8 +78,11 @@ public abstract class Ship extends Entity implements Renderable {
 	public void shoot() {
 		MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(),
 				GameData.getInstance().getPlayerData().getSectionY());
-		mc.getEntities().add(new Bullet(this.x+Math.cos(Math.toRadians(this.direction)) * 30, this.y+Math.sin(Math.toRadians(this.direction)) * 30, GameData.getInstance().getPlayerData().getBulletSpeed(),
-				this.direction, GameData.getInstance().getPlayerData().getBulletDamage(), this));
+		mc.getEntities()
+				.add(new Bullet(this.x + Math.cos(Math.toRadians(this.direction)) * 30,
+						this.y + Math.sin(Math.toRadians(this.direction)) * 30,
+						GameData.getInstance().getPlayerData().getBulletSpeed(), this.direction,
+						GameData.getInstance().getPlayerData().getBulletDamage(), this));
 	}
 
 	public void healMaxHp() {
@@ -87,10 +90,22 @@ public abstract class Ship extends Entity implements Renderable {
 	}
 
 	@Override
-	void update() {
+	public void update() {
 		// TODO Auto-generated method stub
 		this.x += Math.cos(Math.toRadians(this.direction)) * speed;
 		this.y += Math.sin(Math.toRadians(this.direction)) * speed;
+		if(this.x < radius){
+			this.x = radius;
+		}
+		if (this.x > ConfigConstant.gameScreenWidth-radius) {
+			this.x = ConfigConstant.gameScreenWidth-radius;
+		}
+		if(this.y < radius){
+			this.y = radius;
+		}
+		if (this.y > ConfigConstant.gameScreenHeight-radius) {
+			this.y = ConfigConstant.gameScreenHeight-radius;
+		}
 	}
 
 }

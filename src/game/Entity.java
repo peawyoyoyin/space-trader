@@ -26,5 +26,5 @@ public abstract class  Entity {
 		return Math.hypot(this.x-other.x, this.y-other.y) < this.radius+other.radius;
 	}
 	
-	abstract void update();
+	abstract public void update();
 }
