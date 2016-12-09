@@ -19,7 +19,7 @@ public class GameTest extends Application {
 
 		GamePane gamePane = new GamePane(constants.ConfigConstant.gameScreenWidth,
 				constants.ConfigConstant.gameScreenHeight);
-		PlayerShip ship = new PlayerShip(500, 500, 100, 100, 0, 15, 3, 5, 0);
+		PlayerShip ship = new PlayerShip(500, 500, 100, 100, 0, 10, 3, 5, 0);
 		EnemyShip bShip = new EnemyShip(100, 100, 500, 500, 0, 5, 2, 1, 0);
 
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
@@ -30,7 +30,6 @@ public class GameTest extends Application {
 		mc.getEntities().add(be);
 
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
-
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());

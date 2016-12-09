@@ -5,24 +5,17 @@ import java.util.Collections;
 import constants.ConfigConstant;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
 
 public class RenderableHolder {
 	public static RenderableHolder instance = new RenderableHolder();
 
-	public static Image background;
+	private Image background;
 	private double x;
 	private double y;
 
-	static {
-		loadResource();
-	}
-
 	public RenderableHolder() {
-
-	}
-
-	public static void loadResource() {
-		RenderableHolder.background = new Image(ClassLoader.getSystemResource("Map.jpg").toString());
+		this.background = ConfigConstant.Resource.MAP_BACKGROUND;
 	}
 
 	public void render(GraphicsContext gc, MapCell mc) {
@@ -54,10 +47,14 @@ public class RenderableHolder {
 
 	public void drawBackground(GraphicsContext gc) {
 		// TODO Auto-generated method stub
-		gc.drawImage(RenderableHolder.background, 0, 0, ConfigConstant.mapCellWidth, ConfigConstant.mapCellHeight);
+		ImagePattern backgroundRepeated = new ImagePattern(this.background, 0, 0,
+				this.background.getWidth() / ConfigConstant.mapCellWidth,
+				this.background.getHeight() / ConfigConstant.mapCellHeight, true);
+		gc.setFill(backgroundRepeated);
+		gc.fillRect(0, 0, ConfigConstant.mapCellWidth, ConfigConstant.mapCellHeight);
 	}
-	
-	public void drawInterface(GraphicsContext gc){
+
+	public void drawInterface(GraphicsContext gc) {
 
 	}
 }

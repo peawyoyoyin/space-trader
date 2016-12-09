@@ -4,15 +4,23 @@ import constants.ConfigConstant;
 import input.Input;
 import input.KeyCodeConstants;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
-public class PlayerShip extends Ship implements Friendly{
+public class PlayerShip extends Ship implements Friendly {
+
+	private Image image;
+	private int delayShoot;
+	private int counterdelay;
 
 	public PlayerShip(int x, int y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
 			int direction) {
 		super(x, y, hp, maxHp, speed, maxSpeed, accelerate, turnRate, direction);
 		// TODO Auto-generated constructor stub
 		this.radius = 25;
+		this.image = ConfigConstant.Resource.SHIP_IMAGE;
+		this.delayShoot = 10;
+		this.counterdelay = 0;
 	}
 
 	@Override
@@ -20,8 +28,7 @@ public class PlayerShip extends Ship implements Friendly{
 		// TODO Auto-generated method stub
 		gc.translate(x, y);
 		gc.rotate(this.direction + 90);
-		gc.setFill(Color.DARKGRAY);
-		gc.fillRect(-25, -25, 50, 50);
+		gc.drawImage(image, -image.getWidth() / 2, -image.getHeight() / 2);
 		gc.rotate(-this.direction - 90);
 		gc.translate(-x, -y);
 
@@ -30,7 +37,7 @@ public class PlayerShip extends Ship implements Friendly{
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		
+
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		if (this.x <= radius && Player.instance.getSectionX() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() - 1,
@@ -69,9 +76,9 @@ public class PlayerShip extends Ship implements Friendly{
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
 		}
-		
+
 		super.update();
-		
+
 		if (Input.isKeyDown(KeyCodeConstants.KEY_UP)) {
 			forward();
 		} else if (Input.isKeyDown(KeyCodeConstants.KEY_DOWN)) {
@@ -85,7 +92,15 @@ public class PlayerShip extends Ship implements Friendly{
 			turn(false);
 		}
 		if (Input.isKeyDown(KeyCodeConstants.KEY_SHOOT)) {
-			shoot();
+			if (counterdelay == 0) {
+				shoot();
+			}
+			counterdelay++;
+			if (counterdelay == delayShoot) {
+				this.counterdelay = 0;
+			}
+		} else {
+			this.counterdelay = 0;
 		}
 	}
 

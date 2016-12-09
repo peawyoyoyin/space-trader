@@ -2,6 +2,7 @@ package game;
 
 import constants.ConfigConstant;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class Bullet extends Entity implements Renderable {
@@ -10,6 +11,7 @@ public class Bullet extends Entity implements Renderable {
 	private int direction;
 	private int damage;
 	private Ship shooter;
+	private Image image;
 
 	public Ship getShooter() {
 		return shooter;
@@ -27,7 +29,9 @@ public class Bullet extends Entity implements Renderable {
 		this.damage = damage;
 		this.shooter = shooter;
 		this.radius = 5;
-		this.z = 0;
+		this.z = 100;
+		this.image = ConfigConstant.Resource.BULLET_IMAGE;
+		ConfigConstant.Resource.LASER_SOUND.play();
 	}
 
 	@Override
@@ -56,8 +60,7 @@ public class Bullet extends Entity implements Renderable {
 		// TODO Auto-generated method stub
 		gc.translate(x, y);
 		gc.rotate(this.direction + 90);
-		gc.setFill(Color.BLUE);
-		gc.fillRect(-5, -5, 10, 10);
+		gc.drawImage(image, -image.getWidth()/2, -image.getHeight()/2);
 		gc.rotate(-this.direction - 90);
 		gc.translate(-x, -y);
 	}
