@@ -1,4 +1,4 @@
-package stocksview;
+package stocks;
 
 import java.util.List;
 
@@ -10,7 +10,6 @@ import javafx.scene.chart.ValueAxis;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.StackPane;
-import stocks.Stock;
 
 public class StockGraph extends StackPane {
 	

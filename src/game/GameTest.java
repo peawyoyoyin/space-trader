@@ -37,7 +37,6 @@ public class GameTest extends Application {
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
 				Input.inputUpdate();
-
 			}
 		};
 		animation.start();
@@ -51,5 +50,4 @@ public class GameTest extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 }

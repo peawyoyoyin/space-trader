@@ -1,4 +1,4 @@
-package stocksview;
+package stocks;
 
 import game.Player;
 import javafx.application.Application;
@@ -7,7 +7,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import market.Market;
 import market.StockUpdater;
-import stocks.Stock;
 
 public class StocksScreenTest extends Application {
 	

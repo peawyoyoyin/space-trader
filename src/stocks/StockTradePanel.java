@@ -1,4 +1,4 @@
-package stocksview;
+package stocks;
 
 import game.Player;
 import gamedata.PlayerStocksPortFolio;
@@ -8,7 +8,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import stocks.Stock;
 
 public class StockTradePanel extends GridPane {
 	

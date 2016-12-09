@@ -2,7 +2,7 @@ package market;
 
 import javafx.application.Platform;
 import stocks.StockPriceController;
-import stocksview.StocksScreen;
+import stocks.StocksScreen;
 
 public class StockUpdater extends Thread {
 
