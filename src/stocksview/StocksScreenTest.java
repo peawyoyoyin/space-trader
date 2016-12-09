@@ -1,5 +1,6 @@
 package stocksview;
 
+import game.Player;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -14,8 +15,15 @@ public class StocksScreenTest extends Application {
 		// TODO Auto-generated method stub
 		StackPane root = new StackPane();
 		StocksScreen stocksScreen = StocksScreen.instance;
+		
+		new Player();
+		
+		Player.instance.setMoney(2000000);
+		
 		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER_2));
 		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER));
+		
+		stocksScreen.getStockTradePanel().setStock(Stock.STOCK_PLACEHOLDER);
 		root.getChildren().add(stocksScreen);
 		
 		Market.InitializeMarket();

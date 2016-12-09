@@ -8,8 +8,10 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public class Stock {
 	
-	public static final Stock STOCK_PLACEHOLDER = new Stock("Placeholder",15,0,50);
-	public static final Stock STOCK_PLACEHOLDER_2 = new Stock("Placeholder2", 20, 0, 30);
+	public static final Stock STOCK_PLACEHOLDER = new Stock("Placeholder",15,10,50);
+	public static final Stock STOCK_PLACEHOLDER_2 = new Stock("Placeholder2", 20, 15, 30);
+	
+	public static final int MAX_HISTORY_SIZE = 40;
 	
 	static {
 		Stock.STOCK_PLACEHOLDER.setPrice(20);
@@ -108,7 +110,7 @@ public class Stock {
 	private void setNewPrice(int price) {
 		this.price = price;
 		this.priceHistory.add(this.price);
-		if(priceHistory.size() > 5) {
+		if(priceHistory.size() > MAX_HISTORY_SIZE) {
 			priceHistory.remove(0);
 		}
 		this.priceProperty.set(price);
