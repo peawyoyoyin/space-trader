@@ -17,7 +17,7 @@ public class Player {
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
-	public Player() {;
+	public Player() {
 		this.playerName = PLACEHOLDER_NAME;
 		this.money = 0;
 		this.sectionX = 0;
