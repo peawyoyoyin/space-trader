@@ -42,6 +42,9 @@ public class GameTest extends Application {
 		root.getChildren().add(gamePane);
 		Scene scene = new Scene(root);
 		Input.Initialize(scene);
+		
+		scene.setRoot(PlayerInfoPane.instance);
+		
 		stage.setScene(scene);
 		stage.show();
 	}

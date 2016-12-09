@@ -1,7 +1,13 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import game.Item.ItemType;
+import javafx.beans.property.MapProperty;
+import javafx.beans.property.SimpleMapProperty;
 
 public class Player {
 	public static Player instance = new Player();
@@ -13,7 +19,8 @@ public class Player {
 	private int bulletDamage;
 	private PlayerShip playerShip;
 	
-	private List<Item> inventory;
+	private Map<ItemType, Integer> inventory;
+	private MapProperty<ItemType, Integer> inventoryProperty;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
@@ -24,10 +31,25 @@ public class Player {
 		this.sectionY = 0;
 		this.bulletSpeed = 20;
 		this.bulletDamage = 5;
-		this.inventory = new ArrayList<>();
+		this.inventory = new HashMap<>();
+		for (ItemType type : ItemType.values()) {
+			inventory.put(type, 0);
+		}
 	}
 	
-	public List<Item> getInventory() {
+	public void addItemtoInventory(Item item) {
+		int old = this.inventory.get(item.getItemType());
+		this.inventory.put(item.getItemType(), old+1);
+	}
+	
+	public void removeItemFromInventory(ItemType type) {
+		int old = this.inventory.get(type);
+		if(old > 0) {
+			this.inventory.put(type, old-1);
+		}
+	}
+	
+	public Map<ItemType, Integer> getInventory() {
 		return this.inventory;
 	}
 	

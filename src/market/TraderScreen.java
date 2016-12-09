@@ -5,6 +5,7 @@ import java.util.List;
 
 import constants.ConfigConstant;
 import game.Item;
+import game.Player;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,6 +21,7 @@ public class TraderScreen extends BorderPane{
 	private Trader trader;
 	private List<TraderScreenItemCell> itemCells;
 	private VBox itemsOnSale;
+	private TraderItemPricesList priceList;
 	
 	public class TraderScreenTop extends BorderPane {
 		public TraderScreenTop(Trader trader) {
@@ -61,12 +63,16 @@ public class TraderScreen extends BorderPane{
 		super();
 		this.itemCells = new ArrayList<>();
 		this.trader = trader;
+		this.priceList = new TraderItemPricesList(trader);
+		
+		this.setCenter(new BorderPane());
 		
 		this.itemsOnSale = new VBox();
 		
-		updateItemList();
+		((BorderPane) this.getCenter()).setCenter(itemsOnSale);
+		((BorderPane) this.getCenter()).setRight(this.priceList);
 		
-		this.setCenter(itemsOnSale);
+		updateItemList();
 		
 		TraderScreenTop top = new TraderScreenTop(trader);
 		this.setTop(top);
@@ -78,14 +84,20 @@ public class TraderScreen extends BorderPane{
 	}
 	
 	public void updateItemList() {
+		this.itemCells.clear();
+		this.itemsOnSale.getChildren().clear();
 		for (Item item : trader.getItemsOnSale()) {
 			TraderScreenItemCell itemCell = new TraderScreenItemCell(item, trader);
 			itemCell.setOnMouseClicked(event -> {
-				System.out.println(itemCell.item);
+				Item product = trader.playerBuyItem(item);
+				if(product != null) {
+					Player.instance.addItemtoInventory(product);
+					updateItemList();
+					System.out.println(Player.instance.getInventory() + " " + Player.instance.getMoney());
+				}
 			});
 			this.itemCells.add(itemCell);
-			itemsOnSale.getChildren().add(itemCell);
+			this.itemsOnSale.getChildren().add(itemCell);
 		}
 	}
-
 }

@@ -3,11 +3,16 @@ package game;
 import constants.ConfigConstant;
 import input.Input;
 import input.KeyCodeConstants;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class PlayerShip extends Ship implements Friendly {
+
+	private IntegerProperty hpProperty;
+	private IntegerProperty maxHpProperty;
 
 	private Image image;
 	private int delayShoot;
@@ -21,6 +26,24 @@ public class PlayerShip extends Ship implements Friendly {
 		this.image = ConfigConstant.Resource.SHIP_IMAGE;
 		this.delayShoot = 10;
 		this.counterdelay = 0;
+		this.hpProperty = new SimpleIntegerProperty();
+		this.hpProperty.set(hp);
+		this.maxHpProperty = new SimpleIntegerProperty();
+		this.maxHpProperty.set(maxHp);
+	}
+
+	public IntegerProperty getShipProperty(String indicator) {
+		switch (indicator) {
+		case "hp": {
+			return this.hpProperty;
+		}
+		case "maxHp": {
+			return this.maxHpProperty;
+		}
+		default: {
+			return this.hpProperty;
+		}
+		}
 	}
 
 	@Override
@@ -32,6 +55,20 @@ public class PlayerShip extends Ship implements Friendly {
 		gc.rotate(-this.direction - 90);
 		gc.translate(-x, -y);
 
+	}
+
+	@Override
+	public void setMaxHp(int maxHp) {
+		// TODO Auto-generated method stub
+		super.setMaxHp(maxHp);
+		this.maxHpProperty.set(maxHp);
+	}
+
+	@Override
+	public void hit(int damage) {
+		// TODO Auto-generated method stub
+		super.hit(damage);
+		this.hpProperty.set(this.getHp());
 	}
 
 	@Override
