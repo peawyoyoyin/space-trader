@@ -14,6 +14,7 @@ public class News {
 		randomNews.add(new News("peawyoyoyin","progmeth final is too hard for me."));
 		randomNews.add(new News("roy lek","You call this an exam?"));
 		randomNews.add(new News("naisk133", "Hope I get Rank 1 on discrete again."));
+		randomNews.add(new News("enginex", "enginex co-working space is now open! 6th floor, 100th year building"));
 	}
 	
 	public static News getRandomNews() {

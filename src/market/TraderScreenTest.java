@@ -1,6 +1,7 @@
 package market;
 
 import constants.ConfigConstant;
+import game.Player;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -14,6 +15,8 @@ public class TraderScreenTest extends Application {
 		StackPane root = new StackPane();
 		
 		Market.InitializeMarket();
+		
+		Player.instance.setMoney(20000000);
 		
 		Trader trader = new Trader("Trader!!!!!");
 		trader.generateItems();
