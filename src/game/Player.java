@@ -1,5 +1,7 @@
 package game;
 
+import java.util.List;
+
 public class Player {
 	public static Player instance;
 	private String playerName;
@@ -8,6 +10,7 @@ public class Player {
 	private int sectionY;
 	private double bulletSpeed;
 	private int bulletDamage;
+	private List<Item> inventory;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
@@ -80,5 +83,9 @@ public class Player {
 
 	public void setMoney(int money) {
 		this.money = money;
+	}
+	
+	public List<Item> getInventory() {
+		return this.inventory;
 	}
 }

@@ -5,12 +5,15 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import stocks.Stock;
 
 public class StockTradePanel extends GridPane {
 	
 	private Button buyButton;
 	private Button sellButton;
 	private Label stockNameLabel;
+	
+	private Stock stock;
 	
 	public StockTradePanel() {
 		super();
@@ -23,8 +26,15 @@ public class StockTradePanel extends GridPane {
 		this.sellButton = new Button("Sell");
 		this.stockNameLabel = new Label("Stock Name");
 		
+		this.stock = null;
+		
 		this.add(stockNameLabel, 0, 0, 2, 1);
 		this.add(buyButton, 2, 0);
 		this.add(sellButton, 3, 0);
+	}
+	
+	public void setStock(Stock stock) {
+		this.stockNameLabel.setText(stock.getName());
+		this.stock = stock;
 	}
 }

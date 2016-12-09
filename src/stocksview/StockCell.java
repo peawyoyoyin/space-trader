@@ -42,6 +42,7 @@ public class StockCell extends GridPane {
 		this.stock = stock;
 		this.stockNameLabel = new Label(this.stock.getName());
 		this.stockPriceLabel = new Label(Integer.toString(this.stock.getPrice()));
+		this.stockPriceLabel.textProperty().bind(this.stock.getPriceProperty().asString());
 		this.stockChangeLabel = new StockChangeLabel();
 		this.instockLabel = new Label("0");
 		this.add(stockNameLabel, 0, 0, 2, 1);

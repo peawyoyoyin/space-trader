@@ -21,8 +21,11 @@ public class Market {
 	private static List<StockUpdater> stockUpdaters = new ArrayList<StockUpdater>();
 	
 	public static void InitializeMarket() {
+		int d = 1000;
+		
 		for (Stock stock : StockHolder.getInstance().getStocks()) {
-			stockUpdaters.add(new StockUpdater(new StockPriceController(stock, 2),1000));
+			stockUpdaters.add(new StockUpdater(new StockPriceController(stock, 2),d));
+			d -= 200;
 		}
 		
 		for (StockUpdater stockUpdater : stockUpdaters) {

@@ -1,5 +1,6 @@
 package gamedata;
 
+@Deprecated
 public class PlayerData {
 	String playerName;
 	int money;
@@ -21,11 +22,9 @@ public class PlayerData {
 		this.bulletDamage = 5;
 	}
 	
-
 	public int getBulletDamage() {
 		return bulletDamage;
 	}
-
 
 	public void setBulletDamage(int bulletDamage) {
 		this.bulletDamage = bulletDamage;

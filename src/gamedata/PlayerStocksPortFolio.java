@@ -42,12 +42,12 @@ class StockTradeData {
 		return this.stock;
 	}
 	
-	public void addInstock(int amount) {
+	public void addInstock(int amount, int price) {
 		if(this.inStock == 0) {
-			this.boughtPrice = this.stock.getPrice();
+			this.boughtPrice = price;
 		} else {
 			//new boughtPrice is average calculated from old boughtPrice
-			this.boughtPrice = (this.boughtPrice*this.inStock + this.stock.getPrice()*amount) / this.inStock+amount;
+			this.boughtPrice = (this.boughtPrice*this.inStock + price*amount) / this.inStock+amount;
 		}
 		this.inStock+=amount;
 	}

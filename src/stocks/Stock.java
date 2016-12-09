@@ -3,6 +3,9 @@ package stocks;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
 public class Stock {
 	
 	public static final Stock STOCK_PLACEHOLDER = new Stock("Placeholder",15,0,50);
@@ -23,6 +26,8 @@ public class Stock {
 	private String name;
 	private int price;
 	
+	private IntegerProperty priceProperty;
+	
 	private List<Integer> priceHistory;
 	
 	private int minPrice;
@@ -38,6 +43,7 @@ public class Stock {
 		this.priceHistory = new ArrayList<Integer>();
 		this.buyable = true;
 		this.sellable = true;
+		this.priceProperty = new SimpleIntegerProperty();
 		this.setNewPrice(basePrice);
 		StockHolder.getInstance().getStocks().add(this);
 	}
@@ -105,6 +111,7 @@ public class Stock {
 		if(priceHistory.size() > 5) {
 			priceHistory.remove(0);
 		}
+		this.priceProperty.set(price);
 	}
 
 	public double getMaxPrice() {
@@ -113,5 +120,9 @@ public class Stock {
 
 	public double getMinPrice() {
 		return this.minPrice;
+	}
+	
+	public IntegerProperty getPriceProperty() {
+		return this.priceProperty;
 	}
 }
