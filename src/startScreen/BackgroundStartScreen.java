@@ -12,7 +12,7 @@ public class BackgroundStartScreen extends Canvas {
 		// TODO Auto-generated constructor stub
 		this.setWidth(1120);
 		this.setHeight(630);
-		Image bg = new Image("res/startScreen/bg.png");
+		Image bg = new Image(ClassLoader.getSystemResource("bg.png").toString());
 //		getGraphicsContext2D().setFill(Color.GREEN);
 //		getGraphicsContext2D().fillRect(0, 0, 1120, 630);
 		this.getGraphicsContext2D().drawImage(bg, 0, 0);

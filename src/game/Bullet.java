@@ -1,10 +1,7 @@
 package game;
 
-import com.sun.javafx.geom.Shape;
-
 import constants.ConfigConstant;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class Bullet extends Entity implements Renderable {
@@ -12,7 +9,6 @@ public class Bullet extends Entity implements Renderable {
 	private double speed;
 	private int direction;
 	private int damage;
-	private Image body;
 	private Ship shooter;
 
 	public Ship getShooter() {
@@ -29,7 +25,6 @@ public class Bullet extends Entity implements Renderable {
 		this.speed = speed;
 		this.direction = direction;
 		this.damage = damage;
-		// this.body = new Image("res/startScreen/bg.png");
 		this.shooter = shooter;
 		this.radius = 5;
 	}

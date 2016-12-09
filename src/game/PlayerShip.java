@@ -1,16 +1,12 @@
 package game;
 
 import constants.ConfigConstant;
-import gamedata.GameData;
 import input.Input;
 import input.KeyCodeConstants;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class PlayerShip extends Ship {
-
-	private Image body;
 
 	public PlayerShip(int x, int y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
 			int direction) {
@@ -35,46 +31,39 @@ public class PlayerShip extends Ship {
 	public void update() {
 		// TODO Auto-generated method stub
 		super.update();
-		MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(),
-				GameData.getInstance().getPlayerData().getSectionY());
-		if (this.x <= radius && GameData.getInstance().getPlayerData().getSectionX() > 0) {
-			MapCell mcNext = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX() - 1,
-					GameData.getInstance().getPlayerData().getSectionY());
-			GameData.getInstance().getPlayerData()
-					.setSectionX(GameData.getInstance().getPlayerData().getSectionX() - 1);
+		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		if (this.x <= radius && Player.instance.getSectionX() > 0) {
+			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() - 1,
+					Player.instance.getSectionY());
+			Player.instance.setSectionX(Player.instance.getSectionX() - 1);
 			this.x = ConfigConstant.gameScreenWidth - radius - 1;
 			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
 			mc.clearBullet();
 			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
-			
-		} else if (this.y <= radius && GameData.getInstance().getPlayerData().getSectionY() > 0) {
-			MapCell mcNext = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(),
-					GameData.getInstance().getPlayerData().getSectionY() - 1);
-			GameData.getInstance().getPlayerData()
-					.setSectionY(GameData.getInstance().getPlayerData().getSectionY() - 1);
+
+		} else if (this.y <= radius && Player.instance.getSectionY() > 0) {
+			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
+					Player.instance.getSectionY() - 1);
+			Player.instance.setSectionY(Player.instance.getSectionY() - 1);
 			this.y = ConfigConstant.gameScreenHeight - radius - 1;
 			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
 			mc.clearBullet();
 			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
 
 		}
-		if (this.x >= ConfigConstant.gameScreenWidth - radius
-				&& GameData.getInstance().getPlayerData().getSectionX() < 4) {
-			MapCell mcNext = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX() + 1,
-					GameData.getInstance().getPlayerData().getSectionY());
-			GameData.getInstance().getPlayerData()
-					.setSectionX(GameData.getInstance().getPlayerData().getSectionX() + 1);
+		if (this.x >= ConfigConstant.gameScreenWidth - radius && Player.instance.getSectionX() < 4) {
+			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() + 1,
+					Player.instance.getSectionY());
+			Player.instance.setSectionX(Player.instance.getSectionX() + 1);
 			this.x = radius + 1;
 			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
 			mc.clearBullet();
 			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
 
-		} else if (this.y >= ConfigConstant.gameScreenHeight - radius
-				&& GameData.getInstance().getPlayerData().getSectionY() < 4) {
-			MapCell mcNext = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(),
-					GameData.getInstance().getPlayerData().getSectionY() + 1);
-			GameData.getInstance().getPlayerData()
-					.setSectionY(GameData.getInstance().getPlayerData().getSectionY() + 1);
+		} else if (this.y >= ConfigConstant.gameScreenHeight - radius && Player.instance.getSectionY() < 4) {
+			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
+					Player.instance.getSectionY() + 1);
+			Player.instance.setSectionY(Player.instance.getSectionY() + 1);
 			this.y = radius + 1;
 			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
 			mc.clearBullet();

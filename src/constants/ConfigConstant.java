@@ -17,6 +17,9 @@ public class ConfigConstant {
 	public static int gameScreenHeight = 630;
 	public static int gameScreenWidth = 620;
 	
+	public static int mapCellWidth = 6000;
+	public static int mapCellHeight = 6000;
+	
 	public static int stocksScreenWidth;
 	public static int stocksScreenHeight;
 	

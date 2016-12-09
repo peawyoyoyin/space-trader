@@ -1,6 +1,6 @@
 package game;
 
-public abstract class  Entity {
+public abstract class  Entity implements Comparable<Entity> {
 	protected double x,y;
 	protected int z;
 	protected boolean visible,destroyed;
@@ -11,6 +11,12 @@ public abstract class  Entity {
 		destroyed = false;
 	}
 	
+	@Override
+	public int compareTo(Entity other) {
+		// TODO Auto-generated method stub
+		return this.z-other.z;
+	}
+
 	public boolean isDestroyed(){
 		return destroyed;
 	}

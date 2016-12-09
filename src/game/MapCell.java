@@ -3,7 +3,6 @@ package game;
 import java.util.ArrayList;
 import java.util.List;
 
-import gamedata.GameData;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -58,8 +57,8 @@ public class MapCell {
 		}
 		
 		gc.setFill(Color.BROWN);
-		gc.fillText(GameData.getInstance().getPlayerData().getSectionX() + " - "
-				+ GameData.getInstance().getPlayerData().getSectionY(), 5, 20);
+		gc.fillText(Player.instance.getSectionX() + " - "
+				+ Player.instance.getSectionY(), 5, 20);
 
 	}
 

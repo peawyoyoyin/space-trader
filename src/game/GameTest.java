@@ -8,9 +8,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import constants.ConfigConstant;
 import gamedata.GameData;
 

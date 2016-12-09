@@ -11,7 +11,7 @@ class NewsPaneTop extends StackPane {
 //		Label name = new Label("News Feed");
 //		this.getChildren().add(name);
 //		this.setPrefHeight(40);
-		Image logo = new Image("res/newsFeed/logo.png");
+		Image logo = new Image(ClassLoader.getSystemResource("logo.png").toString());
 		Canvas logoCanvas = new Canvas(50, 50);
 		logoCanvas.getGraphicsContext2D().drawImage(logo, 0, 0, 50, 50);
 		this.getChildren().add(logoCanvas);
