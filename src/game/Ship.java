@@ -1,7 +1,6 @@
 package game;
 
 import constants.ConfigConstant;
-import gamedata.GameData;
 
 public abstract class Ship extends Entity implements Renderable {
 
@@ -24,6 +23,7 @@ public abstract class Ship extends Entity implements Renderable {
 		this.accelerate = accelerate;
 		this.turnRate = turnRate;
 		this.direction = direction;
+		this.z = 2;
 	}
 
 	public int getHp() {
@@ -76,13 +76,11 @@ public abstract class Ship extends Entity implements Renderable {
 	}
 
 	public void shoot() {
-		MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(),
-				GameData.getInstance().getPlayerData().getSectionY());
+		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities()
 				.add(new Bullet(this.x + Math.cos(Math.toRadians(this.direction)) * 30,
-						this.y + Math.sin(Math.toRadians(this.direction)) * 30,
-						GameData.getInstance().getPlayerData().getBulletSpeed(), this.direction,
-						GameData.getInstance().getPlayerData().getBulletDamage(), this));
+						this.y + Math.sin(Math.toRadians(this.direction)) * 30, Player.instance.getBulletSpeed(),
+						this.direction, Player.instance.getBulletDamage(), this));
 	}
 
 	public void healMaxHp() {
@@ -92,19 +90,21 @@ public abstract class Ship extends Entity implements Renderable {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
+		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		mc.addNewEffect(new TailShipEffect(this.x, this.y, 40,this.direction));
 		this.x += Math.cos(Math.toRadians(this.direction)) * speed;
 		this.y += Math.sin(Math.toRadians(this.direction)) * speed;
-		if(this.x < radius){
+		if (this.x < radius) {
 			this.x = radius;
 		}
-		if (this.x > ConfigConstant.gameScreenWidth-radius) {
-			this.x = ConfigConstant.gameScreenWidth-radius;
+		if (this.x > ConfigConstant.mapCellWidth - radius) {
+			this.x = ConfigConstant.mapCellWidth - radius;
 		}
-		if(this.y < radius){
+		if (this.y < radius) {
 			this.y = radius;
 		}
-		if (this.y > ConfigConstant.gameScreenHeight-radius) {
-			this.y = ConfigConstant.gameScreenHeight-radius;
+		if (this.y > ConfigConstant.mapCellHeight - radius) {
+			this.y = ConfigConstant.mapCellHeight - radius;
 		}
 	}
 

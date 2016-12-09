@@ -1,18 +1,18 @@
 package game;
 
 public class Player {
-	public static Player instance;
+	public static Player instance = new Player();
 	private String playerName;
 	private int money;
 	private int sectionX;
 	private int sectionY;
 	private double bulletSpeed;
 	private int bulletDamage;
+	private PlayerShip playerShip;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
-	public Player() {
-		instance = this;
+	public Player() {;
 		this.playerName = PLACEHOLDER_NAME;
 		this.money = 0;
 		this.sectionX = 0;
@@ -26,6 +26,13 @@ public class Player {
 		return bulletDamage;
 	}
 
+	public PlayerShip getPlayerShip() {
+		return playerShip;
+	}
+
+	public void setPlayerShip(PlayerShip playerShip) {
+		this.playerShip = playerShip;
+	}
 
 	public void setBulletDamage(int bulletDamage) {
 		this.bulletDamage = bulletDamage;

@@ -6,7 +6,6 @@ import java.util.List;
 public class MapCellHolder {
 	private List<List<MapCell>> mapCells;
 	public static final MapCellHolder instance = new MapCellHolder(); 
-	private PlayerShip playerShip;
 	
 	private MapCellHolder() {
 		this.mapCells = new ArrayList<>();
@@ -17,16 +16,6 @@ public class MapCellHolder {
 			}
 		}
 	}
-	
-	public PlayerShip getPlayerShip() {
-		return playerShip;
-	}
-
-	public void setPlayerShip(PlayerShip playerShip) {
-		this.playerShip = playerShip;
-	}
-
-
 
 	public List<List<MapCell>> getMapCells() {
 		return this.mapCells;

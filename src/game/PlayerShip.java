@@ -6,7 +6,7 @@ import input.KeyCodeConstants;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class PlayerShip extends Ship {
+public class PlayerShip extends Ship implements Friendly{
 
 	public PlayerShip(int x, int y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
 			int direction) {
@@ -30,50 +30,54 @@ public class PlayerShip extends Ship {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		super.update();
+		
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		if (this.x <= radius && Player.instance.getSectionX() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() - 1,
 					Player.instance.getSectionY());
 			Player.instance.setSectionX(Player.instance.getSectionX() - 1);
-			this.x = ConfigConstant.gameScreenWidth - radius - 1;
-			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
-			mc.clearBullet();
-			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
+			this.x = ConfigConstant.mapCellWidth - radius - 1;
+			mc.getEntities().remove(Player.instance.getPlayerShip());
+			mc.clear();
+			mcNext.getEntities().add(Player.instance.getPlayerShip());
 
 		} else if (this.y <= radius && Player.instance.getSectionY() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
 					Player.instance.getSectionY() - 1);
 			Player.instance.setSectionY(Player.instance.getSectionY() - 1);
-			this.y = ConfigConstant.gameScreenHeight - radius - 1;
-			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
-			mc.clearBullet();
-			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
+			this.y = ConfigConstant.mapCellHeight - radius - 1;
+			mc.getEntities().remove(Player.instance.getPlayerShip());
+			mc.clear();
+			mcNext.getEntities().add(Player.instance.getPlayerShip());
 
 		}
-		if (this.x >= ConfigConstant.gameScreenWidth - radius && Player.instance.getSectionX() < 4) {
+		if (this.x >= ConfigConstant.mapCellWidth - radius && Player.instance.getSectionX() < 4) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() + 1,
 					Player.instance.getSectionY());
 			Player.instance.setSectionX(Player.instance.getSectionX() + 1);
 			this.x = radius + 1;
-			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
-			mc.clearBullet();
-			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
+			mc.getEntities().remove(Player.instance.getPlayerShip());
+			mc.clear();
+			mcNext.getEntities().add(Player.instance.getPlayerShip());
 
-		} else if (this.y >= ConfigConstant.gameScreenHeight - radius && Player.instance.getSectionY() < 4) {
+		} else if (this.y >= ConfigConstant.mapCellHeight - radius && Player.instance.getSectionY() < 4) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
 					Player.instance.getSectionY() + 1);
 			Player.instance.setSectionY(Player.instance.getSectionY() + 1);
 			this.y = radius + 1;
-			mc.getEntities().remove(MapCellHolder.instance.getPlayerShip());
-			mc.clearBullet();
-			mcNext.getEntities().add(MapCellHolder.instance.getPlayerShip());
+			mc.getEntities().remove(Player.instance.getPlayerShip());
+			mc.clear();
+			mcNext.getEntities().add(Player.instance.getPlayerShip());
 		}
-
+		
+		super.update();
+		
 		if (Input.isKeyDown(KeyCodeConstants.KEY_UP)) {
 			forward();
 		} else if (Input.isKeyDown(KeyCodeConstants.KEY_DOWN)) {
 			back();
+		} else {
+			this.speed = this.speed * 0.98;
 		}
 		if (Input.isKeyDown(KeyCodeConstants.KEY_LEFT)) {
 			turn(true);

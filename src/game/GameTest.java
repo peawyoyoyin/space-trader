@@ -9,7 +9,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import constants.ConfigConstant;
-import gamedata.GameData;
 
 public class GameTest extends Application {
 
@@ -20,19 +19,21 @@ public class GameTest extends Application {
 
 		GamePane gamePane = new GamePane(constants.ConfigConstant.gameScreenWidth,
 				constants.ConfigConstant.gameScreenHeight);
-		PlayerShip ship = new PlayerShip(500, 500, 100, 100, 0, 5, 0.05, 5, 0);
-		BossShip bShip = new BossShip(100, 100, 500, 500, 0, 5, 2, 1, 0);
-		
-		MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(), GameData.getInstance().getPlayerData().getSectionY());
-		MapCellHolder.instance.setPlayerShip(ship);
+		PlayerShip ship = new PlayerShip(500, 500, 100, 100, 0, 30, 5, 5, 0);
+		EnemyShip bShip = new EnemyShip(100, 100, 500, 500, 0, 5, 2, 1, 0);
+
+		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		Player.instance.setPlayerShip(ship);
 		mc.getEntities().add(ship);
 		mc.getEntities().add(bShip);
+		BombEffect be = new BombEffect(500, 500, 100, 100);
+		mc.getEntities().add(be);
 
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
-		
+
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
-				MapCell mc = MapCellHolder.instance.get(GameData.getInstance().getPlayerData().getSectionX(), GameData.getInstance().getPlayerData().getSectionY());
+				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
 				Input.inputUpdate();

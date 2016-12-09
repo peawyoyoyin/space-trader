@@ -27,6 +27,7 @@ public class Bullet extends Entity implements Renderable {
 		this.damage = damage;
 		this.shooter = shooter;
 		this.radius = 5;
+		this.z = 0;
 	}
 
 	@Override
@@ -34,9 +35,19 @@ public class Bullet extends Entity implements Renderable {
 		// TODO Auto-generated method stub
 		this.x += Math.cos(Math.toRadians(this.direction)) * speed;
 		this.y += Math.sin(Math.toRadians(this.direction)) * speed;
-		if (x > ConfigConstant.gameScreenWidth + radius || x < -radius || y > ConfigConstant.gameScreenHeight + radius
+		if (x > ConfigConstant.mapCellWidth + radius || x < -radius || y > ConfigConstant.mapCellHeight + radius
 				|| y < -radius) {
 			this.destroyed = true;
+		}
+		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		for (Entity entity : mc.getEntities()) {
+			if (entity instanceof Ship && entity != this.getShooter()
+					&& this.isCollideWith(entity)) {
+				this.destroyed = true;
+				((Ship) entity).hit(this.getDamage());
+				mc.addNewEffect(new BombEffect(this.x, this.y, 40, 10));
+			}
+
 		}
 	}
 
