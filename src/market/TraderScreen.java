@@ -91,7 +91,7 @@ public class TraderScreen extends BorderPane{
 			itemCell.setOnMouseClicked(event -> {
 				Item product = trader.playerBuyItem(item);
 				if(product != null) {
-					Player.instance.getInventory().add(product);
+					Player.instance.addItemtoInventory(product);
 					updateItemList();
 					System.out.println(Player.instance.getInventory() + " " + Player.instance.getMoney());
 				}
@@ -100,5 +100,4 @@ public class TraderScreen extends BorderPane{
 			this.itemsOnSale.getChildren().add(itemCell);
 		}
 	}
-
 }

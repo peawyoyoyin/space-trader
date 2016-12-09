@@ -14,7 +14,8 @@ public class PlayerInfoPane extends BorderPane {
 		this.playerStatusPane = new PlayerStatusPane();
 		this.playerInventoryPane = new PlayerInventoryPane();
 		this.setCenter(this.playerStatusPane);
-		this.setBottom(this.playerInventoryPane); 
+		this.setBottom(this.playerInventoryPane);
+		this.playerStatusPane.setShipView(PlayerStatusPane.SHIPVIEW_HEALTHY);
 	}
 	
 	public void update() {
