@@ -36,6 +36,10 @@ public class StocksScreen extends BorderPane {
 	public StockGraph getStockGraph() {
 		return this.stocksGraph;
 	}
+	
+	public StockTradePanel getStockTradePanel() {
+		return this.stockTradePanel;
+	}
 }
 
 class StocksList extends VBox {
@@ -45,5 +49,10 @@ class StocksList extends VBox {
 	
 	public void addStockCell(StockCell stockCell) {
 		this.getChildren().add(stockCell);
+		stockCell.setOnMouseClicked(event -> {
+			StocksScreen.instance.getStockGraph().setStock(stockCell.getStock());
+			StocksScreen.instance.getStockTradePanel().setStock(stockCell.getStock());
+			StocksScreen.instance.getStockGraph().updateGraph();
+		});
 	}
 }

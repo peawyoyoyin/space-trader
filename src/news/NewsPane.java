@@ -19,6 +19,8 @@ class NewsPaneTop extends StackPane {
 }
 
 public class NewsPane extends BorderPane {
+	public static NewsPane instance = new NewsPane();
+	
 	NewsFeed newsFeed;
 	public NewsPane() {
 		super();
@@ -30,5 +32,9 @@ public class NewsPane extends BorderPane {
 	
 	public NewsFeed getNewsFeed() {
 		return this.newsFeed;
+	}
+	
+	public void addNews(News news) {
+		this.newsFeed.addNews(news);
 	}
 }

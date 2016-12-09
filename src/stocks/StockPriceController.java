@@ -23,6 +23,7 @@ public class StockPriceController {
 		this.stockEvent = new ArrayList<StockEvent>();
 		this.maxStep = 5;
 		this.direction = 1;
+		this.random = new Random();
 	}
 	
 	public StockPriceController(Stock stock, int priceChangeModifier, Random random) {

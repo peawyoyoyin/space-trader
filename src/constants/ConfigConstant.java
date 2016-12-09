@@ -1,5 +1,6 @@
 package constants;
 
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 
@@ -28,4 +29,17 @@ public class ConfigConstant {
 	
 	public static String serverURL = "http://127.0.0.1:7777/";
 	public static String version = "# progmeth-project";	
+	
+	public static class Resource {
+		public static Image BULLET_IMAGE;
+		public static Image SHIP_IMAGE;
+		
+		
+		public static Image TRADER_FACE = new Image(ClassLoader.getSystemResource("trader/traderface.jpg").toString());
+		public static Image ITEM_GEM = new Image(ClassLoader.getSystemResource("itemicon/itemgem.png").toString());
+		public static Image ITEM_PARTS = new Image(ClassLoader.getSystemResource("itemicon/itemparts.png").toString());
+		public static Image ITEM_JUNK = new Image(ClassLoader.getSystemResource("itemicon/itemjunk.png").toString());
+		public static Image ITEM_WEAPON = new Image(ClassLoader.getSystemResource("itemicon/itemweapon.png").toString());
+		public static Image ITEM_MATERIAL = new Image(ClassLoader.getSystemResource("itemicon/itemmaterial.png").toString());
+	}
 }

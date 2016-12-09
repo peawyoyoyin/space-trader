@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import market.Market;
 
 public class NewsFeedTest extends Application {
 
@@ -12,12 +13,29 @@ public class NewsFeedTest extends Application {
 	public void start(Stage stage) throws Exception {
 		// TODO Auto-generated method stub
 		StackPane root = new StackPane();
-		NewsPane newsPane = new NewsPane();
+		NewsPane newsPane = NewsPane.instance;
 		
 		newsPane.getNewsFeed().addNews(new News("python","Why you no use me anymore? :sadface:"));
 		newsPane.getNewsFeed().addNews(new News("java","NullPointerException gonna rekt us so hard"));
 		newsPane.getNewsFeed().addNews(new News("peawyoyoyin","this is the news feed"));
 		newsPane.getNewsFeed().addNews(new News("roy lek", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				while(true) {
+					Market.MarketUpdate();
+					try {
+						Thread.sleep(200);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}).start();
 		
 		new Thread(new Runnable() {
 			
