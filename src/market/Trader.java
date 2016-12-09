@@ -15,6 +15,8 @@ public class Trader {
 	private Map<ItemType, Double> buyPriceMultiplier;
 	private String name;
 	private boolean isAccessing;
+	
+	private static final int ITEMS_ON_SALE = 6;
 
 	public Trader(String name) {
 		this.name = name;
@@ -46,9 +48,12 @@ public class Trader {
 
 	public void generateItems() {
 		for (ItemType type : Item.ItemType.values()) {
-			this.itemsOnSale.add(new Item(type, 200));
 			this.sellPriceMultiplier.put(type, 1.0);
 			this.buyPriceMultiplier.put(type, 1.0);
+		}
+		
+		for(int i=0; i<ITEMS_ON_SALE; i++) {
+			this.itemsOnSale.add(new Item(ItemType.getRandomItemType(), 200));
 		}
 	}
 
@@ -57,6 +62,7 @@ public class Trader {
 			int realPrice = (int) (item.getBasePrice() * this.buyPriceMultiplier.get(item.getItemType()));
 			if (Player.instance.getMoney() >= realPrice) {
 				Player.instance.removeMoney(realPrice);
+				this.itemsOnSale.remove(item);
 				return item;
 			} else {
 				return null;

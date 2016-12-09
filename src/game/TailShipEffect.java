@@ -20,7 +20,7 @@ public class TailShipEffect extends Entity implements Renderable {
 		this.direction = direction;
 		this.radius = radius;
 		this.counter = 0;
-		this.maxCounter = 40;
+		this.maxCounter = 50;
 		this.speed = 1;
 	}
 
@@ -38,7 +38,7 @@ public class TailShipEffect extends Entity implements Renderable {
 		// TODO Auto-generated method stub
 		this.x -= Math.cos(Math.toRadians(this.direction)) * speed;
 		this.y -= Math.sin(Math.toRadians(this.direction)) * speed;
-		this.radius--;
+		this.radius = this.radius - ((double) 50/this.maxCounter);
 		this.counter++;
 		if (this.counter > this.maxCounter) {
 			this.destroyed = true;

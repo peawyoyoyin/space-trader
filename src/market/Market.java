@@ -53,6 +53,10 @@ public class Market {
 		}
 	}
 	
+	public static List<StockUpdater> getStockUpdaters() {
+		return stockUpdaters;
+	}
+	
 	private static void generateRandomNews() {
 		Platform.runLater(new Runnable() {
 			

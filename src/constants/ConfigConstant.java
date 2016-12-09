@@ -21,11 +21,8 @@ public class ConfigConstant {
 	public static int mapCellWidth = 6000;
 	public static int mapCellHeight = 6000;
 	
-	public static int stocksScreenWidth;
-	public static int stocksScreenHeight;
-	
-	public static int newsFeedScreenWidth;
-	public static int newsFeedScreenHeight;
+	public static int gameScreen_right_width = 250;
+	public static int gameScreen_left_width = 250;
 	
 	public static String serverURL = "http://127.0.0.1:7777/";
 	public static String version = "# progmeth-project";	

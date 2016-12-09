@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import market.Market;
+import market.StockUpdater;
 import stocks.Stock;
 
 public class StocksScreenTest extends Application {
@@ -31,6 +32,15 @@ public class StocksScreenTest extends Application {
 		Scene scene = new Scene(root,250,500);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+	}
+	
+	@Override
+	public void stop() throws Exception {
+		// TODO Auto-generated method stub
+		super.stop();
+		for (StockUpdater stockUpdater : Market.getStockUpdaters()) {
+			stockUpdater.interrupt();
+		}
 	}
 	
 	public static void main(String[] args) {

@@ -1,5 +1,8 @@
 package game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 	public static Player instance = new Player();
 	private String playerName;
@@ -10,6 +13,8 @@ public class Player {
 	private int bulletDamage;
 	private PlayerShip playerShip;
 	
+	private List<Item> inventory;
+	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
 	public Player() {;
@@ -19,6 +24,11 @@ public class Player {
 		this.sectionY = 0;
 		this.bulletSpeed = 20;
 		this.bulletDamage = 5;
+		this.inventory = new ArrayList<>();
+	}
+	
+	public List<Item> getInventory() {
+		return this.inventory;
 	}
 	
 

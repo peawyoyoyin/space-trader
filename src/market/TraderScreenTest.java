@@ -24,6 +24,15 @@ public class TraderScreenTest extends Application {
 		primaryStage.show();
 	}
 	
+	@Override
+	public void stop() throws Exception {
+		// TODO Auto-generated method stub
+		super.stop();
+		for (StockUpdater stockUpdater : Market.getStockUpdaters()) {
+			stockUpdater.interrupt();
+		}
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

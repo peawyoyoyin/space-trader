@@ -9,6 +9,11 @@ public class Item {
 	public enum ItemType {
 		MATERIAL, WEAPON, GEM, PARTS, JUNK;
 		
+		public static ItemType getRandomItemType() {
+			Random random = new Random();
+			return ItemType.values()[random.nextInt(ItemType.values().length)];
+		}
+		
 		public static Image getItemIcon(ItemType type) {
 			Image image = null;
 			

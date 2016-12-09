@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 import constants.ConfigConstant;
 
 public abstract class Ship extends Entity implements Renderable {
