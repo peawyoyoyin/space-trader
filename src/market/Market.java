@@ -88,4 +88,10 @@ public class Market {
 	private static void generateTraderChange() {
 		
 	}
+	
+	public static void finalizeMarket() {
+		for (StockUpdater stockUpdater : stockUpdaters) {
+			stockUpdater.interrupt();
+		}
+	}
 }

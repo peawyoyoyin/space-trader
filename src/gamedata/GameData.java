@@ -1,5 +1,6 @@
 package gamedata;
 
+@Deprecated
 public class GameData {
 	public static GameData instance = new GameData();
 	
