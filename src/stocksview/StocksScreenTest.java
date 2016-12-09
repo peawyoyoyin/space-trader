@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import market.Market;
 import stocks.Stock;
 
 public class StocksScreenTest extends Application {
@@ -16,6 +17,8 @@ public class StocksScreenTest extends Application {
 		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER_2));
 		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER));
 		root.getChildren().add(stocksScreen);
+		
+		Market.InitializeMarket();
 		
 		Scene scene = new Scene(root,250,500);
 		primaryStage.setScene(scene);

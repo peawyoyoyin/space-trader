@@ -1,7 +1,7 @@
 package gamedata;
 
 public class GameData {
-	private static GameData instance = new GameData();
+	public static GameData instance = new GameData();
 	
 	private PlayerData playerData;
 	
@@ -13,6 +13,7 @@ public class GameData {
 		return this.playerData;
 	}
 	
+	@Deprecated
 	public static GameData getInstance() {
 		return instance;
 	}

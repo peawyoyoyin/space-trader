@@ -1,5 +1,6 @@
 package constants;
 
+import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 
@@ -28,4 +29,8 @@ public class ConfigConstant {
 	
 	public static String serverURL = "http://127.0.0.1:7777/";
 	public static String version = "# progmeth-project";	
+	
+	public static class Resource {
+		public static Image BULLET_IMAGE;
+	}
 }

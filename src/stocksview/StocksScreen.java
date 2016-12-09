@@ -45,5 +45,9 @@ class StocksList extends VBox {
 	
 	public void addStockCell(StockCell stockCell) {
 		this.getChildren().add(stockCell);
+		stockCell.setOnMouseClicked(event -> {
+			StocksScreen.instance.getStockGraph().setStock(stockCell.getStock());
+			StocksScreen.instance.getStockGraph().updateGraph();
+		});
 	}
 }

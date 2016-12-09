@@ -57,19 +57,22 @@ public class StockGraph extends StackPane {
 		this.updateGraph();
 	}
 	
-	public void updateGraph() {
+	public synchronized void updateGraph() {
 		if(stock == null) {
 			return;
 		}
+		this.lineChart.setAnimated(false);
+		this.lineChart.getData().clear();
 		Axis yAxis = this.lineChart.getYAxis();
 		yAxis.setAutoRanging(false);
 		((NumberAxis) yAxis).setUpperBound(Stock.STOCK_PLACEHOLDER.getMaxPrice()*1.1);
 		((NumberAxis) yAxis).setLowerBound(Stock.STOCK_PLACEHOLDER.getMinPrice()-1);
-		this.series.getData().clear();
+		this.series = new Series<Number,Number>();
 		List<Integer> priceHistory = this.stock.getPriceHistory();
 		System.out.println(priceHistory);
 		for(int i=0; i<priceHistory.size(); i++) {
 			this.series.getData().add(new Data<Number, Number>(i, priceHistory.get(i)));
 		}
+		this.lineChart.getData().add(this.series);
 	}
 }

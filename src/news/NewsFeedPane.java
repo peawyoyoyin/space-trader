@@ -23,7 +23,7 @@ public class NewsFeedPane extends ScrollPane{
 }
 
 class NewsFeed extends VBox {
-	private static final int MAX_NEWS = 5;
+	private static final int MAX_NEWS = 10;
 	
 	public NewsFeed() {
 		super();
