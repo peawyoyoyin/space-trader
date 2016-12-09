@@ -13,6 +13,8 @@ public class TraderScreenTest extends Application {
 		// TODO Auto-generated method stub
 		StackPane root = new StackPane();
 		
+		Market.InitializeMarket();
+		
 		Trader trader = new Trader("Trader!!!!!");
 		trader.generateItems();
 		

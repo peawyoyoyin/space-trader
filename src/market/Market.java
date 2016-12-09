@@ -1,9 +1,12 @@
 package market;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
+import game.Item.ItemType;
 import javafx.application.Platform;
 import news.News;
 import news.NewsPane;
@@ -19,6 +22,7 @@ public class Market {
 	
 	
 	private static List<StockUpdater> stockUpdaters = new ArrayList<StockUpdater>();
+	private static Map<ItemType, Integer> itemPrices = new HashMap<ItemType, Integer>();
 	
 	public static void InitializeMarket() {
 		int d = 1000;
@@ -31,6 +35,14 @@ public class Market {
 		for (StockUpdater stockUpdater : stockUpdaters) {
 			stockUpdater.start();
 		}
+		
+		for (ItemType itemType : ItemType.values()) {
+			itemPrices.put(itemType, 50);
+		}
+	}
+	
+	public static int getItemPrice(ItemType itemType) {
+		return itemPrices.get(itemType);
 	}
 	
 	public static void MarketUpdate() {

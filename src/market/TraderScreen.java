@@ -51,7 +51,7 @@ public class TraderScreen extends BorderPane{
 			this.setAlignment(Pos.CENTER);
 			this.setSpacing(5);
 			this.itemCellIcon = new ItemCellIcon(item);
-			this.priceLabel = new Label("Price: "+Integer.toString((int) (trader.getBuyPriceMultipliers().get(item.getItemType())*item.getBasePrice())));
+			this.priceLabel = new Label("Price: "+Integer.toString((int) (trader.getBuyPriceMultipliers().get(item.getItemType())*Market.getItemPrice(item.getItemType()))));
 			
 			this.getChildren().addAll(itemCellIcon, priceLabel);
 		}

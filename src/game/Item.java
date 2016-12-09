@@ -8,71 +8,96 @@ import javafx.scene.image.Image;
 public class Item {
 	public enum ItemType {
 		MATERIAL, WEAPON, GEM, PARTS, JUNK;
-		
+
 		public static ItemType getRandomItemType() {
 			Random random = new Random();
 			return ItemType.values()[random.nextInt(ItemType.values().length)];
 		}
-		
+
+		public static String toString(ItemType itemType) {
+			switch(itemType) {
+			case MATERIAL : {
+				return "materials";
+			}
+			case WEAPON : {
+				return "weapons";
+			}
+			case GEM : {
+				return "gems";
+			}
+			case PARTS : {
+				return "parts";
+			}
+			case JUNK : {
+				return "junk";
+			}
+			default: {
+				return "NoneType";
+			}
+			}
+		}
+
 		public static Image getItemIcon(ItemType type) {
 			Image image = null;
-			
-			switch(type) {
+
+			switch (type) {
 			case MATERIAL: {
 				image = ConfigConstant.Resource.ITEM_MATERIAL;
 				break;
 			}
-			case WEAPON : {
+			case WEAPON: {
 				image = ConfigConstant.Resource.ITEM_WEAPON;
 				break;
 			}
-			case GEM : {
+			case GEM: {
 				image = ConfigConstant.Resource.ITEM_GEM;
 				break;
 			}
-			case PARTS : {
+			case PARTS: {
 				image = ConfigConstant.Resource.ITEM_PARTS;
 				break;
 			}
-			case JUNK : {
+			case JUNK: {
 				image = ConfigConstant.Resource.ITEM_JUNK;
 				break;
 			}
-			default : {
+			default: {
 				System.out.println("Warning: bad item type in getItemIcon");
 				image = ConfigConstant.Resource.ITEM_JUNK;
 				break;
 			}
 			}
-			
+
 			return image;
 		}
 	}
-	
+
 	private ItemType itemType;
-	private int basePrice;
-	
+
+	@Deprecated
 	public Item(ItemType itemType, int basePrice) {
-		this.itemType = itemType;
-		this.basePrice = basePrice;
+		this(itemType);
 	}
-	
+
+	public Item(ItemType itemType) {
+		this.itemType = itemType;
+	}
+
 	public static Item generate() {
 		Random random = new Random();
 		ItemType itemType = ItemType.values()[random.nextInt(ItemType.values().length)];
-		return new Item(itemType, random.nextInt(1000)+150);
+		return new Item(itemType);
 	}
-	
-	public static Item generate(ItemType itemType){
-		Random random = new Random();
-		return new Item(itemType, random.nextInt(1000)+150);
+
+	public static Item generate(ItemType itemType) {
+		return new Item(itemType);
 	}
-	
-	public int getBasePrice() {
-		return this.basePrice;
-	}
-	
+
 	public ItemType getItemType() {
 		return this.itemType;
+	}
+
+	public Image getItemIcon() {
+		return ItemType.getItemIcon(this.itemType);
 	}
 }

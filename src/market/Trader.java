@@ -53,13 +53,13 @@ public class Trader {
 		}
 		
 		for(int i=0; i<ITEMS_ON_SALE; i++) {
-			this.itemsOnSale.add(new Item(ItemType.getRandomItemType(), 200));
+			this.itemsOnSale.add(new Item(ItemType.getRandomItemType()));
 		}
 	}
 
 	public Item playerBuyItem(Item item) {
 		if (this.itemsOnSale.contains(item)) {
-			int realPrice = (int) (item.getBasePrice() * this.buyPriceMultiplier.get(item.getItemType()));
+			int realPrice = (int) (Market.getItemPrice(item.getItemType()) * this.buyPriceMultiplier.get(item.getItemType()));
 			if (Player.instance.getMoney() >= realPrice) {
 				Player.instance.removeMoney(realPrice);
 				this.itemsOnSale.remove(item);
@@ -74,7 +74,7 @@ public class Trader {
 	}
 
 	public int playerSellItem(Item item) {
-		return (int) ((int) item.getBasePrice() * this.sellPriceMultiplier.get(item.getItemType()));
+		return (int) ((int) Market.getItemPrice(item.getItemType()) * this.sellPriceMultiplier.get(item.getItemType()));
 	}
 	
 	public boolean isAccessing() {
