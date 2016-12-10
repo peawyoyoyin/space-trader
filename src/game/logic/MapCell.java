@@ -30,7 +30,7 @@ public class MapCell {
 
 	public void clear() {
 		for (int i = 0; i < entities.size(); i++) {
-			if (!(entities.get(i) instanceof Ship)) {
+			if (!(entities.get(i) instanceof Ship || entities.get(i) instanceof SpaceStationEntity)) {
 				entities.remove(i);
 				i--;
 			}

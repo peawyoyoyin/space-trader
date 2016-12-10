@@ -65,11 +65,11 @@ public abstract class Ship extends Entity implements Renderable {
 	public void turn(boolean left) {
 		if (left) {
 			this.direction -= this.turnRate;
-			if (this.direction < 0)
+			if (this.direction < -180)
 				this.direction += 360;
 		} else {
 			this.direction += this.turnRate;
-			if (this.direction >= 360)
+			if (this.direction >= 180)
 				this.direction -= 360;
 		}
 	}
