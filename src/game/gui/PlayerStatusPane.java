@@ -1,5 +1,6 @@
-package game;
+package game.gui;
 
+import game.logic.Player;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;

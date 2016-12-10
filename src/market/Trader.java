@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import game.Item;
-import game.Item.ItemType;
-import game.Player;
+import game.logic.Item;
+import game.logic.Player;
+import game.logic.Item.ItemType;
 
 public class Trader {
 	private List<Item> itemsOnSale;
