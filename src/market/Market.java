@@ -11,10 +11,14 @@ import javafx.application.Platform;
 import news.News;
 import news.NewsPane;
 import stocks.Stock;
+import stocks.StockCell;
 import stocks.StockHolder;
 import stocks.StockPriceController;
+import stocks.StocksScreen;
 
 public class Market {
+	
+	private static Thread marketRunner;
 	
 	private static final double RANDOM_NEWS_CHANCE = 2.00;
 	private static final double STOCK_EVENT_CHANCE = 5.00;
@@ -25,12 +29,19 @@ public class Market {
 	private static Map<ItemType, Integer> itemPrices = new HashMap<ItemType, Integer>();
 	
 	public static void InitializeMarket() {
+		Stock.initializeGameStocks();
+		
 		int d = 1000;
 		
-		for (Stock stock : StockHolder.getInstance().getStocks()) {
+		for (Stock stock : StockHolder.instance.getStocks()) {
+			StocksScreen.instance.getStocksList().addStockCell(new StockCell(stock));
 			stockUpdaters.add(new StockUpdater(new StockPriceController(stock, 2),d));
 			d -= 200;
 		}
+		
+		StocksScreen.instance.getStockGraph().setStock(StockHolder.instance.getStocks().get(0));
+		StocksScreen.instance.getStockTradePanel().setStock(StockHolder.instance.getStocks().get(0));
+		
 		
 		for (StockUpdater stockUpdater : stockUpdaters) {
 			stockUpdater.start();
@@ -39,6 +50,26 @@ public class Market {
 		for (ItemType itemType : ItemType.values()) {
 			itemPrices.put(itemType, 50);
 		}
+		
+		Market.marketRunner = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try {
+					while(true) {
+						Thread.sleep(100);
+						MarketUpdate();
+					}
+				} catch(InterruptedException e) {
+					System.out.println("marketRunner Interrupted");
+				}
+			}
+		});
+		
+		Market.marketRunner.start();
+		
+		System.out.println("Market initialized");
 	}
 	
 	public static int getItemPrice(ItemType itemType) {
@@ -81,6 +112,7 @@ public class Market {
 
 	}
 	
+	@Deprecated
 	private static void generateStockEvent() {
 		
 	}
@@ -93,5 +125,6 @@ public class Market {
 		for (StockUpdater stockUpdater : stockUpdaters) {
 			stockUpdater.interrupt();
 		}
+		Market.marketRunner.interrupt();
 	}
 }

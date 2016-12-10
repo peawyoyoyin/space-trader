@@ -8,13 +8,24 @@ import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import market.TraderScreen;
+import news.NewsPane;
+import stocks.StocksScreen;
 
 public class GameScreen extends BorderPane{
+	
+	public static final GameScreen instance = new GameScreen();
+	
 	private Node left;
 	private Node center;
 	private Node right;
+	
+	public GameScreen() {
+		this(NewsPane.instance,new Canvas(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight),StocksScreen.instance);
+	}
 	
 	public GameScreen(Node left, Node center, Node right) {
 		super();

@@ -7,14 +7,24 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import market.Market;
 import constants.ConfigConstant;
 
 public class GameTest extends Application {
+	
+	@Override
+	public void stop() throws Exception {
+		// TODO Auto-generated method stub
+		super.stop();
+		Market.finalizeMarket();
+	}
 
 	@Override
 	public void start(Stage stage) throws Exception {
 		// TODO Auto-generated method stub
+		
+		Market.InitializeMarket();
+		
 		StackPane root = new StackPane();
 
 		GamePane gamePane = new GamePane(constants.ConfigConstant.gameScreenWidth,
@@ -43,7 +53,8 @@ public class GameTest extends Application {
 		Scene scene = new Scene(root);
 		Input.Initialize(scene);
 		
-		scene.setRoot(PlayerInfoPane.instance);
+		scene.setRoot(GameScreen.instance);
+		
 		
 		stage.setScene(scene);
 		stage.show();

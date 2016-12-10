@@ -14,7 +14,7 @@ public class PlayerStocksPortFolio {
 	
 	public PlayerStocksPortFolio() {
 		this.allTradeData = new ArrayList<StockTradeData>();
-		for (Stock stock : StockHolder.getInstance().getStocks()) {
+		for (Stock stock : StockHolder.instance.getStocks()) {
 			this.allTradeData.add(new StockTradeData(stock));
 		}
 	}

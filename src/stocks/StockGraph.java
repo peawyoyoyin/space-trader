@@ -66,8 +66,8 @@ public class StockGraph extends StackPane {
 		this.lineChart.getData().clear();
 		Axis yAxis = this.lineChart.getYAxis();
 		yAxis.setAutoRanging(false);
-		((NumberAxis) yAxis).setUpperBound(Stock.STOCK_PLACEHOLDER.getMaxPrice()*1.1);
-		((NumberAxis) yAxis).setLowerBound(Stock.STOCK_PLACEHOLDER.getMinPrice()-10);
+		((NumberAxis) yAxis).setUpperBound(this.stock.getMaxPrice()*1.1);
+		((NumberAxis) yAxis).setLowerBound(this.stock.getMinPrice()-10);
 		this.series = new Series<Number,Number>();
 		List<Integer> priceHistory = this.stock.getPriceHistory();
 		for(int i=0; i<priceHistory.size(); i++) {

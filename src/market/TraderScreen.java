@@ -17,7 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-public class TraderScreen extends BorderPane{
+public class TraderScreen extends StackPane{
 	private Trader trader;
 	private List<TraderScreenItemCell> itemCells;
 	private VBox itemsOnSale;
@@ -26,6 +26,7 @@ public class TraderScreen extends BorderPane{
 	public class TraderScreenTop extends BorderPane {
 		public TraderScreenTop(Trader trader) {
 			super();
+			this.setStyle("-fx-background-color: green;");
 			Label name = new Label(trader.getName());
 			BorderPane.setAlignment(name, Pos.CENTER);
 			this.setCenter(name);
@@ -61,26 +62,28 @@ public class TraderScreen extends BorderPane{
 	
 	public TraderScreen(Trader trader) {
 		super();
+		BorderPane front = new BorderPane();
 		this.itemCells = new ArrayList<>();
 		this.trader = trader;
 		this.priceList = new TraderItemPricesList(trader);
 		
-		this.setCenter(new BorderPane());
+		front.setCenter(new BorderPane());
 		
 		this.itemsOnSale = new VBox();
+		this.itemsOnSale.setStyle("-fx-background-color: gray;");
 		
-		((BorderPane) this.getCenter()).setCenter(itemsOnSale);
-		((BorderPane) this.getCenter()).setRight(this.priceList);
+		((BorderPane) front.getCenter()).setCenter(itemsOnSale);
+		((BorderPane) front.getCenter()).setRight(this.priceList);
 		
 		updateItemList();
 		
 		TraderScreenTop top = new TraderScreenTop(trader);
-		this.setTop(top);
+		front.setTop(top);
 		
-		Canvas canvas = new Canvas(ConfigConstant.gameScreenWidth,100);
-		canvas.getGraphicsContext2D().drawImage(ConfigConstant.Resource.TRADER_FACE, 0, 0, ConfigConstant.gameScreenWidth, 100);
-		
-		top.setTop(canvas);
+		Canvas back = new Canvas(ConfigConstant.gameScreenWidth,ConfigConstant.gameScreenHeight);
+		back.getGraphicsContext2D().drawImage(ConfigConstant.Resource.TRADER_FACE, 0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
+		this.getChildren().add(back);
+		this.getChildren().add(front);
 	}
 	
 	public void updateItemList() {

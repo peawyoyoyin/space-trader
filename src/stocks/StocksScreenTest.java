@@ -20,10 +20,6 @@ public class StocksScreenTest extends Application {
 		
 		Player.instance.setMoney(2000000);
 		
-		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER_2));
-		stocksScreen.getStocksList().addStockCell(new StockCell(Stock.STOCK_PLACEHOLDER));
-		
-		stocksScreen.getStockTradePanel().setStock(Stock.STOCK_PLACEHOLDER);
 		root.getChildren().add(stocksScreen);
 		
 		Market.InitializeMarket();

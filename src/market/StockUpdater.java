@@ -34,7 +34,7 @@ public class StockUpdater extends Thread {
 
 			}
 		} catch (InterruptedException e) {
-			System.out.println("Y");
+			System.out.println("Stockupdater Interrupted");
 		}
 
 	}

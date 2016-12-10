@@ -5,8 +5,11 @@ import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 public class TraderItemPricesList extends VBox {
 	
@@ -26,6 +29,8 @@ public class TraderItemPricesList extends VBox {
 	}
 	
 	public TraderItemPricesList(Trader trader) {
+		this.setMaxHeight(400);
+		this.setStyle("-fx-background-color: red;");
 		Label top = new Label("Current Sell Prices");
 		this.getChildren().add(top);
 		for(ItemType type : ItemType.values()) {

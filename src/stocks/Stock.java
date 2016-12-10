@@ -8,22 +8,9 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public class Stock {
 	
-	public static final Stock STOCK_PLACEHOLDER = new Stock("Placeholder",15,10,50);
-	public static final Stock STOCK_PLACEHOLDER_2 = new Stock("Placeholder2", 20, 15, 30);
+	public static final List<Stock> GAME_STOCKS = new ArrayList<>();
 	
 	public static final int MAX_HISTORY_SIZE = 40;
-	
-	static {
-		Stock.STOCK_PLACEHOLDER.setPrice(20);
-		Stock.STOCK_PLACEHOLDER.setPrice(17);
-		Stock.STOCK_PLACEHOLDER.setPrice(10);
-		Stock.STOCK_PLACEHOLDER.setPrice(12);
-		
-		Stock.STOCK_PLACEHOLDER_2.setPrice(21);
-		Stock.STOCK_PLACEHOLDER_2.setPrice(19);
-		Stock.STOCK_PLACEHOLDER_2.setPrice(18);
-		Stock.STOCK_PLACEHOLDER_2.setPrice(20);
-	}
 	
 	private String name;
 	private int price;
@@ -38,6 +25,13 @@ public class Stock {
 	private boolean sellable;
 	private boolean buyable;
 	
+	public static void initializeGameStocks() {
+		GAME_STOCKS.add(new Stock("JDT",15,10,50));
+		GAME_STOCKS.add(new Stock("PGMTH",12,9,23));
+		GAME_STOCKS.add(new Stock("CPS",40,32,70));
+		System.out.println("GameStocks initialized");
+	}
+	
 	public Stock(String name, int basePrice, int minPrice, int maxPrice) {
 		this.name = name;
 		this.minPrice = minPrice;
@@ -47,7 +41,7 @@ public class Stock {
 		this.sellable = true;
 		this.priceProperty = new SimpleIntegerProperty();
 		this.setNewPrice(basePrice);
-		StockHolder.getInstance().getStocks().add(this);
+		StockHolder.instance.getStocks().add(this);
 	}
 	
 	public boolean isBuyable() {

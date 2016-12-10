@@ -21,7 +21,7 @@ public class StocksScreen extends BorderPane {
 		super();
 		this.setStyle("-fx-background-color: gray;");
 		this.stocksList = new StocksList();
-		this.stocksGraph = new StockGraph(Stock.STOCK_PLACEHOLDER);
+		this.stocksGraph = new StockGraph();
 		this.stockTradePanel = new StockTradePanel();
 		this.setTop(stocksList);
 		this.setCenter(stocksGraph);
@@ -39,19 +39,20 @@ public class StocksScreen extends BorderPane {
 	public StockTradePanel getStockTradePanel() {
 		return this.stockTradePanel;
 	}
+	
+	public class StocksList extends VBox {
+		public StocksList() {
+			super();
+		}
+		
+		public void addStockCell(StockCell stockCell) {
+			this.getChildren().add(stockCell);
+			stockCell.setOnMouseClicked(event -> {
+				StocksScreen.instance.getStockGraph().setStock(stockCell.getStock());
+				StocksScreen.instance.getStockTradePanel().setStock(stockCell.getStock());
+				StocksScreen.instance.getStockGraph().updateGraph();
+			});
+		}
+	}
 }
 
-class StocksList extends VBox {
-	public StocksList() {
-		super();
-	}
-	
-	public void addStockCell(StockCell stockCell) {
-		this.getChildren().add(stockCell);
-		stockCell.setOnMouseClicked(event -> {
-			StocksScreen.instance.getStockGraph().setStock(stockCell.getStock());
-			StocksScreen.instance.getStockTradePanel().setStock(stockCell.getStock());
-			StocksScreen.instance.getStockGraph().updateGraph();
-		});
-	}
-}
