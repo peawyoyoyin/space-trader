@@ -1,6 +1,6 @@
 package stocks;
 
-import game.Player;
+import game.logic.Player;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;

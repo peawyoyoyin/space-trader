@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import constants.ConfigConstant;
-import game.Item;
-import game.Player;
+import game.logic.Item;
+import game.logic.Player;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import game.Item.ItemType;
+import game.logic.Item.ItemType;
 import javafx.application.Platform;
 import news.News;
 import news.NewsPane;

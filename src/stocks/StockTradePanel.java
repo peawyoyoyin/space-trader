@@ -1,6 +1,6 @@
 package stocks;
 
-import game.Player;
+import game.logic.Player;
 import gamedata.PlayerStocksPortFolio;
 import gamedata.StockTradeData;
 import javafx.geometry.Insets;
