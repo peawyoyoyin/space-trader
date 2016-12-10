@@ -4,7 +4,7 @@ public abstract class  Entity implements Comparable<Entity> {
 	protected double x,y;
 	protected int z;
 	protected boolean visible,destroyed;
-	protected int radius;
+	protected double radius;
 	
 	protected Entity(){
 		visible = true;

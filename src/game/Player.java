@@ -15,6 +15,7 @@ public class Player {
 	private int money;
 	private int sectionX;
 	private int sectionY;
+	private boolean isPause;
 	private double bulletSpeed;
 	private int bulletDamage;
 	private PlayerShip playerShip;
@@ -35,6 +36,7 @@ public class Player {
 		for (ItemType type : ItemType.values()) {
 			inventory.put(type, 0);
 		}
+		this.isPause = false;
 	}
 	
 	public void addItemtoInventory(Item item) {
@@ -119,5 +121,16 @@ public class Player {
 
 	public void setMoney(int money) {
 		this.money = money;
+	}
+
+	public boolean isPause() {
+		return isPause;
+	}
+
+	public void pause() {
+		this.isPause = true;
+	}
+	public void resume(){
+		this.isPause = false;
 	}
 }

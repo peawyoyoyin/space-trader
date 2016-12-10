@@ -139,6 +139,7 @@ public class PlayerShip extends Ship implements Friendly {
 		} else {
 			this.counterdelay = 0;
 		}
+		
 	}
 
 }
