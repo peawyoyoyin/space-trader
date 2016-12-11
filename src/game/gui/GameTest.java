@@ -4,10 +4,12 @@ import input.Input;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
+import news.NewsPane;
+import stocks.StocksScreen;
 import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
@@ -49,10 +51,33 @@ public class GameTest extends Application {
 		};
 		animation.start();
 		root.getChildren().add(gamePane);
-		Scene scene = new Scene(root);
+		Scene scene = new Scene(root,ConfigConstant.startScreenWidth, ConfigConstant.startScreenHeight);
 		Input.Initialize(scene);
 		
 		//scene.setRoot(PlayerInfoPane.instance);
+		scene.setRoot(GameScreen.instance);
+		GameScreen.instance.setLeft(NewsPane.instance);
+		GameScreen.instance.setCenter(new GamePane(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight));
+		GameScreen.instance.setRight(StocksScreen.instance);
+		
+		Player.instance.getPlayerShip().setMaxHp(200);
+		Player.instance.setMoney(500);
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try {
+					Thread.sleep(1000);
+					GameScreen.instance.changeLeft(PlayerInfoPane.instance);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		}).start();
 		
 		stage.setScene(scene);
 		stage.show();

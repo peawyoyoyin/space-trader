@@ -4,12 +4,23 @@ import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 public class GameScreen extends BorderPane{
+	
+	public static final GameScreen instance = new GameScreen();
+	
 	private Node left;
 	private Node center;
 	private Node right;
+	
+	public GameScreen() {
+		super();
+		this.setLeft(new StackPane());
+		this.setRight(new StackPane());
+		this.setCenter(new StackPane());
+	}
 	
 	public GameScreen(Node left, Node center, Node right) {
 		super();

@@ -23,7 +23,7 @@ public class TraderItemPricesList extends VBox {
 			Canvas itemIcon = new Canvas(40,40);
 			itemIcon.getGraphicsContext2D().drawImage(ItemType.getItemIcon(type), 0, 0, 40, 40);
 			
-			Label price = new Label(Integer.toString((int) (Market.getItemPrice(type)*trader.getBuyPriceMultipliers().get(type))));
+			Label price = new Label(Integer.toString((int) (Market.getItemPrice(type)*trader.getSellPriceMultipliers().get(type))));
 			this.getChildren().addAll(itemIcon,price);
 		}
 	}

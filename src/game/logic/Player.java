@@ -7,7 +7,9 @@ import java.util.Map;
 
 import game.logic.Item.ItemType;
 import game.model.PlayerShip;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.MapProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleMapProperty;
 
 public class Player {
@@ -22,7 +24,8 @@ public class Player {
 	private PlayerShip playerShip;
 	
 	private Map<ItemType, Integer> inventory;
-	private MapProperty<ItemType, Integer> inventoryProperty;
+	
+	private IntegerProperty moneyProperty;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
@@ -37,7 +40,12 @@ public class Player {
 		for (ItemType type : ItemType.values()) {
 			inventory.put(type, 0);
 		}
+		this.moneyProperty = new SimpleIntegerProperty();
 		this.isPause = false;
+	}
+	
+	public IntegerProperty getMoneyProperty() {
+		return this.moneyProperty;
 	}
 	
 	public void addItemtoInventory(Item item) {
@@ -110,10 +118,12 @@ public class Player {
 
 	public void addMoney(int amount) {
 		this.money += amount;
+		this.moneyProperty.set(this.money);
 	}
 	
 	public void removeMoney(int amount) {
 		this.money -= amount;
+		this.moneyProperty.set(this.money);
 	}
 	
 	public int getMoney() {
@@ -122,6 +132,7 @@ public class Player {
 
 	public void setMoney(int money) {
 		this.money = money;
+		this.moneyProperty.set(money);
 	}
 
 	public boolean isPause() {
