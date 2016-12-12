@@ -1,6 +1,9 @@
 package game.logic;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import com.sun.javafx.tk.Toolkit;
 
@@ -77,17 +80,17 @@ public class RenderableHolder {
 		if (nearestEnemy != null) {
 			track(nearestEnemy.getX(), nearestEnemy.getY(), Color.RED, gc);
 		}
-		if (Player.instance.getPlayerShip().getX() < ConfigConstant.mapCellWidth / 2
-				&& Player.instance.getPlayerShip().getX() < Player.instance.getPlayerShip().getY()) {
+		List<Double> distanceList = Arrays.asList(Player.instance.getPlayerShip().getX(),
+				Player.instance.getPlayerShip().getY(),
+				ConfigConstant.mapCellWidth - Player.instance.getPlayerShip().getX(),
+				ConfigConstant.mapCellHeight - Player.instance.getPlayerShip().getY());
+		if (Player.instance.getPlayerShip().getX() == Collections.min(distanceList)) {
 			track(0, Player.instance.getPlayerShip().getY(), Color.LAWNGREEN, gc);
-		} else if (Player.instance.getPlayerShip().getY() < ConfigConstant.mapCellHeight / 2
-				&& Player.instance.getPlayerShip().getY() < Player.instance.getPlayerShip().getX()) {
+		} else if (Player.instance.getPlayerShip().getY() == Collections.min(distanceList)) {
 			track(Player.instance.getPlayerShip().getX(), 0, Color.LAWNGREEN, gc);
-		} else if (Player.instance.getPlayerShip().getX() > ConfigConstant.mapCellWidth / 2
-				&& Player.instance.getPlayerShip().getX() > Player.instance.getPlayerShip().getY()) {
+		} else if (ConfigConstant.mapCellWidth - Player.instance.getPlayerShip().getX()  == Collections.min(distanceList)) {
 			track(ConfigConstant.mapCellWidth, Player.instance.getPlayerShip().getY(), Color.LAWNGREEN, gc);
-		} else if (Player.instance.getPlayerShip().getY() > ConfigConstant.mapCellHeight / 2
-				&& Player.instance.getPlayerShip().getY() > Player.instance.getPlayerShip().getX()) {
+		} else if (ConfigConstant.mapCellHeight - Player.instance.getPlayerShip().getY()  == Collections.min(distanceList)) {
 			track(Player.instance.getPlayerShip().getX(), ConfigConstant.mapCellHeight, Color.LAWNGREEN, gc);
 		}
 	}

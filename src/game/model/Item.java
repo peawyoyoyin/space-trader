@@ -98,7 +98,7 @@ public class Item extends Entity implements Renderable {
 		item.setY(y);
 		item.setZ(-100);
 		item.radius = 20;
-		item.direction = 225;
+		item.direction = 45;
 		return item;
 	}
 

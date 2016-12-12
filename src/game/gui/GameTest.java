@@ -35,7 +35,7 @@ public class GameTest extends Application {
 
 		GamePane gamePane = new GamePane(constants.ConfigConstant.gameScreenWidth,
 				constants.ConfigConstant.gameScreenHeight);
-		PlayerShip ship = new PlayerShip(ConfigConstant.mapCellWidth / 2, ConfigConstant.mapCellHeight / 2, 100, 100, 0,
+		PlayerShip ship = new PlayerShip(ConfigConstant.mapCellWidth / 2, ConfigConstant.mapCellHeight / 2, 5, 100, 0,
 				10, 3, 5, 0);
 		EnemyShip bShip = new EnemyShip(100, 100, 5, 500, 0, 5, 2, 1, 0);
 

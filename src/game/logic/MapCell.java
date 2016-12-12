@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import game.gui.GameOverPane;
 import game.gui.GameScreen;
 import game.model.BombEffect;
 import game.model.EnemyShip;
 import game.model.Entity;
 import game.model.Item;
+import game.model.PlayerShip;
 import game.model.Ship;
 import game.model.SpaceStationEntity;
 import input.Input;
@@ -90,6 +92,9 @@ public class MapCell {
 				if (entities.get(i) instanceof EnemyShip){
 					Player.instance.addMoney(new Random().nextInt(50)+25);
 					this.entities.add(Item.generateEnitity(entities.get(i).getX(), entities.get(i).getY()));
+				}
+				if (entities.get(i) instanceof PlayerShip){
+					GameScreen.instance.changeCenter(new GameOverPane());
 				}
 				entities.remove(i);
 				i--;
