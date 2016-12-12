@@ -14,6 +14,7 @@ public class PlayerInfoPane extends BorderPane {
 		this.setPrefSize(ConfigConstant.gameScreen_left_width, ConfigConstant.gameScreenHeight);
 		this.playerStatusPane = new PlayerStatusPane();
 		this.setCenter(this.playerStatusPane);
+		this.setBottom(PlayerInventoryPane.instance);
 	}
 	
 	public void update() {

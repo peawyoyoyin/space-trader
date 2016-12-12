@@ -23,7 +23,11 @@ public class Player {
 	private int bulletDamage;
 	private PlayerShip playerShip;
 	
+	private IntegerProperty sectionXProperty;
+	private IntegerProperty sectionYProperty;
+	
 	private Map<ItemType, Integer> inventory;
+	private Map<ItemType, IntegerProperty> inventoryProperties;
 	
 	private IntegerProperty moneyProperty;
 	
@@ -37,11 +41,23 @@ public class Player {
 		this.bulletSpeed = 20;
 		this.bulletDamage = 5;
 		this.inventory = new HashMap<>();
+		this.inventoryProperties = new HashMap<>();
 		for (ItemType type : ItemType.values()) {
 			inventory.put(type, 0);
+			inventoryProperties.put(type, new SimpleIntegerProperty(0));
 		}
 		this.moneyProperty = new SimpleIntegerProperty();
 		this.isPause = false;
+		this.sectionXProperty = new SimpleIntegerProperty(this.sectionX);
+		this.sectionYProperty = new SimpleIntegerProperty(this.sectionY);
+	}
+	
+	public IntegerProperty getSectionXProperty() {
+		return this.sectionXProperty;
+	}
+	
+	public IntegerProperty getSectionYProperty() {
+		return this.sectionYProperty;
 	}
 	
 	public IntegerProperty getMoneyProperty() {
@@ -51,13 +67,19 @@ public class Player {
 	public void addItemtoInventory(Item item) {
 		int old = this.inventory.get(item.getItemType());
 		this.inventory.put(item.getItemType(), old+1);
+		this.inventoryProperties.get(item.getItemType()).set(old+1);
 	}
 	
 	public void removeItemFromInventory(ItemType type) {
 		int old = this.inventory.get(type);
 		if(old > 0) {
 			this.inventory.put(type, old-1);
+			this.inventoryProperties.get(type).set(old-1);;
 		}
+	}
+	
+	public Map<ItemType, IntegerProperty> getInventoryProperties() {
+		return this.inventoryProperties;
 	}
 	
 	public Map<ItemType, Integer> getInventory() {
@@ -102,10 +124,12 @@ public class Player {
 
 	public void setSectionX(int sectionX) {
 		this.sectionX = sectionX;
+		this.sectionXProperty.set(sectionX);
 	}
 
 	public void setSectionY(int sectionY) {
 		this.sectionY = sectionY;
+		this.sectionYProperty.set(sectionY);
 	}
 
 	public String getPlayerName() {

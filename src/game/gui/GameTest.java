@@ -9,6 +9,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import market.Market;
+import market.Trader;
 import news.NewsPane;
 import stocks.StocksScreen;
 import constants.ConfigConstant;
@@ -47,6 +48,7 @@ public class GameTest extends Application {
 		mc.getEntities().add(be);
 		SpaceStationEntity st = new SpaceStationEntity(ConfigConstant.mapCellWidth / 2,
 				ConfigConstant.mapCellHeight / 2);
+		st.setTrader(new Trader("Roy Lek"));
 		mc.getEntities().add(st);
 
 		GraphicsContext gc = gamePane.getGraphicsContext2D();

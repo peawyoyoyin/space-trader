@@ -16,8 +16,17 @@ public class Trader {
 	private static final Map<ItemType, Double> MIN_SELL_MULT = new HashMap<ItemType,Double>();
 	private static final Map<ItemType, Double> MAX_BUY_MULT = new HashMap<ItemType,Double>();
 	private static final Map<ItemType, Double> MIN_BUY_MULT = new HashMap<ItemType,Double>();
-
 	private static List<Trader> allTraders;
+	
+	static {
+		for (ItemType type : ItemType.values()) {
+			MAX_SELL_MULT.put(type, 1.5);
+			MIN_SELL_MULT.put(type, 0.25);
+			MAX_BUY_MULT.put(type, 2.0);
+			MIN_BUY_MULT.put(type, 0.75);
+		}
+	}
+	
 	private List<Item> itemsOnSale;
 	private Map<ItemType, Double> sellPriceMultiplier;
 	private Map<ItemType, Double> buyPriceMultiplier;
