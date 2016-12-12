@@ -7,6 +7,10 @@ import javafx.scene.text.FontPosture;
 
 public class ConfigConstant {
 	public static final String GAME_NAME = "GAME NAME";
+	
+	public static final String PLAYER_NAME = "< blank name >";
+	
+	public static final String HIGHSCORE_FILE = "highscores/highscore";
 
 	public static int startScreenHeight = 630;
 	public static int startScreenWidth = 1120;
@@ -28,7 +32,7 @@ public class ConfigConstant {
 	public static int gameScreen_left_width = 250;
 
 	public static String serverURL = "http://127.0.0.1:7777/";
-	public static String version = "# progmeth-project";
+	public static String version = "old version";
 
 	public static class Resource {
 		public static AudioClip LASER_SOUND = new AudioClip(ClassLoader.getSystemResource("sfx_laser1.wav").toString());
