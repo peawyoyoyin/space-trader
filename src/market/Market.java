@@ -105,6 +105,7 @@ public class Market {
 	}
 
 	private static void generateTraderChange() {
+		System.out.println("TraderChange event");
 		ItemType type = ItemType.getRandomItemType();
 		Trader trader = Trader.getRandomTrader();
 		
