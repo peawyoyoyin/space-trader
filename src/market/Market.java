@@ -188,6 +188,8 @@ public class Market {
 		for (StockUpdater stockUpdater : stockUpdaters) {
 			stockUpdater.interrupt();
 		}
-		Market.marketRunner.interrupt();
+		if(Market.marketRunner != null && Market.marketRunner.isAlive()) {
+			Market.marketRunner.interrupt();
+		}
 	}
 }
