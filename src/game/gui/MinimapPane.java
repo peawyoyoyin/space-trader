@@ -11,19 +11,19 @@ public class MinimapPane extends Canvas {
 	public static MinimapPane instance = new MinimapPane();
 	private IntegerProperty sectionX;
 	private IntegerProperty sectionY;
+	private GraphicsContext gc = this.getGraphicsContext2D();
 
 	public static void initializeMinimap() {
 		instance = new MinimapPane();
 	}
 
 	public MinimapPane() {
-		this.setWidth(200);
-		this.setHeight(200);
+		super(200,200);
 		this.sectionX = new SimpleIntegerProperty();
 		this.sectionY = new SimpleIntegerProperty();
 		this.sectionX.bind(Player.instance.getSectionXProperty());
 		this.sectionY.bind(Player.instance.getSectionYProperty());
-		
+		render();
 		this.sectionX.addListener(event -> {
 			render();
 		});
@@ -33,12 +33,13 @@ public class MinimapPane extends Canvas {
 		});
 	}
 
-	public void render(GraphicsContext gc) {
-		gc.setStroke(Color.WHITE);
-		for (int i = 0; i < 5; i++) {
+	public void render() {
+		gc.clearRect(0, 0, 200, 200);
+		gc.setStroke(Color.BLACK);
+		for (int i = 0; i < 6; i++) {
 			gc.strokeLine(0, 40 * i, 200, 40 * i);
 		}
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 6; i++) {
 			gc.strokeLine(40 * i, 0, 40 * i, 200);
 		}
 		gc.setFill(Color.AQUAMARINE);
