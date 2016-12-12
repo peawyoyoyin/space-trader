@@ -154,7 +154,7 @@ public class Player {
 		return money;
 	}
 
-	public void setMoney(int money) {
+	public synchronized void setMoney(int money) {
 		this.money = money;
 		this.moneyProperty.set(money);
 	}
