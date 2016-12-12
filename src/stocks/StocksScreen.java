@@ -1,5 +1,6 @@
 package stocks;
 
+import constants.ConfigConstant;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -13,6 +14,7 @@ public class StocksScreen extends BorderPane {
 
 	public StocksScreen() {
 		super();
+		this.setMaxSize(ConfigConstant.gameScreen_right_width, ConfigConstant.gameScreenHeight);
 		this.setStyle("-fx-background-color: gray;");
 		this.stocksList = new StocksList();
 		this.stocksGraph = new StockGraph();

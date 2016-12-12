@@ -28,7 +28,7 @@ public class StockTradeData {
 			this.boughtPrice = price;
 		} else {
 			//new boughtPrice is average calculated from old boughtPrice
-			this.boughtPrice = (this.boughtPrice*this.inStock + price*amount) / this.inStock+amount;
+			this.boughtPrice = (this.boughtPrice*this.inStock + price*amount) / (this.inStock+amount);
 		}
 		this.inStock+=amount;
 		this.inStockProperty.set(this.inStock);

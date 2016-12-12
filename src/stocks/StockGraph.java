@@ -19,6 +19,8 @@ public class StockGraph extends StackPane {
 	
 	public StockGraph() {
 		super();
+		
+		this.setMaxWidth(250);
 
 		this.setMaxHeight(200);
 		this.setStyle("-fx-background-color:gray;");

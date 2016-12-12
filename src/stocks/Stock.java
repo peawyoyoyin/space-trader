@@ -26,7 +26,7 @@ public class Stock {
 	private boolean buyable;
 	
 	public static void initializeGameStocks() {
-		GAME_STOCKS.add(new Stock("JDT",15,10,50));
+		GAME_STOCKS.add(new Stock("JTC",15,10,50));
 		GAME_STOCKS.add(new Stock("PGMTH",12,9,23));
 		GAME_STOCKS.add(new Stock("CPS",40,32,70));
 		System.out.println("GameStocks initialized");
