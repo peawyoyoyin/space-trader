@@ -22,6 +22,7 @@ import market.Market;
 import market.Trader;
 import news.NewsPane;
 import startScreen.BackgroundStartScreen;
+import startScreen.StartPane;
 import startScreen.StartScreen;
 import stocks.StocksScreen;
 
@@ -64,12 +65,28 @@ public class Main extends Application {
 				Input.inputUpdate();
 			}
 		};
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try {
+					Thread.sleep(1500);
+					Player.instance.getPlayerShip().hit(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}).start();
 		gameRunner.start();
 		scene.setRoot(GameScreen.instance);
 	}
 	
 	public static void toStartScreen() {
 		gameRunner.stop();
+		StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
 		BackgroundStartScreen.reBackground();
 		scene.setRoot(StartScreen.getInstace());
 	}
@@ -80,7 +97,7 @@ public class Main extends Application {
 			StartScreen startScreen = StartScreen.getInstace();
 			scene = new Scene(startScreen, ConfigConstant.startScreenWidth, ConfigConstant.startScreenHeight);
 //			primaryStage.initStyle(StageStyle.UNDECORATED);
-//			primaryStage.setTitle("Project-Progmeth"); // Set the stage title
+			primaryStage.setTitle("Project-Progmeth"); // Set the stage title
 			primaryStage.setScene(scene); // Place the scene
 			primaryStage.setResizable(false);
 			primaryStage.show();
