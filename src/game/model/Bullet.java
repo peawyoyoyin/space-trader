@@ -53,7 +53,7 @@ public class Bullet extends Entity implements Renderable {
 					&& this.isCollideWith(entity)) {
 				this.destroyed = true;
 				((Ship) entity).hit(this.getDamage());
-				mc.addNewEffect(new BombEffect(this.x, this.y, 40, 10));
+				mc.addNewEffect(new HitEffect(this.x, this.y, 40, 10));
 			}
 
 		}

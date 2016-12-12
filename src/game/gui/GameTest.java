@@ -43,7 +43,7 @@ public class GameTest extends Application {
 		Player.instance.setPlayerShip(ship);
 		mc.getEntities().add(ship);
 		mc.getEntities().add(bShip);
-		BombEffect be = new BombEffect(500, 500, 100, 100);
+		BombEffect be = new BombEffect(3000,3000);
 		mc.getEntities().add(be);
 		SpaceStationEntity st = new SpaceStationEntity(ConfigConstant.mapCellWidth / 2,
 				ConfigConstant.mapCellHeight / 2);
