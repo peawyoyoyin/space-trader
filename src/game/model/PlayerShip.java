@@ -38,7 +38,7 @@ public class PlayerShip extends Ship implements Friendly {
 		this.maxHpProperty.set(maxHp);
 		this.speedProperty = new SimpleDoubleProperty(this.maxSpeed);
 	}
-	
+
 	@Override
 	public void setMaxSpeed(int maxSpeed) {
 		// TODO Auto-generated method stub
@@ -59,7 +59,7 @@ public class PlayerShip extends Ship implements Friendly {
 		}
 		}
 	}
-	
+
 	public DoubleProperty getSpeedProperty() {
 		return this.speedProperty;
 	}
@@ -157,7 +157,7 @@ public class PlayerShip extends Ship implements Friendly {
 		} else {
 			this.counterdelay = 0;
 		}
-		
+
 	}
 
 }

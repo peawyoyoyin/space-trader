@@ -71,6 +71,7 @@ public class Trader {
 			allTraders = new ArrayList<>();
 		}
 		allTraders.add(this);
+		this.generateItems();
 	}
 
 	public String getName() {

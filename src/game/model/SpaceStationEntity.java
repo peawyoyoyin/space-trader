@@ -26,6 +26,10 @@ public class SpaceStationEntity extends Entity implements Renderable {
 		this.trader = null;
 	}
 	
+	public Trader getTrader() {
+		return this.trader;
+	}
+	
 	public void setTrader(Trader trader) {
 		this.trader = trader;
 	}

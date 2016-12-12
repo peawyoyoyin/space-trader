@@ -1,81 +1,118 @@
 package game.gui;
 
+import constants.ConfigConstant;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
 import javafx.scene.Node;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
+import news.NewsPane;
 
-public class GameScreen extends BorderPane{
-	
+public class GameScreen extends BorderPane {
+
 	public static final GameScreen instance = new GameScreen();
-	
+
 	private Node left;
 	private Node center;
 	private Node right;
-	
+
+	private BorderPane leftPane;
+	private StackPane centerPane;
+	private BorderPane rightPane;
+
 	public GameScreen() {
-		super();
-		this.setLeft(new StackPane());
-		this.setRight(new StackPane());
-		this.setCenter(new StackPane());
+		this(new Canvas(ConfigConstant.gameScreen_left_width, ConfigConstant.gameScreenHeight),
+				new Canvas(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight),
+				new Canvas(ConfigConstant.gameScreen_right_width, ConfigConstant.gameScreenHeight));
 	}
-	
+
 	public GameScreen(Node left, Node center, Node right) {
 		super();
+		this.leftPane = new BorderPane();
+		this.rightPane = new BorderPane();
+		this.centerPane = new StackPane();
+
+		Label changeToNewsFeed = new Label("News");
+		Label changeToShipStatus = new Label("Status");
+
+		changeToNewsFeed.setOnMouseClicked(event -> {
+			changeLeft(NewsPane.instance);
+		});
+
+		changeToShipStatus.setOnMouseClicked(event -> {
+			changeLeft(PlayerInfoPane.instance);
+		});
+
+		HBox leftTabControl = new HBox();
+		leftTabControl.getChildren().addAll(changeToNewsFeed, changeToShipStatus);
+
+		this.leftPane.setTop(leftTabControl);
+
 		this.left = left;
 		this.center = center;
 		this.right = right;
-		this.setLeft(this.left);
-		this.setCenter(this.center);
-		this.setRight(this.right);
-	}
-	
-	public void changeLeft(Node left) {
-		Platform.runLater(new Runnable() {
-			
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				setLeft(left);
-				FadeTransition fts = new FadeTransition(Duration.seconds(0.3), left);
-				fts.setFromValue(0);
-				fts.setToValue(1);
-				fts.play();
-			}
-		});
+		this.setLeft(this.leftPane);
+		this.setCenter(this.centerPane);
+		this.setRight(this.rightPane);
 
+		this.leftPane.setCenter(left);
+		this.rightPane.setCenter(right);
+		this.centerPane.getChildren().add(center);
 	}
-	
+
+	public void changeLeft(Node left) {
+		if (left != this.left) {
+			Platform.runLater(new Runnable() {
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					leftPane.setCenter(left);
+					FadeTransition fts = new FadeTransition(Duration.seconds(0.3), left);
+					fts.setFromValue(0);
+					fts.setToValue(1);
+					fts.play();
+				}
+			});
+		}
+		this.left = left;
+	}
+
 	public void changeRight(Node right) {
-		Platform.runLater(new Runnable() {
-			
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				setRight(right);
-				FadeTransition fts = new FadeTransition(Duration.seconds(0.3), right);
-				fts.setFromValue(0);
-				fts.setToValue(1);
-				fts.play();
-			}
-		});
+
+		if (right != this.right) {
+			Platform.runLater(new Runnable() {
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					rightPane.setCenter(right);
+					FadeTransition fts = new FadeTransition(Duration.seconds(0.3), right);
+					fts.setFromValue(0);
+					fts.setToValue(1);
+					fts.play();
+				}
+			});
+		}
+		this.right = right;
 	}
-	
+
 	public void changeCenter(Node center) {
 		Platform.runLater(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				setCenter(center);
+				centerPane.getChildren().add(center);
 				FadeTransition fts = new FadeTransition(Duration.seconds(0.3), center);
 				fts.setFromValue(0);
 				fts.setToValue(1);
 				fts.play();
 			}
 		});
+		this.center = center;
 	}
 }

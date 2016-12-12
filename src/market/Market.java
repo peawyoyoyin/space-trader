@@ -101,7 +101,7 @@ public class Market {
 				NewsPane.instance.addNews(News.getRandomNews());
 			}
 		});
-
+		System.out.println("RandomNews event");
 	}
 
 	private static void generateTraderChange() {

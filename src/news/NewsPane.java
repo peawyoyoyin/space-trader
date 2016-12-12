@@ -1,5 +1,6 @@
 package news;
 
+import constants.ConfigConstant;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -28,6 +29,7 @@ public class NewsPane extends BorderPane {
 		NewsFeedPane newsFeedPane = new NewsFeedPane();
 		this.newsFeed = newsFeedPane.getNewsFeed();
 		this.setCenter(newsFeedPane);
+		this.setMaxWidth(ConfigConstant.gameScreen_left_width);
 	}
 	
 	public NewsFeed getNewsFeed() {

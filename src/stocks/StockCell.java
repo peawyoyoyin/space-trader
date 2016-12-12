@@ -46,7 +46,7 @@ public class StockCell extends GridPane {
 		this.stockPriceLabel.textProperty().addListener(event -> {
 			StockTradeData data = PlayerStocksPortFolio.instance.getStockTradeData(stock);
 			double boughtPrice = data.getBoughtPrice();
-			int price = Integer.parseInt(stockPriceLabel.textProperty().get());
+			int price = stock.getPrice();
 			double change = (price-boughtPrice)/boughtPrice*100;
 			if(data.getInstock() == 0) {
 				change = 0;

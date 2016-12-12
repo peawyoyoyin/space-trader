@@ -3,14 +3,18 @@ package game.logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import game.gui.GameScreen;
 import game.model.BombEffect;
 import game.model.Entity;
 import game.model.Ship;
 import game.model.SpaceStationEntity;
 import input.Input;
 import input.KeyCodeConstants;
+import javafx.scene.Node;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import market.TraderScreen;
 
 public class MapCell {
 	private List<Entity> entities;
@@ -52,10 +56,18 @@ public class MapCell {
 			for (Entity entity : entities) {
 				if (entity instanceof SpaceStationEntity) {
 					if (Player.instance.getPlayerShip().isCollideWith(entity)) {
-						if (Player.instance.isPause()) {
-							Player.instance.resume();
-						} else {
+						if (!Player.instance.isPause()) {
 							Player.instance.pause();
+							GameScreen.instance.changeCenter(new TraderScreen(((SpaceStationEntity) entity).getTrader()));
+						} else {
+							Node target = null;
+							for (Node node : ((Pane) GameScreen.instance.getCenter()).getChildren()) {
+								if(node instanceof TraderScreen){
+									target = node;
+								}
+							}
+							((Pane) GameScreen.instance.getCenter()).getChildren().remove(target);
+							Player.instance.resume();
 						}
 					}
 				}

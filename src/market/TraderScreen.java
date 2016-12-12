@@ -62,6 +62,7 @@ public class TraderScreen extends StackPane{
 	
 	public TraderScreen(Trader trader) {
 		super();
+		this.setMaxSize(400, 400);
 		BorderPane front = new BorderPane();
 		this.itemCells = new ArrayList<>();
 		this.trader = trader;
@@ -80,9 +81,6 @@ public class TraderScreen extends StackPane{
 		TraderScreenTop top = new TraderScreenTop(trader);
 		front.setTop(top);
 		
-		Canvas back = new Canvas(ConfigConstant.gameScreenWidth,ConfigConstant.gameScreenHeight);
-		back.getGraphicsContext2D().drawImage(ConfigConstant.Resource.TRADER_FACE, 0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
-		this.getChildren().add(back);
 		this.getChildren().add(front);
 	}
 	

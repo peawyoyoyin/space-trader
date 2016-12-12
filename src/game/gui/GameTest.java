@@ -68,9 +68,9 @@ public class GameTest extends Application {
 
 		scene.setRoot(PlayerInfoPane.instance);
 		scene.setRoot(GameScreen.instance);
-		GameScreen.instance.setLeft(NewsPane.instance);
-		GameScreen.instance.setCenter(gamePane);
-		GameScreen.instance.setRight(StocksScreen.instance);
+		GameScreen.instance.changeLeft(NewsPane.instance);
+		GameScreen.instance.changeCenter(gamePane);
+		GameScreen.instance.changeRight(StocksScreen.instance);
 
 		Player.instance.getPlayerShip().setMaxHp(200);
 		Player.instance.setMoney(500);
