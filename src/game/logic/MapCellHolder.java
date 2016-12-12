@@ -5,9 +5,9 @@ import java.util.List;
 
 public class MapCellHolder {
 	private List<List<MapCell>> mapCells;
-	public static final MapCellHolder instance = new MapCellHolder(); 
+	public static MapCellHolder instance = new MapCellHolder(); 
 	
-	private MapCellHolder() {
+	public MapCellHolder() {
 		this.mapCells = new ArrayList<>();
 		for (int i = 0; i < 5; i++) {
 			this.mapCells.add(new ArrayList<MapCell>());

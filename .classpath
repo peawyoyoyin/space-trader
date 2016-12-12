@@ -6,6 +6,7 @@
 	<classpathentry kind="src" path="res/Pic/SpaceShooterRedux/Backgrounds"/>
 	<classpathentry kind="src" path="res/Pic/SpaceShooterRedux/PNG"/>
 	<classpathentry kind="src" path="res/Pic/SpaceShooterRedux/Bonus"/>
+	<classpathentry kind="src" path="res/font/ken-fonts"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

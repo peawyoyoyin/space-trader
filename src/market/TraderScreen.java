@@ -28,6 +28,7 @@ public class TraderScreen extends StackPane{
 			super();
 			this.setStyle("-fx-background-color: green;");
 			Label name = new Label(trader.getName());
+			name.setFont(ConfigConstant.Resource.HUD_FONT);
 			BorderPane.setAlignment(name, Pos.CENTER);
 			this.setCenter(name);
 		}

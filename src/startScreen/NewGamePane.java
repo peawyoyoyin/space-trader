@@ -1,11 +1,13 @@
 package startScreen;
 
 import constants.ConfigConstant;
+import game.gui.GameTest;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import main.Main;
 
 public class NewGamePane extends GridPane {
 
@@ -42,7 +44,7 @@ public class NewGamePane extends GridPane {
 		GridPane.setVgrow(container, Priority.ALWAYS);
 		
 		textNew.setOnMouseClicked(e -> {
-			
+			Main.newGame();
 		});
 		
 		textLoad.setOnMouseClicked(e -> {

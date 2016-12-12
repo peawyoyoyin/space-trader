@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Random;
 
 import game.model.Item.ItemType;
+import gamedata.PlayerStocksPortFolio;
 import javafx.application.Platform;
 import news.News;
 import news.NewsPane;
@@ -27,10 +28,26 @@ public class Market {
 	private static Map<ItemType, Integer> itemPrices = new HashMap<ItemType, Integer>();
 
 	public static void InitializeMarket() {
+		if(marketRunner != null) {
+			marketRunner.interrupt();
+		}
+		NewsPane.instance.clearFeed();
+		StockHolder.instance.getStocks().clear();
 		Stock.initializeGameStocks();
-
+		PlayerStocksPortFolio.instance = new PlayerStocksPortFolio();
+		
 		int d = 1000;
+		
+		if(!stockUpdaters.isEmpty()) {
+			for (StockUpdater stockUpdater : stockUpdaters) {
+				stockUpdater.interrupt();
+			}
+			stockUpdaters.clear();
+		}
+		
+		stockUpdaters = new ArrayList<StockUpdater>();
 
+		StocksScreen.instance.getStocksList().getChildren().clear();
 		for (Stock stock : StockHolder.instance.getStocks()) {
 			StocksScreen.instance.getStocksList().addStockCell(new StockCell(stock));
 			stockUpdaters.add(new StockUpdater(new StockPriceController(stock, 2), d));
@@ -39,11 +56,12 @@ public class Market {
 
 		StocksScreen.instance.getStockGraph().setStock(StockHolder.instance.getStocks().get(0));
 		StocksScreen.instance.getStockTradePanel().setStock(StockHolder.instance.getStocks().get(0));
-
+		
 		for (StockUpdater stockUpdater : stockUpdaters) {
 			stockUpdater.start();
 		}
-
+		
+		itemPrices = new HashMap<ItemType, Integer>();
 		for (ItemType itemType : ItemType.values()) {
 			itemPrices.put(itemType, 50);
 		}

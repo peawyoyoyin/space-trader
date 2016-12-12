@@ -39,4 +39,9 @@ public class NewsPane extends BorderPane {
 	public void addNews(News news) {
 		this.newsFeed.addNews(news);
 	}
+
+	public void clearFeed() {
+		// TODO Auto-generated method stub
+		this.newsFeed.getChildren().clear();
+	}
 }

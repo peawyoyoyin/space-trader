@@ -6,9 +6,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import game.logic.MapCell;
+import game.logic.MapCellHolder;
 import game.logic.Player;
 import game.model.Item;
 import game.model.Item.ItemType;
+import game.model.SpaceStationEntity;
 
 public class Trader {
 
@@ -16,7 +19,7 @@ public class Trader {
 	private static final Map<ItemType, Double> MIN_SELL_MULT = new HashMap<ItemType,Double>();
 	private static final Map<ItemType, Double> MAX_BUY_MULT = new HashMap<ItemType,Double>();
 	private static final Map<ItemType, Double> MIN_BUY_MULT = new HashMap<ItemType,Double>();
-	private static List<Trader> allTraders;
+	private static List<Trader> allTraders = new ArrayList<Trader>();
 	
 	static {
 		for (ItemType type : ItemType.values()) {
@@ -25,6 +28,29 @@ public class Trader {
 			MAX_BUY_MULT.put(type, 2.0);
 			MIN_BUY_MULT.put(type, 0.75);
 		}
+	}
+	
+	public static void InitiailizeTraders() {
+		allTraders.clear();
+		MapCell mc = MapCellHolder.instance.get(1, 1);
+		SpaceStationEntity sse = new SpaceStationEntity(3000, 3000);
+		sse.setTrader(new Trader("CPALL"));
+		mc.getEntities().add(sse);
+		
+		mc = MapCellHolder.instance.get(1, 3);
+		sse = new SpaceStationEntity(3000, 3000);
+		sse.setTrader(new Trader("TRUE"));
+		mc.getEntities().add(sse);
+		
+		mc = MapCellHolder.instance.get(3, 1);
+		sse = new SpaceStationEntity(3000, 3000);
+		sse.setTrader(new Trader("Microsoft"));
+		mc.getEntities().add(sse);
+		
+		mc = MapCellHolder.instance.get(3, 3);
+		sse = new SpaceStationEntity(3, 3);
+		sse.setTrader(new Trader("Starbucks"));
+		mc.getEntities().add(sse);
 	}
 	
 	private List<Item> itemsOnSale;

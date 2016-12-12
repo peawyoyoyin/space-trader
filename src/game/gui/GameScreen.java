@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import news.NewsPane;
+import stocks.StocksScreen;
 
 public class GameScreen extends BorderPane {
 
@@ -26,9 +27,9 @@ public class GameScreen extends BorderPane {
 	private BorderPane rightPane;
 
 	public GameScreen() {
-		this(new Canvas(ConfigConstant.gameScreen_left_width, ConfigConstant.gameScreenHeight),
-				new Canvas(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight),
-				new Canvas(ConfigConstant.gameScreen_right_width, ConfigConstant.gameScreenHeight));
+		this(NewsPane.instance,
+				new StackPane(),
+				StocksScreen.instance);
 	}
 
 	public GameScreen(Node left, Node center, Node right) {

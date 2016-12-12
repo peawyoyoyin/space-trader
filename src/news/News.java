@@ -19,6 +19,7 @@ public class News {
 		randomNews.add(new News("thinc", "app development is kinda hard"));
 		randomNews.add(new News("kp666-pun","I'm the best programmer in SE."));
 		randomNews.add(new News("dev team","this game is full of bugs."));
+		randomNews.add(new News("levitate","progmeth's project is too hard."));
 	}
 	
 	public static News getRandomNews() {
