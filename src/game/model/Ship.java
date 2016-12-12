@@ -1,7 +1,5 @@
 package game.model;
 
-import java.util.Random;
-
 import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
@@ -77,6 +75,7 @@ public abstract class Ship extends Entity implements Renderable {
 	public void hit(int damage) {
 		this.hp = this.hp - damage;
 		if (this.hp < 0) {
+			this.hp = 0;
 			this.destroyed = true;
 		}
 	}

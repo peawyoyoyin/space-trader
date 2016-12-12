@@ -4,7 +4,6 @@ import input.Input;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -38,7 +37,7 @@ public class GameTest extends Application {
 				constants.ConfigConstant.gameScreenHeight);
 		PlayerShip ship = new PlayerShip(ConfigConstant.mapCellWidth / 2, ConfigConstant.mapCellHeight / 2, 100, 100, 0,
 				10, 3, 5, 0);
-		EnemyShip bShip = new EnemyShip(100, 100, 500, 500, 0, 5, 2, 1, 0);
+		EnemyShip bShip = new EnemyShip(100, 100, 5, 500, 0, 5, 2, 1, 0);
 
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		Player.instance.setPlayerShip(ship);
@@ -95,7 +94,7 @@ public class GameTest extends Application {
 		gamePane.requestFocus();
 		stage.setScene(scene);
 		stage.show();
-		stage.setResizable(false);
+		//stage.setResizable(false);
 	}
 
 	public static void main(String[] args) {

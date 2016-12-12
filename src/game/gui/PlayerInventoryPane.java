@@ -3,9 +3,9 @@ package game.gui;
 import java.util.HashMap;
 import java.util.Map;
 
-import game.logic.Item;
 import game.logic.Player;
-import game.logic.Item.ItemType;
+import game.model.Item;
+import game.model.Item.ItemType;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;

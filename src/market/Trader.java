@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import game.logic.Item;
 import game.logic.Player;
-import game.logic.Item.ItemType;
+import game.model.Item;
+import game.model.Item.ItemType;
 
 public class Trader {
 
