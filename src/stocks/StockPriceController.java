@@ -1,13 +1,10 @@
 package stocks;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class StockPriceController {
 	private Stock stock;
 	private Random random;
-	private List<StockEvent> stockEvent;
 	private int priceChangeModifier;
 	
 	private int maxStep;
@@ -20,7 +17,6 @@ public class StockPriceController {
 	public StockPriceController(Stock stock, int priceChangeModifier) {
 		this.stock = stock;
 		this.priceChangeModifier = priceChangeModifier;
-		this.stockEvent = new ArrayList<StockEvent>();
 		this.maxStep = 5;
 		this.direction = 1;
 		this.random = new Random();
@@ -30,17 +26,12 @@ public class StockPriceController {
 		this.stock = stock;
 		this.random = random;
 		this.priceChangeModifier = priceChangeModifier;
-		this.stockEvent = new ArrayList<StockEvent>();
 	}
 	
 	public void updateStockPrice() {
 		this.step = this.random.nextInt(this.maxStep+1);
 		int[] temp = {DIRECTION_UP,DIRECTION_DOWN};
 		this.direction = temp[this.random.nextInt(2)];
-		
-		for (StockEvent stockEvent : this.stockEvent) {
-			stockEvent.onUpdate(this);
-		}
 		
 		switch(this.direction) {
 		case DIRECTION_UP: {
@@ -53,15 +44,4 @@ public class StockPriceController {
 		}
 		}
 	}
-	
-	public void addEvent(StockEvent event) {
-		this.stockEvent.add(event);
-		event.onStart(this);
-	}
-	
-	public void removeEvent(StockEvent event) {
-		this.stockEvent.remove(event);
-		event.onEnd(this);
-	}
-
 }
