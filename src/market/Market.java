@@ -21,7 +21,7 @@ public class Market {
 	private static Thread marketRunner;
 
 	private static final double RANDOM_NEWS_CHANCE = 2.00;
-	private static final double TRADER_CHANGE_CHANCE = 5.00;
+	private static final double TRADER_CHANGE_CHANCE = 1.00;
 
 	private static List<StockUpdater> stockUpdaters = new ArrayList<StockUpdater>();
 	private static Map<ItemType, Integer> itemPrices = new HashMap<ItemType, Integer>();

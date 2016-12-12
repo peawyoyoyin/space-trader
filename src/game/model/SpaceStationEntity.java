@@ -4,12 +4,14 @@ import constants.ConfigConstant;
 import game.logic.Renderable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import market.Trader;
 
 public class SpaceStationEntity extends Entity implements Renderable {
 
 	private Image image;
 	private double direction;
 	private double turnRate;
+	private Trader trader;
 
 	public SpaceStationEntity(double x, double y) {
 		super();
@@ -21,6 +23,11 @@ public class SpaceStationEntity extends Entity implements Renderable {
 		this.turnRate = 0.05;
 		this.z = -1000;
 		this.radius = this.image.getWidth() / 2;
+		this.trader = null;
+	}
+	
+	public void setTrader(Trader trader) {
+		this.trader = trader;
 	}
 
 	public void turn(boolean left) {

@@ -16,23 +16,12 @@ public class StockCell extends GridPane {
 	private Label instockLabel;
 	private Stock stock;
 	
-	@Deprecated
-	public StockCell() {
-		super();
-		this.setStyle("-fx-background-color: gray;");
-		this.setPadding(new Insets(5));
-		this.setMinHeight(40);
-		this.setHgap(20);
-		this.setAlignment(Pos.CENTER_LEFT);
-		this.stock = null;
-		this.stockNameLabel = new Label("Stock Name");
-		this.stockPriceLabel = new Label("15.00");
-		this.stockChangeLabel = new StockChangeLabel();
-		this.instockLabel = new Label("0");
-		this.add(stockNameLabel, 0, 0, 2, 1);
-		this.add(stockPriceLabel, 2, 0);
-		this.add(stockChangeLabel, 3, 0);
-		this.add(instockLabel, 4, 0);
+	public void setActive(boolean active) {
+		if(active) {
+			this.setStyle("-fx-background-color: lightgray;");
+		} else {
+			this.setStyle("-fx-background-color: gray;");
+		}
 	}
 	
 	public StockCell(Stock stock) {
