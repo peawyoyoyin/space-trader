@@ -55,6 +55,7 @@ public class GameTest extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
+				
 				Input.inputUpdate();
 			}
 		};
