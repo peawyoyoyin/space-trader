@@ -117,8 +117,8 @@ public class Trader {
 		}
 	}
 
-	public int playerSellItem(Item item) {
-		return (int) ((int) Market.getItemPrice(item.getItemType()) * this.sellPriceMultiplier.get(item.getItemType()));
+	public int playerSellItem(ItemType type) {
+		return (int) ((int) Market.getItemPrice(type) * this.sellPriceMultiplier.get(type));
 	}
 
 	public boolean isAccessing() {

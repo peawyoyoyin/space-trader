@@ -58,6 +58,7 @@ public class MapCell {
 					if (Player.instance.getPlayerShip().isCollideWith(entity)) {
 						if (!Player.instance.isPause()) {
 							Player.instance.pause();
+							((SpaceStationEntity) entity).getTrader().setAccessing(true);
 							GameScreen.instance.changeCenter(new TraderScreen(((SpaceStationEntity) entity).getTrader()));
 						} else {
 							Node target = null;
@@ -68,6 +69,7 @@ public class MapCell {
 							}
 							((Pane) GameScreen.instance.getCenter()).getChildren().remove(target);
 							Player.instance.resume();
+							((SpaceStationEntity) entity).getTrader().setAccessing(false);
 						}
 					}
 				}

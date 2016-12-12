@@ -33,11 +33,13 @@ public class PlayerStatusPane extends BorderPane{
 			HBox shipDamageLabels = new HBox();
 			shipDamageLabels.setPadding(new Insets(15,0,0,5));
 			Label shipDamageLabel = new Label();
+			shipDamageLabel.textProperty().bind(Player.instance.getBulletDamageProperty().asString());
 			shipDamageLabels.getChildren().addAll(new Label("Ship Weapon Damage : "), shipDamageLabel);
 			
 			HBox shipSpeedLabels = new HBox();
 			shipSpeedLabels.setPadding(new Insets(15,0,0,5));
 			Label shipSpeedLabel = new Label();
+			shipSpeedLabel.textProperty().bind(Player.instance.getPlayerShip().getSpeedProperty().asString());
 			shipSpeedLabels.getChildren().addAll(new Label("Ship Speed : "),shipSpeedLabel);
 			
 			HBox moneyLabels = new HBox();

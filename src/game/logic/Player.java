@@ -30,6 +30,7 @@ public class Player {
 	private Map<ItemType, IntegerProperty> inventoryProperties;
 	
 	private IntegerProperty moneyProperty;
+	private IntegerProperty bulletDamageProperty;
 	
 	private static final String PLACEHOLDER_NAME = "name is blank";
 	
@@ -50,6 +51,11 @@ public class Player {
 		this.isPause = false;
 		this.sectionXProperty = new SimpleIntegerProperty(this.sectionX);
 		this.sectionYProperty = new SimpleIntegerProperty(this.sectionY);
+		this.bulletDamageProperty = new SimpleIntegerProperty(this.bulletDamage);
+	}
+	
+	public IntegerProperty getBulletDamageProperty() {
+		return this.bulletDamageProperty;
 	}
 	
 	public IntegerProperty getSectionXProperty() {
@@ -140,12 +146,12 @@ public class Player {
 		this.playerName = playerName;
 	}
 
-	public void addMoney(int amount) {
+	public synchronized void addMoney(int amount) {
 		this.money += amount;
 		this.moneyProperty.set(this.money);
 	}
 	
-	public void removeMoney(int amount) {
+	public synchronized void removeMoney(int amount) {
 		this.money -= amount;
 		this.moneyProperty.set(this.money);
 	}

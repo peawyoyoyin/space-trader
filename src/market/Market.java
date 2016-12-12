@@ -119,7 +119,7 @@ public class Market {
 				double oldMultiplier = trader.getBuyPriceMultipliers().get(type);
 				if(increase) {
 					news.setContent(trader.getName() + " sells " + type.toString() + " more expensive.");
-					double change = random.nextDouble()*0.2;
+					double change = (random.nextDouble()*0.7)+0.1;
 					double newMultiplier = (oldMultiplier + change);
 					if(newMultiplier > Trader.getMaxBuyPriceMultiplier(type)) {
 						newMultiplier = Trader.getMaxBuyPriceMultiplier(type);
@@ -127,7 +127,7 @@ public class Market {
 					trader.getBuyPriceMultipliers().put(type, newMultiplier);
 				} else {
 					news.setContent(trader.getName() + " now sells " + type.toString() + " items at a discount price!");
-					double change = random.nextDouble()*0.2;
+					double change = (random.nextDouble()*0.7)+0.1;
 					double newMultiplier = (oldMultiplier - change);
 					if(newMultiplier < Trader.getMinBuyPriceMultiplier(type)) {
 						newMultiplier = Trader.getMinBuyPriceMultiplier(type);
@@ -138,7 +138,7 @@ public class Market {
 				double oldMultiplier = trader.getSellPriceMultipliers().get(type);
 				if(increase) {
 					news.setContent("Trader "+trader.getName() + " now accepts " + type.toString() + " at better price!.");
-					double change = random.nextDouble()*0.2;
+					double change = (random.nextDouble()*0.7)+0.1;
 					double newMultiplier = (oldMultiplier + change);
 					if(newMultiplier >= Trader.getMaxSellPriceMultiplier(type)) {
 						newMultiplier = Trader.getMaxSellPriceMultiplier(type);
@@ -146,7 +146,7 @@ public class Market {
 					trader.getSellPriceMultipliers().put(type, newMultiplier);
 				} else {
 					news.setContent("Trader "+trader.getName() + " now accepts " + type.toString() + " at reduced price.");
-					double change = random.nextDouble()*0.2;
+					double change = (random.nextDouble()*0.7)+0.1;
 					double newMultiplier = oldMultiplier - change;
 					if(newMultiplier < Trader.getMinSellPriceMultiplier(type)) {
 						newMultiplier = Trader.getMinSellPriceMultiplier(type);

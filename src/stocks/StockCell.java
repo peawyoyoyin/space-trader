@@ -27,6 +27,7 @@ public class StockCell extends GridPane {
 	public StockCell(Stock stock) {
 		super();
 		this.setStyle("-fx-background-color: gray;");
+		this.setPadding(new Insets(0,0,0,5));
 		this.setMinHeight(40);
 		this.setHgap(20);
 		this.setAlignment(Pos.CENTER_LEFT);

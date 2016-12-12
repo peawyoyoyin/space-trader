@@ -1,6 +1,7 @@
 package market;
 
 import game.logic.Item.ItemType;
+import game.logic.Player;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
@@ -34,7 +35,18 @@ public class TraderItemPricesList extends VBox {
 		Label top = new Label("Current Sell Prices");
 		this.getChildren().add(top);
 		for(ItemType type : ItemType.values()) {
-			this.getChildren().add(new TraderItemPriceCell(type,trader));
+			TraderItemPriceCell priceCell = new TraderItemPriceCell(type, trader);
+			priceCell.setOnMouseClicked(event -> {
+				System.out.println("sell item " + type.toString());
+				if(Player.instance.getInventory().get(type) > 0) {
+					Player.instance.removeItemFromInventory(type);
+					Player.instance.addMoney(trader.playerSellItem(type));
+				} else {
+					System.out.println("no item to sell");
+				}
+			});
+			this.getChildren().add(priceCell);
 		}
 	}
+	
 }
