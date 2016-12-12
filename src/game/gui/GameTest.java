@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import market.Market;
 import market.Trader;
@@ -38,7 +39,6 @@ public class GameTest extends Application {
 		PlayerShip ship = new PlayerShip(ConfigConstant.mapCellWidth / 2, ConfigConstant.mapCellHeight / 2, 5, 100, 0,
 				10, 3, 5, 0);
 		EnemyShip bShip = new EnemyShip(100, 100, 5, 500, 0, 5, 2, 1, 0);
-
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		Player.instance.setPlayerShip(ship);
 		mc.getEntities().add(ship);
@@ -49,14 +49,13 @@ public class GameTest extends Application {
 				ConfigConstant.mapCellHeight / 2);
 		st.setTrader(new Trader("Roy Lek"));
 		mc.getEntities().add(st);
-
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
 		AnimationTimer animation = new AnimationTimer() {
 			public void handle(long now) {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-				
+				ship.hit(100);
 				Input.inputUpdate();
 			}
 		};
@@ -76,21 +75,6 @@ public class GameTest extends Application {
 
 		Market.InitializeMarket();
 
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					Thread.sleep(1000);
-					GameScreen.instance.changeLeft(PlayerInfoPane.instance);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
-		}).start();
 		gamePane.requestFocus();
 		stage.setScene(scene);
 		stage.show();
