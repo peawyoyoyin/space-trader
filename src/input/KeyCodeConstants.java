@@ -8,6 +8,6 @@ public class KeyCodeConstants {
 	public static KeyCode KEY_LEFT = KeyCode.A;
 	public static KeyCode KEY_RIGHT = KeyCode.D;
 	
-	public static KeyCode KEY_SHOOT = KeyCode.SPACE;
+	public static KeyCode KEY_SHOOT = KeyCode.J;
 	public static KeyCode KEY_ENTER = KeyCode.ENTER;
 }

@@ -50,7 +50,6 @@ public class SpaceStationEntity extends Entity implements Renderable {
 		gc.drawImage(image, -this.image.getWidth() / 2, -this.image.getHeight() / 2);
 		gc.rotate(-this.direction);
 		gc.translate(-x, -y);
-
 	}
 
 }

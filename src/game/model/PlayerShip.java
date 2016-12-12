@@ -6,7 +6,9 @@ import game.logic.MapCellHolder;
 import game.logic.Player;
 import input.Input;
 import input.KeyCodeConstants;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -16,6 +18,7 @@ public class PlayerShip extends Ship implements Friendly {
 
 	private IntegerProperty hpProperty;
 	private IntegerProperty maxHpProperty;
+	private DoubleProperty speedProperty;
 
 	private Image image;
 	private int delayShoot;
@@ -33,6 +36,14 @@ public class PlayerShip extends Ship implements Friendly {
 		this.hpProperty.set(hp);
 		this.maxHpProperty = new SimpleIntegerProperty();
 		this.maxHpProperty.set(maxHp);
+		this.speedProperty = new SimpleDoubleProperty(this.maxSpeed);
+	}
+	
+	@Override
+	public void setMaxSpeed(int maxSpeed) {
+		// TODO Auto-generated method stub
+		super.setMaxSpeed(maxSpeed);
+		this.speedProperty.set(maxSpeed);
 	}
 
 	public IntegerProperty getShipProperty(String indicator) {
@@ -47,6 +58,10 @@ public class PlayerShip extends Ship implements Friendly {
 			return this.hpProperty;
 		}
 		}
+	}
+	
+	public DoubleProperty getSpeedProperty() {
+		return this.speedProperty;
 	}
 
 	@Override
