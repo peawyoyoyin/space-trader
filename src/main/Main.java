@@ -39,7 +39,7 @@ public class Main extends Application {
 		Trader.InitiailizeTraders();
 		
 		Player.instance = new Player();
-		PlayerShip playerShip = new PlayerShip(3000,3000,100,100,0,10,1,3,0);
+		PlayerShip playerShip = new PlayerShip(3000,3000,5,100,0,10,1,3,0);
 		Player.instance.setPlayerShip(playerShip);
 
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
@@ -55,7 +55,7 @@ public class Main extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-				
+				playerShip.hit(100);
 				if(Input.isKeyPressed(KeyCode.N)){
 					System.out.println("new game");
 					this.stop();

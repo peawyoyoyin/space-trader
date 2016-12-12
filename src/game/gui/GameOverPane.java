@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import main.Main;
 
 public class GameOverPane extends StackPane{
 
@@ -20,7 +21,7 @@ public class GameOverPane extends StackPane{
 		this.getChildren().add(container);
 		
 		mainMenuButton.setOnAction(event -> {
-			
+			Main.toStartScreen();
 		});
 	}
 	
