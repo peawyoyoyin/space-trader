@@ -1,36 +1,57 @@
 package game.model;
 
-public abstract class  Entity implements Comparable<Entity> {
-	public double x,y;
-	public int z;
-	protected boolean visible,destroyed;
+public abstract class Entity implements Comparable<Entity> {
+	protected double x, y;
+	protected int z;
+	protected boolean visible, destroyed;
 	protected double radius;
-	
-	protected Entity(){
+
+	protected Entity() {
 		visible = true;
 		destroyed = false;
 	}
-	
+
 	@Override
 	public int compareTo(Entity other) {
 		// TODO Auto-generated method stub
-		return this.z-other.z;
+		return this.z - other.z;
 	}
 
-	public boolean isDestroyed(){
+	public boolean isDestroyed() {
 		return destroyed;
 	}
-	
-	public boolean isVisible(){
+
+	public boolean isVisible() {
 		return visible;
 	}
-	
-	public int getZ(){
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public void setZ(int z) {
+		this.z = z;
+	}
+
+	public int getZ() {
 		return z;
 	}
-	public boolean isCollideWith(Entity other){
-		return Math.hypot(this.x-other.x, this.y-other.y) < this.radius+other.radius;
+
+	public boolean isCollideWith(Entity other) {
+		return Math.hypot(this.x - other.x, this.y - other.y) < this.radius + other.radius;
 	}
-	
+
 	abstract public void update();
 }

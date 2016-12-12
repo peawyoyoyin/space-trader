@@ -3,6 +3,7 @@ package game.logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import game.model.BombEffect;
 import game.model.Entity;
 import game.model.Ship;
 import game.model.SpaceStationEntity;
@@ -60,17 +61,20 @@ public class MapCell {
 				}
 			}
 		}
-
+		
 		this.entities.addAll(newEffect);
 		this.newEffect.clear();
 
 		for (int i = 0; i < entities.size(); i++) {
 			if (entities.get(i).isDestroyed()) {
+				if (entities.get(i) instanceof Ship) {
+					this.entities.add(new BombEffect(entities.get(i).getX(), entities.get(i).getY()));
+				}
 				entities.remove(i);
 				i--;
 			}
 		}
-
+		
 		gc.setFill(Color.BROWN);
 		gc.fillText(Player.instance.getSectionX() + " - " + Player.instance.getSectionY(), 5, 20);
 

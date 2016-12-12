@@ -25,8 +25,8 @@ public class RenderableHolder {
 	}
 
 	public void render(GraphicsContext gc, MapCell mc) {
-		this.x = Player.instance.getPlayerShip().x - ConfigConstant.gameScreenWidth / 2;
-		this.y = Player.instance.getPlayerShip().y - ConfigConstant.gameScreenHeight / 2;
+		this.x = Player.instance.getPlayerShip().getX() - ConfigConstant.gameScreenWidth / 2;
+		this.y = Player.instance.getPlayerShip().getY() - ConfigConstant.gameScreenHeight / 2;
 		if (this.x < 0) {
 			this.x = 0;
 		}
@@ -65,39 +65,40 @@ public class RenderableHolder {
 		Entity nearestEnemy = null;
 		for (Entity entity : mc.getEntities()) {
 			if (entity instanceof SpaceStationEntity) {
-				track(entity.x, entity.y, Color.AQUA, gc);
+				track(entity.getX(), entity.getY(), Color.AQUA, gc);
 			}
 			if (entity instanceof Enemy) {
-				if (Math.hypot(entity.x - Player.instance.getPlayerShip().x,
-						entity.y - Player.instance.getPlayerShip().y) < nearestEnemyDistance) {
+				if (Math.hypot(entity.getX() - Player.instance.getPlayerShip().getX(),
+						entity.getY() - Player.instance.getPlayerShip().getY()) < nearestEnemyDistance) {
 					nearestEnemy = entity;
 				}
 			}
 		}
 		if (nearestEnemy != null) {
-			track(nearestEnemy.x, nearestEnemy.y, Color.RED, gc);
+			track(nearestEnemy.getX(), nearestEnemy.getY(), Color.RED, gc);
 		}
-		if (Player.instance.getPlayerShip().x < ConfigConstant.mapCellWidth / 2
-				&& Player.instance.getPlayerShip().x < Player.instance.getPlayerShip().y) {
-			track(0, Player.instance.getPlayerShip().y, Color.LAWNGREEN, gc);
-		} else if (Player.instance.getPlayerShip().y < ConfigConstant.mapCellHeight / 2
-				&& Player.instance.getPlayerShip().y < Player.instance.getPlayerShip().x) {
-			track(Player.instance.getPlayerShip().x, 0, Color.LAWNGREEN, gc);
-		} else if (Player.instance.getPlayerShip().x > ConfigConstant.mapCellWidth / 2
-				&& Player.instance.getPlayerShip().x > Player.instance.getPlayerShip().y) {
-			track(ConfigConstant.mapCellWidth, Player.instance.getPlayerShip().y, Color.LAWNGREEN, gc);
-		} else if (Player.instance.getPlayerShip().y > ConfigConstant.mapCellHeight / 2
-				&& Player.instance.getPlayerShip().y > Player.instance.getPlayerShip().x) {
-			track(Player.instance.getPlayerShip().x, ConfigConstant.mapCellHeight, Color.LAWNGREEN, gc);
+		if (Player.instance.getPlayerShip().getX() < ConfigConstant.mapCellWidth / 2
+				&& Player.instance.getPlayerShip().getX() < Player.instance.getPlayerShip().getY()) {
+			track(0, Player.instance.getPlayerShip().getY(), Color.LAWNGREEN, gc);
+		} else if (Player.instance.getPlayerShip().getY() < ConfigConstant.mapCellHeight / 2
+				&& Player.instance.getPlayerShip().getY() < Player.instance.getPlayerShip().getX()) {
+			track(Player.instance.getPlayerShip().getX(), 0, Color.LAWNGREEN, gc);
+		} else if (Player.instance.getPlayerShip().getX() > ConfigConstant.mapCellWidth / 2
+				&& Player.instance.getPlayerShip().getX() > Player.instance.getPlayerShip().getY()) {
+			track(ConfigConstant.mapCellWidth, Player.instance.getPlayerShip().getY(), Color.LAWNGREEN, gc);
+		} else if (Player.instance.getPlayerShip().getY() > ConfigConstant.mapCellHeight / 2
+				&& Player.instance.getPlayerShip().getY() > Player.instance.getPlayerShip().getX()) {
+			track(Player.instance.getPlayerShip().getX(), ConfigConstant.mapCellHeight, Color.LAWNGREEN, gc);
 		}
 	}
 
 	public void track(double x, double y, Color color, GraphicsContext gc) {
 		double degree = Math.toDegrees(
-				Math.atan2((y - Player.instance.getPlayerShip().y), (x - Player.instance.getPlayerShip().x)));
-		double xArrow = Player.instance.getPlayerShip().x + Math.cos(Math.toRadians(degree)) * 70;
-		double yArrow = Player.instance.getPlayerShip().y + Math.sin(Math.toRadians(degree)) * 70;
-		double distance = Math.hypot(x - Player.instance.getPlayerShip().x, y - Player.instance.getPlayerShip().y);
+				Math.atan2((y - Player.instance.getPlayerShip().getY()), (x - Player.instance.getPlayerShip().getX())));
+		double xArrow = Player.instance.getPlayerShip().getX() + Math.cos(Math.toRadians(degree)) * 70;
+		double yArrow = Player.instance.getPlayerShip().getY() + Math.sin(Math.toRadians(degree)) * 70;
+		double distance = Math.hypot(x - Player.instance.getPlayerShip().getX(),
+				y - Player.instance.getPlayerShip().getY());
 		gc.setFill(color);
 		gc.translate(xArrow, yArrow);
 		gc.fillText(Integer.toString((int) distance),

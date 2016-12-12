@@ -12,6 +12,7 @@ import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
 import game.logic.Player;
+import game.model.HitEffect;
 import game.model.BombEffect;
 import game.model.EnemyShip;
 import game.model.PlayerShip;
@@ -33,10 +34,12 @@ public class GameTest extends Application {
 		Player.instance.setPlayerShip(ship);
 		mc.getEntities().add(ship);
 		mc.getEntities().add(bShip);
-		BombEffect be = new BombEffect(500, 500, 100, 100);
-		mc.getEntities().add(be);
+		HitEffect he = new HitEffect(500, 500, 100, 100);
+		mc.getEntities().add(he);
 		SpaceStationEntity st = new SpaceStationEntity(ConfigConstant.mapCellWidth/2, ConfigConstant.mapCellHeight/2);
 		mc.getEntities().add(st);
+		BombEffect be = new BombEffect(3000, 3000);
+		mc.getEntities().add(be);
 		
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
 		AnimationTimer animation = new AnimationTimer() {
