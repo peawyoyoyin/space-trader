@@ -56,7 +56,7 @@ public class Main extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-				playerShip.hit(100);
+				//playerShip.hit(100);
 				if(Input.isKeyPressed(KeyCode.N)){
 					System.out.println("new game");
 					this.stop();
@@ -66,20 +66,7 @@ public class Main extends Application {
 			}
 		};
 		
-		new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try {
-					Thread.sleep(1500);
-					Player.instance.getPlayerShip().hit(200);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}).start();
+		
 		gameRunner.start();
 		scene.setRoot(GameScreen.instance);
 	}
