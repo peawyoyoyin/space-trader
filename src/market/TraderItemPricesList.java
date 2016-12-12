@@ -1,6 +1,6 @@
 package market;
 
-import game.logic.Item.ItemType;
+import game.model.Item.ItemType;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;

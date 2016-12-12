@@ -74,8 +74,8 @@ public class BackgroundStartScreen extends Canvas {
 		// TODO Auto-generated method stub
 		newEffect.add(tailShipEffect);
 	}
-	
-	public void reBackground(){
+
+	public void reBackground() {
 		entities.clear();
 		DemoEnemy en1 = new DemoEnemy(300, 100, 100, 100, 5, 5, 0.1, 2, 45);
 		DemoEnemy en2 = new DemoEnemy(700, 300, 100, 100, 3, 3, 0.1, 3, 0);

@@ -1,11 +1,16 @@
-package game.logic;
+package game.model;
 
 import java.util.Random;
 
 import constants.ConfigConstant;
+import game.logic.MapCell;
+import game.logic.MapCellHolder;
+import game.logic.Player;
+import game.logic.Renderable;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-public class Item {
+public class Item extends Entity implements Renderable {
 	public enum ItemType {
 		MATERIAL, WEAPON, GEM, PARTS, JUNK;
 
@@ -15,20 +20,20 @@ public class Item {
 		}
 
 		public static String toString(ItemType itemType) {
-			switch(itemType) {
-			case MATERIAL : {
+			switch (itemType) {
+			case MATERIAL: {
 				return "materials";
 			}
-			case WEAPON : {
+			case WEAPON: {
 				return "weapons";
 			}
-			case GEM : {
+			case GEM: {
 				return "gems";
 			}
-			case PARTS : {
+			case PARTS: {
 				return "parts";
 			}
-			case JUNK : {
+			case JUNK: {
 				return "junk";
 			}
 			default: {
@@ -73,11 +78,7 @@ public class Item {
 	}
 
 	private ItemType itemType;
-
-	@Deprecated
-	public Item(ItemType itemType, int basePrice) {
-		this(itemType);
-	}
+	private double direction;
 
 	public Item(ItemType itemType) {
 		this.itemType = itemType;
@@ -87,6 +88,18 @@ public class Item {
 		Random random = new Random();
 		ItemType itemType = ItemType.values()[random.nextInt(ItemType.values().length)];
 		return new Item(itemType);
+	}
+
+	public static Item generateEnitity(double x, double y) {
+		Random random = new Random();
+		ItemType itemType = ItemType.values()[random.nextInt(ItemType.values().length)];
+		Item item = new Item(itemType);
+		item.setX(x);
+		item.setY(y);
+		item.setZ(-100);
+		item.radius = 20;
+		item.direction = 225;
+		return item;
 	}
 
 	public static Item generate(ItemType itemType) {
@@ -99,5 +112,27 @@ public class Item {
 
 	public Image getItemIcon() {
 		return ItemType.getItemIcon(this.itemType);
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		for (Entity entity : mc.getEntities()) {
+			if (entity instanceof PlayerShip && this.isCollideWith(entity)) {
+				this.destroyed = true;
+				Player.instance.addItemtoInventory(this);
+			}
+		}
+	}
+
+	@Override
+	public void render(GraphicsContext gc) {
+		// TODO Auto-generated method stub
+		gc.translate(x, y);
+		gc.rotate(this.direction);
+		gc.drawImage(getItemIcon(), -getItemIcon().getWidth()/2, -getItemIcon().getHeight()/2);
+		gc.rotate(-this.direction);
+		gc.translate(-x, -y);
 	}
 }

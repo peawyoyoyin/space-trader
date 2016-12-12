@@ -7,7 +7,6 @@ import game.logic.Player;
 import game.logic.Renderable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 
 public class Bullet extends Entity implements Renderable {
 

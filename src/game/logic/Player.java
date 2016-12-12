@@ -5,8 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import game.logic.Item.ItemType;
+import game.model.Item;
 import game.model.PlayerShip;
+import game.model.Item.ItemType;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.MapProperty;
 import javafx.beans.property.SimpleIntegerProperty;
