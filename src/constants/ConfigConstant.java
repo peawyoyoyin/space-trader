@@ -11,7 +11,7 @@ import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
 
 public class ConfigConstant {
-	public static final String GAME_NAME = "GAME NAME";
+	public static final String GAME_NAME = "Space Trader";
 
 	public static String PLAYER_NAME = "< blank name >";
 	public static double volumeMusic = 1.00;
