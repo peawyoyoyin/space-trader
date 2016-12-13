@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -19,11 +20,17 @@ public class SettingPane extends GridPane{
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("Setting");
 		textName.setFont(ConfigConstant.START_SCREEN_FONT);
+		textName.setFill(Color.WHITE);
+		textName.setStroke(Color.BLACK);
+		textName.setStrokeWidth(2);
 		this.add(textName, 0, 0);
 		GridPane.setMargin(textName, new Insets(20,0,0,80));
 		
 		Text textBack = new Text("Back");
 		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textBack.setFill(Color.WHITE);
+		textBack.setStroke(Color.BLACK);
+		textBack.setStrokeWidth(2);
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20,0,80,80));
 		

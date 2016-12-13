@@ -1,6 +1,5 @@
 package startScreen;
 
-
 import constants.ConfigConstant;
 
 import java.io.BufferedReader;
@@ -8,14 +7,21 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import com.sun.media.jfxmedia.events.NewFrameEvent;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
@@ -29,11 +35,17 @@ public class UpdatingPane extends GridPane {
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("Update");
 		textName.setFont(ConfigConstant.START_SCREEN_FONT);
+		textName.setFill(Color.WHITE);
+		textName.setStroke(Color.BLACK);
+		textName.setStrokeWidth(2);
 		this.add(textName, 0, 0);
-		GridPane.setMargin(textName, new Insets(20, 0, 0, 80));
+		GridPane.setMargin(textName, new Insets(20, 0, 20, 80));
 
 		Text textBack = new Text("Back");
 		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textBack.setFill(Color.WHITE);
+		textBack.setStroke(Color.BLACK);
+		textBack.setStrokeWidth(2);
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
@@ -53,6 +65,9 @@ public class UpdatingPane extends GridPane {
 	public void startUpdate() {
 		Text textStatus = new Text("Connecting to server");
 		textStatus.setFont(ConfigConstant.START_SCREEN_SMALL_FONT);
+		textStatus.setFill(Color.WHITE);
+		textStatus.setStroke(Color.BLACK);
+		textStatus.setStrokeWidth(2);
 		container.getChildren().add(textStatus);
 
 		AnimationTimer animater = new AnimationTimer() {
@@ -106,6 +121,7 @@ public class UpdatingPane extends GridPane {
 						});
 					} else {
 						TextArea changelog = new TextArea();
+						
 						changelog.setMaxWidth(800);
 						changelog.setPrefHeight(450);
 						changelog.setEditable(false);
@@ -117,6 +133,9 @@ public class UpdatingPane extends GridPane {
 								textStatus.setText("New version " + version);
 								container.getChildren().add(changelog);
 								changelog.setText(textlog);
+								changelog.setStyle(
+										"-fx-control-inner-background:#000000;-fx-font-family: Consolas;-fx-highlight-fill: #00ff00;-fx-highlight-text-fill: #000000;-fx-text-fill: #00ff00;-fx-background-color: #000000;");
+								
 							}
 						});
 					}

@@ -1,5 +1,7 @@
 package game.model;
 
+import java.util.Random;
+
 import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
@@ -92,6 +94,8 @@ public class PlayerShip extends Ship implements Friendly {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
+		boolean isSpawnEnemy = true;
+		boolean isChangeSec = false;
 
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		if (this.x <= radius && Player.instance.getSectionX() > 0) {
@@ -102,6 +106,12 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
+			isChangeSec = true;
+			for (Entity entity : mcNext.getEntities()) {
+				if (entity instanceof SpaceStationEntity) {
+					isSpawnEnemy = false;
+				}
+			}
 
 		} else if (this.y <= radius && Player.instance.getSectionY() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
@@ -111,6 +121,12 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
+			isChangeSec = true;
+			for (Entity entity : mcNext.getEntities()) {
+				if (entity instanceof SpaceStationEntity) {
+					isSpawnEnemy = false;
+				}
+			}
 
 		}
 		if (this.x >= ConfigConstant.mapCellWidth - radius && Player.instance.getSectionX() < 4) {
@@ -121,6 +137,12 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
+			isChangeSec = true;
+			for (Entity entity : mcNext.getEntities()) {
+				if (entity instanceof SpaceStationEntity) {
+					isSpawnEnemy = false;
+				}
+			}
 
 		} else if (this.y >= ConfigConstant.mapCellHeight - radius && Player.instance.getSectionY() < 4) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
@@ -130,6 +152,22 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
+			isChangeSec = true;
+			for (Entity entity : mcNext.getEntities()) {
+				if (entity instanceof SpaceStationEntity) {
+					isSpawnEnemy = false;
+				}
+			}
+		}
+
+		if (isSpawnEnemy && isChangeSec) {
+			Random rd = new Random();
+			MapCell mc2 = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+			for (int i = 0; i < rd.nextInt(3)+2; i++) {
+				mc2.getEntities().add(new EnemyShip(rd.nextDouble() * ConfigConstant.mapCellWidth,
+						rd.nextDouble() * ConfigConstant.mapCellHeight, 50, 50, 0, 3, 0.1, 1, rd.nextInt(360)));
+			}
+			
 		}
 
 		super.update();

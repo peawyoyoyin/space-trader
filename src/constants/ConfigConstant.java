@@ -71,6 +71,7 @@ public class ConfigConstant {
 				ClassLoader.getSystemResource("itemicon/itemmaterial.png").toString());
 
 		public static Font HUD_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 15);
+		public static Font HUD_MID_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 24);
 		public static Font HUD_HEADER_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);		
 	}
 
