@@ -2,7 +2,6 @@ package stocks;
 
 import java.util.List;
 
-import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
@@ -10,8 +9,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ValueAxis;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Glow;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
@@ -24,14 +22,14 @@ public class StockGraph extends StackPane {
 	public StockGraph() {
 		super();
 		//create a canvas to draw background
-		Canvas back = new Canvas(200,200);
-		back.getGraphicsContext2D().setFill(Color.BLACK);
-		back.getGraphicsContext2D().fillRect(0, 0, 200, 200);
-		this.getChildren().add(back);
+		Canvas background = new Canvas(200,200);
+		background.getGraphicsContext2D().setFill(Color.rgb(201	,208,217));
+		background.getGraphicsContext2D().fillRoundRect(0, 0, 200, 200,20,20);
+		background.setEffect(new InnerShadow());
+		this.getChildren().add(background);
 		this.setMaxWidth(250);
 		this.setMaxHeight(200);
 
-		this.setEffect(new Glow(5));
 		
 		//create the chart
 		Axis<Number> xAxis = new NumberAxis();
@@ -46,7 +44,6 @@ public class StockGraph extends StackPane {
 		this.series = new Series<>();
 		
 		this.lineChart = new LineChart<Number, Number>(xAxis, yAxis);
-		this.lineChart.setEffect(new DropShadow(5, Color.AQUAMARINE));
 		this.lineChart.setCreateSymbols(false);
 		this.lineChart.getData().add(this.series);
 		this.lineChart.setTitle("");
@@ -54,6 +51,7 @@ public class StockGraph extends StackPane {
 		this.lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
 		this.lineChart.lookup(".chart-horizontal-grid-lines").setVisible(false);
 		this.lineChart.lookup(".chart-vertical-grid-lines").setVisible(false);
+		this.lineChart.setStyle("CHART_COLOR_1: #000;");
 		
 		this.getChildren().add(this.lineChart);
 		this.stock = null;

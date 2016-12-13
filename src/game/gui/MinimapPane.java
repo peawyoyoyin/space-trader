@@ -4,8 +4,6 @@ import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
 import game.logic.Player;
-import game.model.Entity;
-import game.model.SpaceStationEntity;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.canvas.Canvas;
@@ -52,12 +50,11 @@ public class MinimapPane extends Canvas {
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
 				MapCell mc = MapCellHolder.instance.get(i, j);
-				for (Entity entity : mc.getEntities()) {
-					if (entity instanceof SpaceStationEntity) {
-						gc.drawImage(spaceSt, 40 * i + 5, 40 * j + 5, 30, 30);
-						break;
-					}
+				if (mc.hasSpaceStation()) {
+					gc.drawImage(spaceSt, 40 * i + 5, 40 * j + 5, 30, 30);
+
 				}
+
 			}
 		}
 
@@ -68,10 +65,8 @@ public class MinimapPane extends Canvas {
 		for (int i = 0; i < 6; i++) {
 			gc.strokeLine(40 * i, 0, 40 * i, 200);
 		}
-
 		gc.translate(sectionX.get() * 40, sectionY.get() * 40);
 		gc.drawImage(player, 10, 10, 20, 20);
 		gc.translate(-sectionX.get() * 40, -sectionY.get() * 40);
-
 	}
 }

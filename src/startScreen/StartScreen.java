@@ -54,8 +54,6 @@ public class StartScreen extends StackPane {
 		this.settingPane = new SettingPane();
 
 		this.updatingPane = new UpdatingPane();
-
-
 	}
 
 	public void changePane(GridPane pane) {

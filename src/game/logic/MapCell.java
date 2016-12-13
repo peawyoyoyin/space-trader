@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.sun.javafx.tk.FontLoader;
-import com.sun.javafx.tk.Toolkit;
-
 import constants.ConfigConstant;
 import game.gui.GameOverPane;
 import game.gui.GameScreen;
@@ -22,7 +19,6 @@ import input.KeyCodeConstants;
 import javafx.scene.Node;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import market.Market;
 import market.TraderScreen;
 import stocks.StocksScreen;
@@ -73,6 +69,33 @@ public class MapCell {
 		}
 	}
 
+	public SpaceStationEntity getSpaceStation() {
+		for (Entity entity : this.getEntities()) {
+			if (entity instanceof SpaceStationEntity) {
+				return (SpaceStationEntity) entity;
+			}
+		}
+		return null;
+	}
+
+	public boolean hasSpaceStation() {
+		for (Entity entity : this.getEntities()) {
+			if (entity instanceof SpaceStationEntity) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean isPlayerColideWithSpacestation() {
+		for (Entity entity : entities) {
+			if (entity instanceof SpaceStationEntity && Player.instance.getPlayerShip().isCollideWith(entity)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public void update(GraphicsContext gc) {
 
 		RenderableHolder.instance.render(gc, this);
@@ -83,48 +106,18 @@ public class MapCell {
 			}
 		}
 
-		for (Entity entity : entities) {
-			if (entity instanceof SpaceStationEntity) {
-				if (Player.instance.getPlayerShip().isCollideWith(entity) && !Player.instance.isPause()) {
-					gc.setFill(Color.WHITE);
-					gc.setFont(ConfigConstant.Resource.HUD_FONT);
-					String text = "Trader : " + ((SpaceStationEntity) entity).getTrader().getName();
-					FontLoader fl = Toolkit.getToolkit().getFontLoader();
-					double textX = (ConfigConstant.gameScreenWidth
-							- fl.computeStringWidth(text, ConfigConstant.Resource.HUD_FONT)) / 2;
-					gc.fillText(text, textX, 100);
-				}
-			}
-		}
-
 		if (Input.isKeyPressed(KeyCodeConstants.KEY_ENTER)) {
-			for (Entity entity : entities) {
-				if (entity instanceof SpaceStationEntity) {
-					if (Player.instance.getPlayerShip().isCollideWith(entity)) {
-						if (!Player.instance.isPause()) {
-							Player.instance.pause();
-							((SpaceStationEntity) entity).getTrader().setAccessing(true);
-							GameScreen.instance
-									.changeCenter(new TraderScreen(((SpaceStationEntity) entity).getTrader()));
-						} else {
-							Node target = null;
-							for (Node node : ((Pane) GameScreen.instance.getCenter()).getChildren()) {
-								if (node instanceof TraderScreen) {
-									target = node;
-								}
-							}
-							((Pane) GameScreen.instance.getCenter()).getChildren().remove(target);
-							Player.instance.resume();
-							((SpaceStationEntity) entity).getTrader().setAccessing(false);
-						}
-					}
-				}
-			}
+			this.enterSpaceStation();
 		}
 
 		this.entities.addAll(newEffect);
 		this.newEffect.clear();
 
+		this.removeDestroyedEntities();
+
+	}
+
+	public void removeDestroyedEntities() {
 		for (int i = 0; i < entities.size(); i++) {
 			if (entities.get(i).isDestroyed()) {
 				if (entities.get(i) instanceof Ship) {
@@ -144,7 +137,36 @@ public class MapCell {
 				i--;
 			}
 		}
-
 	}
 
+	public void spawnEnemy() {
+		Random rd = new Random();
+		for (int i = 0; i < rd.nextInt(3) + 2; i++) {
+			Ship enemy = new EnemyShip(rd.nextDouble() * ConfigConstant.mapCellWidth,
+					rd.nextDouble() * ConfigConstant.mapCellHeight, this.getEnemyHp(), this.getEnemyHp(), 0, 3, 0.1, 1,
+					rd.nextInt(360));
+			enemy.setBulletDamage(this.getEnemyDmg());
+			this.getEntities().add(enemy);
+		}
+	}
+
+	public void enterSpaceStation() {
+		if (this.isPlayerColideWithSpacestation()) {
+			if (!Player.instance.isPause()) {
+				Player.instance.pause();
+				this.getSpaceStation().getTrader().setAccessing(true);
+				GameScreen.instance.changeCenter(new TraderScreen(this.getSpaceStation().getTrader()));
+			} else {
+				Node target = null;
+				for (Node node : ((Pane) GameScreen.instance.getCenter()).getChildren()) {
+					if (node instanceof TraderScreen) {
+						target = node;
+					}
+				}
+				((Pane) GameScreen.instance.getCenter()).getChildren().remove(target);
+				Player.instance.resume();
+				this.getSpaceStation().getTrader().setAccessing(false);
+			}
+		}
+	}
 }

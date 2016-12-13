@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="res/sound"/>
-	<classpathentry excluding="SpaceShooterRedux/Backgrounds/|SpaceShooterRedux/PNG/|SpaceShooterRedux/Bonus/" kind="src" path="res/Pic"/>
+	<classpathentry kind="src" path="res/pic"/>
+	<classpathentry kind="src" path="res/font"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

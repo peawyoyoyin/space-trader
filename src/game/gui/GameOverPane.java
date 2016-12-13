@@ -24,12 +24,14 @@ public class GameOverPane extends StackPane {
 
 		VBox container = new VBox(25);
 		container.setAlignment(Pos.CENTER);
+		
 		Text gameOver = new Text("Game Over");
 		gameOver.setFont(ConfigConstant.Resource.HUD_HEADER_FONT);
 		gameOver.setFill(Color.WHITE);
 		// gameOver.setStroke(Color.BLACK);
 		gameOver.setEffect(new DropShadow());
 		container.getChildren().add(gameOver);
+		
 		if (HighScore.isInHighScore(Player.instance.getMoney())) {
 			Text highScore = new Text("Your score is High Score!");
 			highScore.setFill(Color.WHITE);
@@ -37,12 +39,15 @@ public class GameOverPane extends StackPane {
 			container.getChildren().add(highScore);
 			height += 50;
 		}
+		
 		Text score = new Text("Your score is : " + Integer.toString(Player.instance.getMoney()));
 		score.setFill(Color.WHITE);
 		score.setFont(ConfigConstant.Resource.HUD_FONT);
 		container.getChildren().add(score);
+		
 		Canvas bg = new Canvas(width, height);
 		this.getChildren().add(bg);
+		
 		StackPane buttonContainer = new StackPane();
 		Canvas bgButton = new Canvas(150, 50);
 		bgButton.getGraphicsContext2D().drawImage(ConfigConstant.Resource.BUTTON_BACKGROUND, 0, 0);
@@ -53,15 +58,18 @@ public class GameOverPane extends StackPane {
 		mainMenuButton.setFont(ConfigConstant.Resource.HUD_FONT);
 		mainMenuButton.setStyle(
 				"-fx-border-color: transparent;-fx-border-width: 0;-fx-background-radius: 0;-fx-background-color: transparent;");
+		
 		mainMenuButton.setOnMouseEntered(e -> {
 			bgButton.setEffect(new Glow(0.5));
 		});
 		mainMenuButton.setOnMouseExited(e -> {
 			bgButton.setEffect(null);
 		});
+		
 		buttonContainer.getChildren().add(mainMenuButton);
 		container.getChildren().add(buttonContainer);
 		this.getChildren().add(container);
+		
 		mainMenuButton.setOnAction(event -> {
 			if (HighScore.isInHighScore(Player.instance.getMoney())) {
 				System.out.println("save highscore with score " + Player.instance.getMoney());
@@ -69,6 +77,7 @@ public class GameOverPane extends StackPane {
 			}
 			Main.toStartScreen();
 		});
+		
 		buttonContainer.setEffect(new DropShadow());
 
 		if (height == 250) {

@@ -3,7 +3,6 @@ package input;
 import java.util.ArrayList;
 import java.util.List;
 
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 

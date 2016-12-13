@@ -24,4 +24,8 @@ public class MapCellHolder {
 	public MapCell get(int x, int y) {
 		return this.mapCells.get(y).get(x);
 	}
+	
+	public MapCell getPlayerCell(){
+		return MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+	}
 }

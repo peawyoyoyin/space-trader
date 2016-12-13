@@ -77,7 +77,7 @@ public class ConfigConstant {
 				ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 56);
 		public static Font START_SCREEN_SMALL_FONT = loadFont(
 				ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);
-
+		public static Font STOCK_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 13);
 		public static Font HUD_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 15);
 		public static Font HUD_MID_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(),
 				24);

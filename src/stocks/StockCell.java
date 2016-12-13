@@ -46,10 +46,10 @@ public class StockCell extends GridPane {
 		this.instockLabel.textProperty()
 				.bind(PlayerStocksPortFolio.instance.getStockTradeData(stock).getInstockProperty().asString());
 
-		this.add(stockNameLabel, 0, 0, 2, 1);
-		this.add(stockPriceLabel, 2, 0);
-		this.add(stockChangeLabel, 3, 0);
-		this.add(instockLabel, 4, 0);
+		this.add(stockNameLabel, 0, 0);
+		this.add(stockPriceLabel, 1, 0);
+		this.add(stockChangeLabel, 2, 0);
+		this.add(instockLabel, 3, 0);
 
 		/* 
 		 * add ChangeListener to stockPriceLabel's textProperty so it calculate
@@ -67,14 +67,14 @@ public class StockCell extends GridPane {
 		});
 		
 		
-		this.stockNameLabel.setFont(ConfigConstant.Resource.HUD_FONT);
-		this.stockPriceLabel.setFont(ConfigConstant.Resource.HUD_FONT);
-		this.instockLabel.setFont(ConfigConstant.Resource.HUD_FONT);
-		this.stockChangeLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		this.stockNameLabel.setFont(ConfigConstant.Resource.STOCK_FONT);
+		this.stockPriceLabel.setFont(ConfigConstant.Resource.STOCK_FONT);
+		this.instockLabel.setFont(ConfigConstant.Resource.STOCK_FONT);
+		this.stockChangeLabel.setFont(ConfigConstant.Resource.STOCK_FONT);
+		this.getColumnConstraints().add(new ColumnConstraints(65));
+		this.getColumnConstraints().add(new ColumnConstraints(35));
+		this.getColumnConstraints().add(new ColumnConstraints(35));
 		this.getColumnConstraints().add(new ColumnConstraints(30));
-		this.getColumnConstraints().add(new ColumnConstraints(25));
-		this.getColumnConstraints().add(new ColumnConstraints(25));
-		this.getColumnConstraints().add(new ColumnConstraints(25));
 	}
 
 	public void setActive(boolean active) {
