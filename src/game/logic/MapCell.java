@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+<<<<<<< HEAD
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
+=======
+>>>>>>> origin/master
 import constants.ConfigConstant;
 import game.gui.GameOverPane;
 import game.gui.GameScreen;
@@ -47,7 +50,7 @@ public class MapCell {
 
 	public void clear() {
 		for (int i = 0; i < entities.size(); i++) {
-			if (!(entities.get(i) instanceof Ship || entities.get(i) instanceof SpaceStationEntity)) {
+			if (!(entities.get(i) instanceof SpaceStationEntity)) {
 				entities.remove(i);
 				i--;
 			}
@@ -108,6 +111,7 @@ public class MapCell {
 			if (entities.get(i).isDestroyed()) {
 				if (entities.get(i) instanceof Ship) {
 					this.entities.add(new BombEffect(entities.get(i).getX(), entities.get(i).getY()));
+					ConfigConstant.Resource.BOOM_SOUND.play(ConfigConstant.volumeSFX);
 				}
 				if (entities.get(i) instanceof EnemyShip){
 					Player.instance.addMoney(new Random().nextInt(50)+25);

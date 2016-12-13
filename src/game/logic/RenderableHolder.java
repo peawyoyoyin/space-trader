@@ -73,6 +73,8 @@ public class RenderableHolder {
 			if (entity instanceof Enemy) {
 				if (Math.hypot(entity.getX() - Player.instance.getPlayerShip().getX(),
 						entity.getY() - Player.instance.getPlayerShip().getY()) < nearestEnemyDistance) {
+					nearestEnemyDistance = Math.hypot(entity.getX() - Player.instance.getPlayerShip().getX(),
+							entity.getY() - Player.instance.getPlayerShip().getY());
 					nearestEnemy = entity;
 				}
 			}

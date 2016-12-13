@@ -34,7 +34,7 @@ public class Bullet extends Entity implements Renderable {
 		this.radius = 5;
 		this.z = 100;
 		this.image = ConfigConstant.Resource.BULLET_IMAGE;
-		ConfigConstant.Resource.LASER_SOUND.play();
+		ConfigConstant.Resource.LASER_SOUND.play(ConfigConstant.volumeSFX);
 	}
 
 	@Override
