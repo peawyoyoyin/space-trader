@@ -35,6 +35,7 @@ public class Main extends Application {
 		Player.instance = new Player();
 		PlayerShip playerShip = new PlayerShip(3000, 3000, 5, 100, 0, 10, 1, 3, 0);
 		Player.instance.setPlayerShip(playerShip);
+		Player.instance.addMoney(500);
 
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities().add(playerShip);
@@ -49,7 +50,7 @@ public class Main extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-
+				playerShip.hit(10);
 				if(Input.isKeyPressed(KeyCode.N)){
 
 					System.out.println("new game");

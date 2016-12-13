@@ -5,12 +5,16 @@ import java.util.List;
 
 public class HighScoreRecord {
 	public static List<HighScoreRecord> highScoreRecords = new ArrayList<>();
-	
+
 	private String name;
 	private int score;
 	
 	public static List<HighScoreRecord> getAllHighScoreRecords() {
 		return highScoreRecords;
+	}
+	
+	public static void setAllHighScoreRecords(List<HighScoreRecord> highScoreRecords) {
+		HighScoreRecord.highScoreRecords = highScoreRecords;
 	}
 	
 	public HighScoreRecord(String name, int score) {
@@ -53,5 +57,9 @@ public class HighScoreRecord {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return this.name + " : " + this.score;
+	}
+
+	public String getName() {
+		return name;
 	}
 }

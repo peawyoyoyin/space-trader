@@ -15,10 +15,9 @@ public class StartScreen extends StackPane {
 
 	private BackgroundStartScreen backgroundStartScreen;
 	private StartPane startPane;
+	private HighScorePane highScorePane;
 	private SettingPane settingPane;
 	private UpdatingPane updatingPane;
-	private NewGamePane newGamePane;
-	private LoadGamePane loadGamePane;
 
 	public static StartScreen getInstace() {
 		return instace;
@@ -40,12 +39,8 @@ public class StartScreen extends StackPane {
 		return updatingPane;
 	}
 
-	public NewGamePane getNewGamePane() {
-		return newGamePane;
-	}
-
-	public LoadGamePane getLoadGamePane() {
-		return loadGamePane;
+	public HighScorePane getHighScorePane(){
+		return highScorePane;
 	}
 
 	public StartScreen() {
@@ -57,14 +52,14 @@ public class StartScreen extends StackPane {
 
 		this.startPane = new StartPane();
 		this.getChildren().add(startPane);
+		
+		this.highScorePane = new HighScorePane();
 
 		this.settingPane = new SettingPane();
 
 		this.updatingPane = new UpdatingPane();
 
-		this.newGamePane = new NewGamePane();
 
-		this.loadGamePane = new LoadGamePane();
 	}
 
 	public void changePane(GridPane pane) {

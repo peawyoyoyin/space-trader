@@ -1,5 +1,13 @@
 package constants;
 
+import java.io.File;
+import java.io.FilePermission;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
+import com.sun.javafx.tk.Toolkit;
+
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
@@ -8,7 +16,9 @@ import javafx.scene.text.FontPosture;
 public class ConfigConstant {
 	public static final String GAME_NAME = "GAME NAME";
 	
-	public static final String PLAYER_NAME = "< blank name >";
+	public static String PLAYER_NAME = "< blank name >";
+	public static double volumeMusic = 1.00;
+	public static double volumeSFX = 1.00;
 	
 	public static final String HIGHSCORE_FILE = "highscores/highscore";
 
@@ -55,4 +65,5 @@ public class ConfigConstant {
 		
 		public static Font HUD_FONT = Font.loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 15);
 	}
+	
 }

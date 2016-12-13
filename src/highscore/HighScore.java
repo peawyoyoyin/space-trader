@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import constants.ConfigConstant;
 
 public class HighScore {
-	private static final int MAX_ENTRY = 10;
+	private static final int MAX_ENTRY = 5;
 	
 	private static String highScores;
 	
@@ -43,6 +43,7 @@ public class HighScore {
 	public static void addHighScoreEntry(String name, int score) {
 		new HighScoreRecord(name, score);
 		sortHighScoreRecords();
+		saveHighScore();
 	}
 	
 	public static void sortHighScoreRecords() {
@@ -60,12 +61,13 @@ public class HighScore {
 			}
 		};
 		highScoreRecords.sort(c);
-		highScoreRecords = highScoreRecords.subList(0, highScoreRecords.size() < MAX_ENTRY ? highScoreRecords.size() : MAX_ENTRY);
+		HighScoreRecord.setAllHighScoreRecords(highScoreRecords.subList(0, highScoreRecords.size() < MAX_ENTRY ? highScoreRecords.size() : MAX_ENTRY));
 		System.out.println(highScoreRecords);
 	}
 	
 	public static void saveHighScore() {
 		List<HighScoreRecord> highScoreRecords = HighScoreRecord.getAllHighScoreRecords();
+		System.out.println(highScoreRecords);
 		String out = "";
 		sortHighScoreRecords();
 		File highScoreFile = new File(ConfigConstant.HIGHSCORE_FILE);
@@ -85,6 +87,7 @@ public class HighScore {
 	}
 	
 	public static void loadHighScore() throws HighScoreParsingException {
+		HighScoreRecord.getAllHighScoreRecords().clear();
 		File highScoreFile = new File(ConfigConstant.HIGHSCORE_FILE);
 		try {
 			BufferedReader highScore = new BufferedReader(new FileReader(highScoreFile));
@@ -107,6 +110,7 @@ public class HighScore {
 				System.out.println(string);
 				new HighScoreRecord(string);
 			}
+			sortHighScoreRecords();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			throw new HighScoreParsingException("highscore not found");
