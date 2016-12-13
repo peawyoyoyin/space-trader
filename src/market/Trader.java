@@ -20,18 +20,27 @@ public class Trader {
 	private static final Map<ItemType, Double> MAX_BUY_MULT = new HashMap<ItemType,Double>();
 	private static final Map<ItemType, Double> MIN_BUY_MULT = new HashMap<ItemType,Double>();
 	private static List<Trader> allTraders = new ArrayList<Trader>();
+
+	private static final int ITEMS_ON_SALE = 6;
 	
-	static {
+	public static void InitiailizeTraders() {
+		//clear all Traders, in case the player is restarting the game
+		allTraders.clear();
+		
+		//initialize min / max buy/sell multipliers for every item type
 		for (ItemType type : ItemType.values()) {
 			MAX_SELL_MULT.put(type, 1.5);
 			MIN_SELL_MULT.put(type, 0.25);
 			MAX_BUY_MULT.put(type, 2.0);
 			MIN_BUY_MULT.put(type, 0.75);
 		}
-	}
-	
-	public static void InitiailizeTraders() {
-		allTraders.clear();
+		
+		/* 
+		 * following lines involves creating trader at various map cells
+		 * with fixed locations and fixed names, this is because we want
+		 * the traders to be the same every game.
+		 */
+		
 		MapCell mc = MapCellHolder.instance.get(1, 1);
 		SpaceStationEntity sse = new SpaceStationEntity(3000, 3000);
 		sse.setTrader(new Trader("CPALL"));
@@ -52,14 +61,6 @@ public class Trader {
 		sse.setTrader(new Trader("Starbucks"));
 		mc.getEntities().add(sse);
 	}
-	
-	private List<Item> itemsOnSale;
-	private Map<ItemType, Double> sellPriceMultiplier;
-	private Map<ItemType, Double> buyPriceMultiplier;
-	private String name;
-	private boolean isAccessing;
-
-	private static final int ITEMS_ON_SALE = 6;
 	
 	public static double getMaxBuyPriceMultiplier(ItemType type) {
 		return MAX_BUY_MULT.get(type);
@@ -82,6 +83,12 @@ public class Trader {
 		return allTraders.get(random.nextInt(allTraders.size()));
 	}
 
+	private List<Item> itemsOnSale;
+	private Map<ItemType, Double> sellPriceMultiplier;
+	private Map<ItemType, Double> buyPriceMultiplier;
+	private String name;
+	private boolean isAccessing;
+	
 	public Trader(String name) {
 		this.name = name;
 		this.itemsOnSale = new ArrayList<>();
@@ -121,13 +128,16 @@ public class Trader {
 	}
 
 	public void generateItems() {
+		//generates items with random item types
 		for (int i = 0; i < ITEMS_ON_SALE; i++) {
 			this.itemsOnSale.add(new Item(ItemType.getRandomItemType()));
 		}
 	}
 
 	public Item playerBuyItem(Item item) {
+		//check if the trader is selling the item: this is purely for safety
 		if (this.itemsOnSale.contains(item)) {
+			//real Price is calculated by the Market's base price times the trader's multiplier
 			int realPrice = (int) (Market.getItemPrice(item.getItemType())
 					* this.buyPriceMultiplier.get(item.getItemType()));
 			if (Player.instance.getMoney() >= realPrice) {
