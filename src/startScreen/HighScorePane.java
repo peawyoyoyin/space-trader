@@ -6,6 +6,9 @@ import highscore.HighScoreParsingException;
 import highscore.HighScoreRecord;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Glow;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.paint.Color;
@@ -24,18 +27,25 @@ public class HighScorePane extends GridPane {
 		textName.setStroke(Color.BLACK);
 		textName.setStrokeWidth(2);
 		this.add(textName, 0, 0);
-		GridPane.setMargin(textName, new Insets(20, 0, 0, 80));
+		GridPane.setMargin(textName, new Insets(20, 0, 30, 80));
 
 		Text textBack = new Text("Back");
 		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
 		textBack.setFill(Color.WHITE);
 		textBack.setStroke(Color.BLACK);
 		textBack.setStrokeWidth(2);
+		textBack.setEffect(new DropShadow());
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
 		textBack.setOnMouseClicked(e -> {
 			StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
+		});
+		textBack.setOnMouseEntered(e -> {
+			textBack.setEffect(new Glow(0.5));
+		});
+		textBack.setOnMouseExited(e -> {
+			textBack.setEffect(new DropShadow());
 		});
 
 		container = new GridPane();
@@ -62,7 +72,9 @@ public class HighScorePane extends GridPane {
 			score.setStrokeWidth(2);
 			container.add(name, 0, 0);
 			container.add(score, 1, 0);
-			GridPane.setColumnSpan(name, 600);
+			ColumnConstraints column1 = new ColumnConstraints();
+			column1.setPercentWidth(50);
+			container.getColumnConstraints().add(column1);
 			int counter = 1;
 			for (HighScoreRecord highScoreRecord : HighScoreRecord.getAllHighScoreRecords()) {
 				Text Pname = new Text(highScoreRecord.getName());
@@ -75,7 +87,7 @@ public class HighScorePane extends GridPane {
 				Pscore.setFill(Color.WHITE);
 				Pscore.setStroke(Color.BLACK);
 				Pscore.setStrokeWidth(1);
-				
+
 				container.add(Pname, 0, counter);
 				container.add(Pscore, 1, counter);
 				counter++;

@@ -33,8 +33,13 @@ public class Bullet extends Entity implements Renderable {
 		this.shooter = shooter;
 		this.radius = 5;
 		this.z = 100;
-		this.image = ConfigConstant.Resource.BULLET_IMAGE;
-		ConfigConstant.Resource.LASER_SOUND.play(ConfigConstant.volumeSFX);
+		if (shooter instanceof PlayerShip) {
+			this.image = ConfigConstant.Resource.BULLET_IMAGE;
+			ConfigConstant.Resource.LASER_SOUND.play(ConfigConstant.volumeSFX);
+		} else {
+			this.image = ConfigConstant.Resource.BULLET_ENEMY_IMAGE;
+			ConfigConstant.Resource.LASER_SOUND.play(ConfigConstant.volumeSFX);
+		}
 	}
 
 	@Override
@@ -48,11 +53,14 @@ public class Bullet extends Entity implements Renderable {
 		}
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		for (Entity entity : mc.getEntities()) {
-			if (entity instanceof Ship && entity != this.getShooter()
-					&& this.isCollideWith(entity)) {
+			if (entity instanceof Ship && entity != this.getShooter() && this.isCollideWith(entity)) {
 				this.destroyed = true;
 				((Ship) entity).hit(this.getDamage());
-				mc.addNewEffect(new HitEffect(this.x, this.y, 40, 10));
+				if (shooter instanceof PlayerShip) {
+					mc.addNewEffect(new HitEffect(this.x, this.y, 6, true));
+				} else {
+					mc.addNewEffect(new HitEffect(this.x, this.y, 6, false));
+				}
 			}
 
 		}
@@ -63,7 +71,7 @@ public class Bullet extends Entity implements Renderable {
 		// TODO Auto-generated method stub
 		gc.translate(x, y);
 		gc.rotate(this.direction + 90);
-		gc.drawImage(image, -image.getWidth()/2, -image.getHeight()/2);
+		gc.drawImage(image, -image.getWidth() / 2, -image.getHeight() / 2);
 		gc.rotate(-this.direction - 90);
 		gc.translate(-x, -y);
 	}

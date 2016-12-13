@@ -14,6 +14,8 @@ import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.TextArea;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Glow;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -46,6 +48,7 @@ public class UpdatingPane extends GridPane {
 		textBack.setFill(Color.WHITE);
 		textBack.setStroke(Color.BLACK);
 		textBack.setStrokeWidth(2);
+		textBack.setEffect(new DropShadow());
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
@@ -53,6 +56,12 @@ public class UpdatingPane extends GridPane {
 			StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
 			container.getChildren().clear();
 			textlog = "";
+		});
+		textBack.setOnMouseEntered(e -> {
+			textBack.setEffect(new Glow(0.5));
+		});
+		textBack.setOnMouseExited(e -> {
+			textBack.setEffect(new DropShadow());
 		});
 
 		container.setPrefWidth(1120);

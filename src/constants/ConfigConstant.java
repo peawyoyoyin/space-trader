@@ -1,36 +1,34 @@
 package constants;
 
-import java.io.File;
-import java.io.FilePermission;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 import com.sun.javafx.tk.Toolkit;
 
 import javafx.scene.image.Image;
 import javafx.scene.media.AudioClip;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
 
 public class ConfigConstant {
 	public static final String GAME_NAME = "GAME NAME";
-	
+
 	public static String PLAYER_NAME = "< blank name >";
 	public static double volumeMusic = 1.00;
 	public static double volumeSFX = 1.00;
-	
+
 	public static final String HIGHSCORE_FILE = "highscores/highscore";
 
 	public static int startScreenHeight = 630;
 	public static int startScreenWidth = 1120;
-	
+
 	public static Font GAME_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 24);
-	public static final Font START_SCREEN_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 72);
-	public static final Font START_SCREEN_ITEM_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 56);
-	public static final Font START_SCREEN_SMALL_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);
+	public static final Font START_SCREEN_FONT = loadFont(
+			ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 72);
+	public static final Font START_SCREEN_ITEM_FONT = loadFont(
+			ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 56);
+	public static final Font START_SCREEN_SMALL_FONT = loadFont(
+			ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);
 
 	public static final String UPTODATE_TEXT = "Game Client is Up to Date";
 	public static final String SERVER_NOT_FOUND_TEXT = "Server Not Found";
@@ -51,19 +49,29 @@ public class ConfigConstant {
 		public static AudioClip LASER_SOUND = new AudioClip(ClassLoader.getSystemResource("sfx_laser1.wav").toString());
 		public static Image HPBAR_BACK = new Image(ClassLoader.getSystemResource("hpbar-bg.png").toString());
 		public static Image HPBAR_FRONT = new Image(ClassLoader.getSystemResource("hpbar-front.png").toString());
-		public static Image BULLET_IMAGE = new Image(ClassLoader.getSystemResource("Lasers/laserGreen12.png").toString());
+		public static Image BULLET_IMAGE = new Image(
+				ClassLoader.getSystemResource("Lasers/laserGreen12.png").toString());
 		public static AudioClip BOOM_SOUND = new AudioClip(ClassLoader.getSystemResource("DeathFlash.wav").toString());
+
+		public static Image BULLET_ENEMY_IMAGE = new Image(
+				ClassLoader.getSystemResource("Lasers/laserRed06.png").toString());
+		public static Image HIT_IMAGE = new Image(ClassLoader.getSystemResource("laserGreenShot.png").toString());
+		public static Image HIT_ENEMY_IMAGE = new Image(ClassLoader.getSystemResource("laserRedShot.png").toString());
+
 		public static Image SHIP_IMAGE = new Image(ClassLoader.getSystemResource("playerShip1_red.png").toString());
 		public static Image ENEMY_IMAGE = new Image(ClassLoader.getSystemResource("Enemies/enemyRed1.png").toString());
 		public static Image MAP_BACKGROUND = new Image(ClassLoader.getSystemResource("purple.png").toString());
 		public static Image SPACE_STATION = new Image(ClassLoader.getSystemResource("starbase-tex.png").toString());
 		public static Image BOOM_IMAGE = new Image(ClassLoader.getSystemResource("explosion_sp.png").toString());
-		public static Image PANEL_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_corners.png").toString());
-		public static Image BUTTON_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_projection.png").toString());
-		
 		public static Image STOCKS_BG = new Image(ClassLoader.getSystemResource("stocks-bg.png").toString());
 		public static Image NEWS_BG = new Image(ClassLoader.getSystemResource("news-bg.png").toString());
 		public static Image STATUS_BG = new Image(ClassLoader.getSystemResource("status-bg.png").toString());
+		public static Image PANEL_BACKGROUND_L = new Image(
+				ClassLoader.getSystemResource("glassPanel_L.png").toString());
+		public static Image PANEL_BACKGROUND_M = new Image(
+				ClassLoader.getSystemResource("glassPanel_M.png").toString());
+		public static Image BUTTON_BACKGROUND = new Image(
+				ClassLoader.getSystemResource("glassPanel_Button.png").toString());
 		
 		public static Image TRADER_FACE = new Image(ClassLoader.getSystemResource("trader/traderface.jpg").toString());
 		public static Image ITEM_GEM = new Image(ClassLoader.getSystemResource("itemicon/itemgem.png").toString());
@@ -75,8 +83,10 @@ public class ConfigConstant {
 				ClassLoader.getSystemResource("itemicon/itemmaterial.png").toString());
 
 		public static Font HUD_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 15);
-		public static Font HUD_MID_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 24);
-		public static Font HUD_HEADER_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);		
+		public static Font HUD_MID_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(),
+				24);
+		public static Font HUD_HEADER_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(),
+				36);
 	}
 
 	public static Font loadFont(String url, double size) {
@@ -91,5 +101,5 @@ public class ConfigConstant {
 		}
 		return null;
 	}
-	
+
 }
