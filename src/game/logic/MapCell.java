@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import constants.ConfigConstant;
 import game.gui.GameOverPane;
 import game.gui.GameScreen;
 import game.model.BombEffect;
@@ -88,6 +89,7 @@ public class MapCell {
 			if (entities.get(i).isDestroyed()) {
 				if (entities.get(i) instanceof Ship) {
 					this.entities.add(new BombEffect(entities.get(i).getX(), entities.get(i).getY()));
+					ConfigConstant.Resource.BOOM_SOUND.play(ConfigConstant.volumeSFX);
 				}
 				if (entities.get(i) instanceof EnemyShip){
 					Player.instance.addMoney(new Random().nextInt(50)+25);

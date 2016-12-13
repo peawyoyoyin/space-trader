@@ -33,10 +33,7 @@ public class Player {
 	private IntegerProperty moneyProperty;
 	private IntegerProperty bulletDamageProperty;
 	
-	private static final String PLACEHOLDER_NAME = "name is blank";
-	
 	public Player() {
-		this.playerName = PLACEHOLDER_NAME;
 		this.money = 0;
 		this.sectionX = 0;
 		this.sectionY = 0;
@@ -107,6 +104,7 @@ public class Player {
 	}
 
 	public void setBulletDamage(int bulletDamage) {
+		this.playerShip.setBulletDamage(bulletDamage);
 		this.bulletDamage = bulletDamage;
 	}
 
@@ -117,6 +115,7 @@ public class Player {
 
 
 	public void setBulletSpeed(int bulletSpeed) {
+		this.playerShip.setBulletSpeed(bulletSpeed);
 		this.bulletSpeed = bulletSpeed;
 	}
 

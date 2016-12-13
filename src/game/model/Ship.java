@@ -8,6 +8,8 @@ import game.logic.Renderable;
 
 public abstract class Ship extends Entity implements Renderable {
 
+	protected double bulletSpeed = 20;
+	protected int bulletDamage = 5;
 	protected int hp;
 	protected int maxHp;
 	protected double speed;
@@ -28,6 +30,22 @@ public abstract class Ship extends Entity implements Renderable {
 		this.turnRate = turnRate;
 		this.direction = direction;
 		this.z = 2;
+	}
+	
+	public double getBulletSpeed() {
+		return bulletSpeed;
+	}
+
+	public void setBulletSpeed(double bulletSpeed) {
+		this.bulletSpeed = bulletSpeed;
+	}
+
+	public int getBulletDamage() {
+		return bulletDamage;
+	}
+
+	public void setBulletDamage(int bulletDamage) {
+		this.bulletDamage = bulletDamage;
 	}
 
 	public int getHp() {
@@ -84,8 +102,8 @@ public abstract class Ship extends Entity implements Renderable {
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities()
 				.add(new Bullet(this.x + Math.cos(Math.toRadians(this.direction)) * 30,
-						this.y + Math.sin(Math.toRadians(this.direction)) * 30, Player.instance.getBulletSpeed(),
-						this.direction, Player.instance.getBulletDamage(), this));
+						this.y + Math.sin(Math.toRadians(this.direction)) * 30, this.bulletSpeed,
+						this.direction, this.bulletDamage, this));
 	}
 
 	public void healMaxHp() {

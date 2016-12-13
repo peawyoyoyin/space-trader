@@ -17,6 +17,9 @@ import javafx.scene.text.FontPosture;
 
 public class ConfigConstant {
 	public static final String GAME_NAME = "GAME NAME";
+	
+	public static double volumeMusic = 1;
+	public static double volumeSFX = 1;
 
 	public static int startScreenHeight = 630;
 	public static int startScreenWidth = 1120;
@@ -42,6 +45,7 @@ public class ConfigConstant {
 
 	public static class Resource {
 		public static AudioClip LASER_SOUND = new AudioClip(ClassLoader.getSystemResource("sfx_laser1.wav").toString());
+		public static AudioClip BOOM_SOUND = new AudioClip(ClassLoader.getSystemResource("DeathFlash.wav").toString());
 
 		public static Image BULLET_IMAGE = new Image(
 				ClassLoader.getSystemResource("Lasers/laserGreen12.png").toString());
@@ -50,7 +54,7 @@ public class ConfigConstant {
 		public static Image MAP_BACKGROUND = new Image(ClassLoader.getSystemResource("purple.png").toString());
 		public static Image SPACE_STATION = new Image(ClassLoader.getSystemResource("starbase-tex.png").toString());
 		public static Image BOOM_IMAGE = new Image(ClassLoader.getSystemResource("explosion_sp.png").toString());
-		public static Image PANEL_BACKGROUND = new Image(ClassLoader.getSystemResource("futureui.png").toString());
+		public static Image PANEL_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_corners.png").toString());
 		public static Image TRADER_FACE = new Image(ClassLoader.getSystemResource("trader/traderface.jpg").toString());
 		public static Image ITEM_GEM = new Image(ClassLoader.getSystemResource("itemicon/itemgem.png").toString());
 		public static Image ITEM_PARTS = new Image(ClassLoader.getSystemResource("itemicon/itemparts.png").toString());
