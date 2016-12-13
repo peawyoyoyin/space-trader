@@ -50,7 +50,7 @@ public class Main extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-				playerShip.hit(100);
+				//playerShip.hit(100);
 				if (Input.isKeyPressed(KeyCode.N)) {
 
 					System.out.println("new game");

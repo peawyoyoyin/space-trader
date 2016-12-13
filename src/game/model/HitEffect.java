@@ -1,24 +1,28 @@
 package game.model;
 
+import constants.ConfigConstant;
 import game.logic.Renderable;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 public class HitEffect extends Entity implements Renderable {
 
 	private int counter;
 	private int maxCounter;
-	private double maxRadius;
-	private double currentRadius;
+	private Image image;
 
-	public HitEffect(double x, double y, double maxRadius, int maxCounter) {
+	public HitEffect(double x, double y, int maxCounter, boolean isGreen) {
 		this.x = x;
 		this.y = y;
 		this.z = 3;
-		this.maxRadius = maxRadius;
 		this.maxCounter = maxCounter;
-		this.currentRadius = 0;
 		this.counter = 0;
+		if (isGreen) {
+			this.image = ConfigConstant.Resource.HIT_IMAGE;
+		} else {
+			this.image = ConfigConstant.Resource.HIT_ENEMY_IMAGE;
+		}
 	}
 
 	@Override
@@ -28,7 +32,6 @@ public class HitEffect extends Entity implements Renderable {
 		if (this.counter > this.maxCounter) {
 			this.destroyed = true;
 		}
-		this.currentRadius = this.currentRadius + this.maxRadius / this.maxCounter;
 	}
 
 	@Override
@@ -36,12 +39,7 @@ public class HitEffect extends Entity implements Renderable {
 		// TODO Auto-generated method stub
 		gc.translate(x, y);
 		gc.setStroke(Color.DARKGRAY);
-		double i = 0;
-		for (int j = 0; j < currentRadius; j++) {
-			gc.setGlobalAlpha(i);
-			gc.strokeOval(-j/2, -j/2, j, j);
-			i = i + 0.01;
-		}
+		gc.drawImage(image, -image.getWidth()/4, -image.getHeight()/4,image.getWidth()/2,image.getHeight()/2);
 		gc.setGlobalAlpha(1);
 		gc.translate(-x, -y);
 	}
