@@ -23,25 +23,28 @@ public class StockGraph extends StackPane {
 	
 	public StockGraph() {
 		super();
+		//create a canvas to draw background
 		Canvas back = new Canvas(200,200);
 		back.getGraphicsContext2D().setFill(Color.BLACK);
 		back.getGraphicsContext2D().fillRect(0, 0, 200, 200);
 		this.getChildren().add(back);
 		this.setMaxWidth(250);
 		this.setMaxHeight(200);
+
 		this.setEffect(new Glow(5));
 		
+		//create the chart
 		Axis<Number> xAxis = new NumberAxis();
 		xAxis.setTickLabelsVisible(false);
 		xAxis.setTickMarkVisible(false);
 		((ValueAxis<Number>) xAxis).setMinorTickVisible(false);
+		
 		Axis<Number> yAxis = new NumberAxis();
 		yAxis.setTickLabelsVisible(false);
 		yAxis.setTickMarkVisible(false);
 		((ValueAxis<Number>) yAxis).setMinorTickVisible(false);
 		this.series = new Series<>();
 		
-
 		this.lineChart = new LineChart<Number, Number>(xAxis, yAxis);
 		this.lineChart.setEffect(new DropShadow(5, Color.AQUAMARINE));
 		this.lineChart.setCreateSymbols(false);
@@ -72,17 +75,25 @@ public class StockGraph extends StackPane {
 		if(stock == null) {
 			return;
 		}
-
+		
+		//clear the chart
 		this.lineChart.getData().clear();
-		Axis yAxis = this.lineChart.getYAxis();
+		
+		//plots the chart using the stock's priceHistory
+		Axis<Number> yAxis = this.lineChart.getYAxis();
 		yAxis.setAutoRanging(false);
+		
+		//set the y axis's bounds so the lines don't actually touch the top and the bottom of the chart
+		//this makes reading the chart easier
 		((NumberAxis) yAxis).setUpperBound(this.stock.getMaxPrice()*1.1);
-		((NumberAxis) yAxis).setLowerBound(this.stock.getMinPrice()-10);
+		((NumberAxis) yAxis).setLowerBound(this.stock.getMinPrice()-9);
+
 		this.series = new Series<Number,Number>();
 		List<Integer> priceHistory = this.stock.getPriceHistory();
 		for(int i=0; i<priceHistory.size(); i++) {
 			this.series.getData().add(new Data<Number, Number>(i, priceHistory.get(i)));
 		}
+		
 		this.lineChart.getData().add(this.series);
 	}
 }

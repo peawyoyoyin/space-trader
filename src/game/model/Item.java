@@ -19,29 +19,6 @@ public class Item extends Entity implements Renderable {
 			return ItemType.values()[random.nextInt(ItemType.values().length)];
 		}
 
-		public static String toString(ItemType itemType) {
-			switch (itemType) {
-			case MATERIAL: {
-				return "materials";
-			}
-			case WEAPON: {
-				return "weapons";
-			}
-			case GEM: {
-				return "gems";
-			}
-			case PARTS: {
-				return "parts";
-			}
-			case JUNK: {
-				return "junk";
-			}
-			default: {
-				return "NoneType";
-			}
-			}
-		}
-
 		public static Image getItemIcon(ItemType type) {
 			Image image = null;
 
@@ -74,6 +51,29 @@ public class Item extends Entity implements Renderable {
 			}
 
 			return image;
+		}
+		
+		public String toString() {
+			switch (this) {
+			case MATERIAL: {
+				return "materials";
+			}
+			case WEAPON: {
+				return "weapons";
+			}
+			case GEM: {
+				return "gems";
+			}
+			case PARTS: {
+				return "parts";
+			}
+			case JUNK: {
+				return "junk";
+			}
+			default: {
+				return "NoneType";
+			}
+			}
 		}
 	}
 

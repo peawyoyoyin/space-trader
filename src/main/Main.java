@@ -31,28 +31,41 @@ public class Main extends Application {
 	private static Scene scene;
 	private static AnimationTimer gameRunner;
 
+	/**
+	 * newGame is called on every time the game starts
+	 */
 	public static void newGame() {
 		ConfigConstant.Resource.MENU_MUSIC.stop();
 		ConfigConstant.Resource.GAME_MUSIC.play(ConfigConstant.volumeMusic);
+		
 		Input.Initialize(scene);
 		Market.InitializeMarket();
+		//re-initialize mapCells
 		MapCellHolder.instance = new MapCellHolder();
+
 		Trader.InitiailizeTraders();
+		
 		GameScreen.instance = new GameScreen();
+		
+		//re-initialize Player
 		Player.instance = new Player();
 		PlayerShip playerShip = new PlayerShip(3000, 3000, 100, 100, 0, 8, 1, 3, 0);
 		Player.instance.setPlayerShip(playerShip);
 		Player.instance.addMoney(500);
 		Player.instance.setSectionX(1);
 		Player.instance.setSectionY(1);
+		
+		//initialize game HUD
 		MinimapPane.initializeMinimap();
 		PlayerInfoPane.instance = new PlayerInfoPane();
+		
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities().add(playerShip);
 		Canvas gamePane = new Canvas(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 		GameScreen.instance.changeCenter(gamePane);
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
 
+		//create a animationTimer (called gameRunner) that call update methods periodically.
 		gameRunner = new AnimationTimer() {
 			int counter = 0;
 
@@ -62,12 +75,15 @@ public class Main extends Application {
 				mc.update(gc);
 				Input.inputUpdate();
 				counter++;
+				
+				//every 1000 ticks one mapCell generate stronger enemies
 				if (counter % 1000 == 0) {
 					Random rd = new Random();
 					boolean isNormalMC = false;
 					int x = 0, y = 0;
 					MapCell mcUpgrade = null;
 					while (!isNormalMC) {
+						//randomly choose a mapCell, until the mapCell contains no SpaceStationEntity
 						x = rd.nextInt(5);
 						y = rd.nextInt(5);
 						mcUpgrade = MapCellHolder.instance.get(x, y);
@@ -78,8 +94,12 @@ public class Main extends Application {
 						}
 						isNormalMC = true;
 					}
+					
+					//add news
 					NewsPane.instance.addNews(new News("Universe", "Monster in sector " + Integer.toString(x) + "-"
 							+ Integer.toString(y) + " are now stronger!"));
+					
+					//upgrade the mapCell's enemy generation
 					mcUpgrade.upgradeEnemyDmg(rd.nextInt(5));
 					mcUpgrade.upgradeEnemyHp(rd.nextInt(5) * 5);
 				}
@@ -90,7 +110,11 @@ public class Main extends Application {
 		scene.setRoot(GameScreen.instance);
 
 	}
-
+	
+	/**
+	 * this method is called when the player dies and goes back the the start screen
+	 * stop all running threads
+	 */
 	public static void toStartScreen() {
 		gameRunner.stop();
 		StartScreen.getInstance().changePane(StartScreen.getInstance().getStartPane());

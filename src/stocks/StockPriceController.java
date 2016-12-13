@@ -3,6 +3,9 @@ package stocks;
 import java.util.Random;
 
 public class StockPriceController {
+	public static final int DIRECTION_DOWN = -1;
+	public static final int DIRECTION_UP = 1;
+	
 	private Stock stock;
 	private Random random;
 	private int priceChangeModifier;
@@ -10,9 +13,6 @@ public class StockPriceController {
 	private int maxStep;
 	private int step;
 	private int direction;
-	
-	public static final int DIRECTION_DOWN = -1;
-	public static final int DIRECTION_UP = 1;
 	
 	public StockPriceController(Stock stock, int priceChangeModifier) {
 		this.stock = stock;
@@ -24,6 +24,8 @@ public class StockPriceController {
 	
 	public void updateStockPrice() {
 		this.step = this.random.nextInt(this.maxStep+1);
+		
+		//randomly chooses a direction : up or down
 		int[] temp = {DIRECTION_UP,DIRECTION_DOWN};
 		this.direction = temp[this.random.nextInt(2)];
 		

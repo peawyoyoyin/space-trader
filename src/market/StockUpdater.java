@@ -17,16 +17,15 @@ public class StockUpdater extends Thread {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		super.run();
 		try {
+			//until it is interrupted, update the stockPrice every for updateInterval, forever.
 			while (true) {
 				Thread.sleep(this.updateInterval);
 				Platform.runLater(new Runnable() {
-
+					
 					@Override
 					public void run() {
-						// TODO Auto-generated method stub
 						stockPriceController.updateStockPrice();
 						StocksScreen.instance.getStockGraph().updateGraph();
 					}
@@ -37,13 +36,5 @@ public class StockUpdater extends Thread {
 			System.out.println("Stockupdater Interrupted");
 		}
 
-	}
-
-	public void setUpdateInterval(int updateInterval) {
-		this.updateInterval = updateInterval;
-	}
-
-	public int getUpdateInterval() {
-		return this.updateInterval;
 	}
 }

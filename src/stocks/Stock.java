@@ -9,7 +9,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 public class Stock {
 	
 	private static final List<Stock> GAME_STOCKS = new ArrayList<>();
-	
 	public static final int MAX_HISTORY_SIZE = 40;
 	
 	public static void initializeGameStocks() {
@@ -23,6 +22,7 @@ public class Stock {
 	private String name;
 	private int price;
 	
+	//priceProperty is used for the ease of binding to texts
 	private IntegerProperty priceProperty;
 	
 	private List<Integer> priceHistory;
@@ -82,12 +82,27 @@ public class Stock {
 		this.setNewPrice(price);
 	}
 	
+	/**
+	 * setNewPrice sets the price of the stock to a new Price,
+	 * and adds the price the its priceHistory, this way prices
+	 * are recorded for the sake of plotting it on StockGraph.
+	 * 
+	 * public methods increasePrice, decreasePrice and setPrice calls setNewPrice
+	 * 
+	 * @param price the price to set, usually automatically passed by the public set methods
+	 */
 	private void setNewPrice(int price) {
+		
 		this.price = price;
+		
+		//add price to priceHistory
 		this.priceHistory.add(this.price);
+		
+		//resize priceHistory so it isn't to large
 		if(priceHistory.size() > MAX_HISTORY_SIZE) {
 			priceHistory.remove(0);
 		}
+		
 		this.priceProperty.set(price);
 	}
 

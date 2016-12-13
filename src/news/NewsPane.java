@@ -20,6 +20,7 @@ class NewsPaneTop extends StackPane {
 
 public class NewsPane extends BorderPane {
 	public static NewsPane instance = new NewsPane();
+	
 	private NewsFeedPane newsFeedPane;
 
 	NewsFeed newsFeed;
@@ -47,7 +48,6 @@ public class NewsPane extends BorderPane {
 	}
 
 	public void clearFeed() {
-
 		this.newsFeed.getChildren().clear();
 	}
 }

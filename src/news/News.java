@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class News {
-	private String author;
-	private String content;
-	
+	//random news are used in Market's randomNews events
 	public static List<News> randomNews = new ArrayList<>();
 	
 	static {
@@ -34,6 +32,9 @@ public class News {
 	public static News getRandomNews() {
 		return randomNews.get(new Random().nextInt(randomNews.size()));
 	}
+	
+	private String author;
+	private String content;
 	
 	public News(String author) {
 		this.author = author;

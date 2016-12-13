@@ -83,20 +83,24 @@ public class ConfigConstant {
 				24);
 		public static Font HUD_HEADER_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(),
 				36);
+
 		static {
 			GAME_MUSIC.setCycleCount(AudioClip.INDEFINITE);
 			MENU_MUSIC.setCycleCount(AudioClip.INDEFINITE);
 		}
+
 	}
 
+	/**
+	 * this method uses Toolkit.getToolkit() to load font. this is created to
+	 * solve font loading problems on some computer.
+	 */
 	public static Font loadFont(String url, double size) {
 		try {
 			return Toolkit.getToolkit().getFontLoader().loadFont(new URL(url).openConnection().getInputStream(), size);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

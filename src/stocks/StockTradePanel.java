@@ -24,7 +24,7 @@ public class StockTradePanel extends GridPane {
 		this.setHgap(20);
 		this.setMinHeight(70);
 		this.setAlignment(Pos.CENTER);
-//		this.setStyle("-fx-background-color: gray;");
+
 		this.buyButton = new Button("Buy");
 		this.buyButton.setOnAction(event -> {
 			this.buyStock();

@@ -23,6 +23,7 @@ public class TraderItemPricesList extends VBox {
 			this.setSpacing(5);
 			this.setPrefWidth(200);
 			
+			//draw item icon based on item type
 			Canvas itemIcon = new Canvas(40,40);
 			itemIcon.getGraphicsContext2D().drawImage(ItemType.getItemIcon(type), 0, 0, 40, 40);
 			
@@ -32,14 +33,20 @@ public class TraderItemPricesList extends VBox {
 		}
 	}
 	
+	/**
+	 * TraderItemPricesList is used to sell items (from player to trader)
+	 * it contains multiple TraderItemPriceCells, one for each ItemType
+	 * 
+	 * @param trader the trader the player is selling to.
+	 */
 	public TraderItemPricesList(Trader trader) {
 		this.setMaxHeight(400);
-//		this.setStyle("-fx-background-color: red;");
 		this.setAlignment(Pos.TOP_CENTER);
 		this.setSpacing(5);
 		Label top = new Label("Sell");
 		top.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.getChildren().add(top);
+		
 		for(ItemType type : ItemType.values()) {
 			TraderItemPriceCell priceCell = new TraderItemPriceCell(type, trader);
 			priceCell.setOnMouseClicked(event -> {
@@ -53,12 +60,14 @@ public class TraderItemPricesList extends VBox {
 			});
 			this.getChildren().add(priceCell);
 		}
+		
 		VBox space = new VBox();
 		this.getChildren().add(space);
 		VBox.setVgrow(space, Priority.ALWAYS);
 		this.setPadding(new Insets(0,0,50,0));
 		Button upgrade = new Button("Upgrade");
 		this.getChildren().add(upgrade);
+		
 		upgrade.setOnAction(e -> {
 			TraderScreen.togglePane();
 		});
