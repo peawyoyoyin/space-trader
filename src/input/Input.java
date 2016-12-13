@@ -45,7 +45,6 @@ public class Input {
 	}
 	
 	public static void inputUpdate() {
-		//System.out.println(keyDown);
 		keyPress.clear();
 	}
 }

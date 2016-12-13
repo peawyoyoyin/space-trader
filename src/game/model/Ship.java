@@ -94,7 +94,7 @@ public abstract class Ship extends Entity implements Renderable {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.addNewEffect(new TailShipEffect(this.x + Math.cos(Math.toRadians(this.direction + 180)) * 10,
 				this.y + Math.sin(Math.toRadians(this.direction + 180)) * 10, 40, this.direction));

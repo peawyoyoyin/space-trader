@@ -32,6 +32,9 @@ public class HighScore {
 		if(highScoreRecords.isEmpty()) {
 			return true;
 		}
+		if(highScoreRecords.size() < MAX_ENTRY) {
+			return true;
+		}
 		for (HighScoreRecord highScoreRecord : highScoreRecords) {
 			if(score > highScoreRecord.getScore()) {
 				return true;

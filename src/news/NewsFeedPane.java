@@ -1,5 +1,6 @@
 package news;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.layout.VBox;
@@ -12,6 +13,7 @@ public class NewsFeedPane extends ScrollPane{
 		this.newsFeed = new NewsFeed();
 		this.setMinWidth(250);
 		this.setMaxHeight(500);
+		this.setPadding(new Insets(5));
 		this.setVbarPolicy(ScrollBarPolicy.NEVER);
 		this.setHbarPolicy(ScrollBarPolicy.NEVER);
 		this.setContent(newsFeed);

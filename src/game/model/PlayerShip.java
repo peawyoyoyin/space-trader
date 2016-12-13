@@ -27,7 +27,7 @@ public class PlayerShip extends Ship implements Friendly {
 	public PlayerShip(int x, int y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
 			int direction) {
 		super(x, y, hp, maxHp, speed, maxSpeed, accelerate, turnRate, direction);
-		// TODO Auto-generated constructor stub
+
 		this.radius = 25;
 		this.image = ConfigConstant.Resource.SHIP_IMAGE;
 		this.delayShoot = 10;
@@ -37,11 +37,12 @@ public class PlayerShip extends Ship implements Friendly {
 		this.maxHpProperty = new SimpleIntegerProperty();
 		this.maxHpProperty.set(maxHp);
 		this.speedProperty = new SimpleDoubleProperty(this.maxSpeed);
+		this.z = 5;
 	}
 
 	@Override
 	public void setMaxSpeed(int maxSpeed) {
-		// TODO Auto-generated method stub
+
 		super.setMaxSpeed(maxSpeed);
 		this.speedProperty.set(maxSpeed);
 	}
@@ -66,7 +67,7 @@ public class PlayerShip extends Ship implements Friendly {
 
 	@Override
 	public void render(GraphicsContext gc) {
-		// TODO Auto-generated method stub
+
 		gc.translate(x, y);
 		gc.rotate(this.direction + 90);
 		gc.drawImage(image, -image.getWidth() / 2, -image.getHeight() / 2);
@@ -77,22 +78,21 @@ public class PlayerShip extends Ship implements Friendly {
 
 	@Override
 	public void setMaxHp(int maxHp) {
-		// TODO Auto-generated method stub
+
 		super.setMaxHp(maxHp);
 		this.maxHpProperty.set(maxHp);
 	}
 
 	@Override
 	public void hit(int damage) {
-		// TODO Auto-generated method stub
+
 		super.hit(damage);
 		this.hpProperty.set(this.getHp());
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-
+		
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		if (this.x <= radius && Player.instance.getSectionX() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() - 1,

@@ -1,6 +1,10 @@
 package game.gui;
 
+import game.logic.MapCell;
+import game.logic.MapCellHolder;
 import game.logic.Player;
+import game.model.Entity;
+import game.model.SpaceStationEntity;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.canvas.Canvas;
@@ -35,13 +39,29 @@ public class MinimapPane extends Canvas {
 
 	public void render() {
 		gc.clearRect(0, 0, 200, 200);
-		gc.setStroke(Color.BLACK);
+		for (int i = 0; i < 5; i++) {
+			for(int j = 0; j < 5; j++) {
+				MapCell mc = MapCellHolder.instance.get(i, j);
+				gc.setFill(Color.BLUEVIOLET);
+				gc.fillRect(40*i, 40*j, 40, 40);
+				for (Entity entity : mc.getEntities()) {
+					if(entity instanceof SpaceStationEntity) {
+						gc.setFill(Color.CADETBLUE);
+						gc.fillOval(40*i+5, 40*j+5, 30, 30);
+						break;
+					}
+				}
+			}
+		}
+		
+		gc.setStroke(Color.BEIGE);
 		for (int i = 0; i < 6; i++) {
 			gc.strokeLine(0, 40 * i, 200, 40 * i);
 		}
 		for (int i = 0; i < 6; i++) {
 			gc.strokeLine(40 * i, 0, 40 * i, 200);
 		}
+
 		gc.setFill(Color.AQUAMARINE);
 		gc.translate(sectionX.get() * 40, sectionY.get() * 40);
 		gc.fillPolygon(new double[]{ 5, 20, 35},new double[]{ 35, 5, 35},3);

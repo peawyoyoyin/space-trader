@@ -48,7 +48,7 @@ public class Trader {
 		mc.getEntities().add(sse);
 		
 		mc = MapCellHolder.instance.get(3, 3);
-		sse = new SpaceStationEntity(3, 3);
+		sse = new SpaceStationEntity(3000, 3000);
 		sse.setTrader(new Trader("Starbucks"));
 		mc.getEntities().add(sse);
 	}
