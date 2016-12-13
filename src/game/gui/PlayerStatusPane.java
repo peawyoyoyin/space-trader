@@ -8,7 +8,7 @@ import game.logic.Player;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -53,7 +53,7 @@ public class PlayerStatusPane extends BorderPane {
 
 	public PlayerStatusPane() {
 		super();
-		this.setStyle("-fx-background-color: gray;");
+//		this.setStyle("-fx-background-color: gray;");
 		this.playerStatus = new PlayerStatus();
 		this.setCenter(playerStatus);
 	}

@@ -14,7 +14,7 @@ public class PlayerInfoPane extends BorderPane {
 	
 	private PlayerInfoPane() {
 		super();
-		this.setStyle("-fx-background-color: gray;");
+//		this.setStyle("-fx-background-color: gray;");
 		this.setPrefSize(ConfigConstant.gameScreen_left_width, ConfigConstant.gameScreenHeight);
 		this.playerStatusPane = new PlayerStatusPane();
 		this.setTop(MinimapPane.instance);

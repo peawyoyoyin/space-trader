@@ -61,6 +61,10 @@ public class ConfigConstant {
 		public static Image PANEL_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_corners.png").toString());
 		public static Image BUTTON_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_projection.png").toString());
 		
+		public static Image STOCKS_BG = new Image(ClassLoader.getSystemResource("stocks-bg.png").toString());
+		public static Image NEWS_BG = new Image(ClassLoader.getSystemResource("news-bg.png").toString());
+		public static Image STATUS_BG = new Image(ClassLoader.getSystemResource("status-bg.png").toString());
+		
 		public static Image TRADER_FACE = new Image(ClassLoader.getSystemResource("trader/traderface.jpg").toString());
 		public static Image ITEM_GEM = new Image(ClassLoader.getSystemResource("itemicon/itemgem.png").toString());
 		public static Image ITEM_PARTS = new Image(ClassLoader.getSystemResource("itemicon/itemparts.png").toString());

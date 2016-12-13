@@ -1,5 +1,6 @@
 package stocks;
 
+import constants.ConfigConstant;
 import game.logic.Player;
 import gamedata.PlayerStocksPortFolio;
 import gamedata.StockTradeData;
@@ -23,7 +24,7 @@ public class StockTradePanel extends GridPane {
 		this.setHgap(20);
 		this.setMinHeight(70);
 		this.setAlignment(Pos.CENTER);
-		this.setStyle("-fx-background-color: gray;");
+//		this.setStyle("-fx-background-color: gray;");
 		this.buyButton = new Button("Buy");
 		this.buyButton.setOnAction(event -> {
 			this.buyStock();
@@ -33,6 +34,7 @@ public class StockTradePanel extends GridPane {
 			this.sellStock();
 		});
 		this.stockNameLabel = new Label("Stock Name");
+		this.stockNameLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 		
 		this.stock = null;
 		

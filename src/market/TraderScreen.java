@@ -6,10 +6,12 @@ import java.util.List;
 import constants.ConfigConstant;
 import game.logic.Player;
 import game.model.Item;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -73,6 +75,8 @@ public class TraderScreen extends StackPane{
 		this.itemsOnSale = new VBox();
 		this.itemsOnSale.setAlignment(Pos.TOP_CENTER);
 		
+		front.setPadding(new Insets(20,0,0,10));
+		
 		((BorderPane) front.getCenter()).setCenter(itemsOnSale);
 		((BorderPane) front.getCenter()).setRight(this.priceList);
 		
@@ -82,8 +86,9 @@ public class TraderScreen extends StackPane{
 		front.setTop(top);
 		
 		Canvas back = new Canvas(400,400);
-		back.getGraphicsContext2D().setFill(Color.RED);
-		back.getGraphicsContext2D().fillRect(0, 0, 400, 400);
+		back.getGraphicsContext2D().setEffect(new Glow(1));
+		back.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND, 0, 0, 400 ,400);
+		back.getGraphicsContext2D().setEffect(null);
 		
 		this.getChildren().addAll(back,front);
 	}

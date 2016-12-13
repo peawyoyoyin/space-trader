@@ -1,10 +1,12 @@
 package stocks;
 
+import constants.ConfigConstant;
 import gamedata.PlayerStocksPortFolio;
 import gamedata.StockTradeData;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
@@ -18,15 +20,17 @@ public class StockCell extends GridPane {
 	
 	public void setActive(boolean active) {
 		if(active) {
-			this.setStyle("-fx-background-color: lightgray;");
+//			this.setStyle("-fx-background-color: lightgray;");
+			this.setEffect(new DropShadow(5, Color.AQUAMARINE));
 		} else {
-			this.setStyle("-fx-background-color: gray;");
+//			this.setStyle("-fx-background-color: gray;");
+			this.setEffect(null);
 		}
 	}
 	
 	public StockCell(Stock stock) {
 		super();
-		this.setStyle("-fx-background-color: gray;");
+//		this.setStyle("-fx-background-color: gray;");
 		this.setPadding(new Insets(0,0,0,5));
 		this.setMinHeight(40);
 		this.setHgap(20);
@@ -36,6 +40,8 @@ public class StockCell extends GridPane {
 		this.stockPriceLabel = new Label(Integer.toString(this.stock.getPrice()));
 		this.stockPriceLabel.textProperty().bind(this.stock.getPriceProperty().asString());
 		this.stockChangeLabel = new StockChangeLabel();
+		
+
 
 		this.instockLabel = new Label(Integer.toString(PlayerStocksPortFolio.instance.getStockTradeData(stock).getInstock()));
 		this.instockLabel.textProperty().bind(PlayerStocksPortFolio.instance.getStockTradeData(stock).getInstockProperty().asString());
@@ -54,6 +60,11 @@ public class StockCell extends GridPane {
 			}
 			stockChangeLabel.setChange(change);
 		});
+		
+		this.stockNameLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		this.stockPriceLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		this.instockLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		this.stockChangeLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 	}
 	
 	public Stock getStock() {

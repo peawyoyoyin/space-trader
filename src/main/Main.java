@@ -36,6 +36,8 @@ public class Main extends Application {
 		PlayerShip playerShip = new PlayerShip(3000, 3000, 5, 100, 0, 10, 1, 3, 0);
 		Player.instance.setPlayerShip(playerShip);
 		Player.instance.addMoney(500);
+		Player.instance.setSectionX(1);
+		Player.instance.setSectionY(1);
 
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities().add(playerShip);
@@ -85,11 +87,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-
-	@Deprecated
-	public void toggleGamescreen() {
-	}
-
+	
 	@Override
 	public void stop() throws Exception {
 		// TODO Auto-generated method stub

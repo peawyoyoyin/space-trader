@@ -9,7 +9,10 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.ValueAxis;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Glow;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 
 public class StockGraph extends StackPane {
 	
@@ -21,9 +24,8 @@ public class StockGraph extends StackPane {
 		super();
 		
 		this.setMaxWidth(250);
-
 		this.setMaxHeight(200);
-		this.setStyle("-fx-background-color:gray;");
+		this.setEffect(new Glow(5));
 		
 		Axis<Number> xAxis = new NumberAxis();
 		xAxis.setTickLabelsVisible(false);
@@ -35,7 +37,9 @@ public class StockGraph extends StackPane {
 		((ValueAxis<Number>) yAxis).setMinorTickVisible(false);
 		this.series = new Series<>();
 		
+
 		this.lineChart = new LineChart<Number, Number>(xAxis, yAxis);
+		this.lineChart.setEffect(new DropShadow(5, Color.AQUAMARINE));
 		this.lineChart.setCreateSymbols(false);
 		this.lineChart.getData().add(this.series);
 		this.lineChart.setTitle("");
