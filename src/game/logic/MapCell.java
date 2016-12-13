@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-<<<<<<< HEAD
+
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
-=======
->>>>>>> origin/master
 import constants.ConfigConstant;
 import game.gui.GameOverPane;
 import game.gui.GameScreen;
