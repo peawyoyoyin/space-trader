@@ -2,13 +2,9 @@ package constants;
 
 import java.io.File;
 import java.io.FilePermission;
-<<<<<<< HEAD
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
-=======
-import java.io.InputStream;
->>>>>>> origin/master
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -30,10 +26,11 @@ public class ConfigConstant {
 
 	public static int startScreenHeight = 630;
 	public static int startScreenWidth = 1120;
-	public static final Font START_SCREEN_FONT = Font.font("Verdana", FontPosture.REGULAR, 72);
-	public static final Font START_SCREEN_ITEM_FONT = Font.font("Verdana", FontPosture.REGULAR, 56);
-
-	public static final Font GAME_FONT = Font.font("Verdana", FontPosture.REGULAR, 24);
+	
+	public static Font GAME_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 24);
+	public static final Font START_SCREEN_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 72);
+	public static final Font START_SCREEN_ITEM_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 56);
+	public static final Font START_SCREEN_SMALL_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);
 
 	public static final String UPTODATE_TEXT = "Game Client is Up to Date";
 	public static final String SERVER_NOT_FOUND_TEXT = "Server Not Found";
@@ -62,6 +59,8 @@ public class ConfigConstant {
 		public static Image SPACE_STATION = new Image(ClassLoader.getSystemResource("starbase-tex.png").toString());
 		public static Image BOOM_IMAGE = new Image(ClassLoader.getSystemResource("explosion_sp.png").toString());
 		public static Image PANEL_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_corners.png").toString());
+		public static Image BUTTON_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_projection.png").toString());
+		
 		public static Image TRADER_FACE = new Image(ClassLoader.getSystemResource("trader/traderface.jpg").toString());
 		public static Image ITEM_GEM = new Image(ClassLoader.getSystemResource("itemicon/itemgem.png").toString());
 		public static Image ITEM_PARTS = new Image(ClassLoader.getSystemResource("itemicon/itemparts.png").toString());
@@ -72,7 +71,7 @@ public class ConfigConstant {
 				ClassLoader.getSystemResource("itemicon/itemmaterial.png").toString());
 
 		public static Font HUD_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 15);
-
+		public static Font HUD_HEADER_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(), 36);		
 	}
 
 	public static Font loadFont(String url, double size) {

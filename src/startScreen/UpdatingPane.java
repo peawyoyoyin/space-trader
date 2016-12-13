@@ -44,7 +44,7 @@ public class UpdatingPane extends GridPane {
 		});
 
 		container.setPrefWidth(1120);
-		container.setAlignment(Pos.TOP_CENTER);
+		container.setAlignment(Pos.CENTER);
 		container.setSpacing(10);
 		this.add(container, 0, 1);
 		GridPane.setVgrow(container, Priority.ALWAYS);
@@ -52,7 +52,7 @@ public class UpdatingPane extends GridPane {
 
 	public void startUpdate() {
 		Text textStatus = new Text("Connecting to server");
-		textStatus.setFont(Font.font(48));
+		textStatus.setFont(ConfigConstant.START_SCREEN_SMALL_FONT);
 		container.getChildren().add(textStatus);
 
 		AnimationTimer animater = new AnimationTimer() {
