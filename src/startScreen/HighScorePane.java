@@ -6,6 +6,7 @@ import highscore.HighScoreParsingException;
 import highscore.HighScoreRecord;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.paint.Color;
@@ -62,7 +63,9 @@ public class HighScorePane extends GridPane {
 			score.setStrokeWidth(2);
 			container.add(name, 0, 0);
 			container.add(score, 1, 0);
-			GridPane.setColumnSpan(name, 600);
+			ColumnConstraints column1 = new ColumnConstraints();
+			column1.setPercentWidth(50);
+			container.getColumnConstraints().add(column1);
 			int counter = 1;
 			for (HighScoreRecord highScoreRecord : HighScoreRecord.getAllHighScoreRecords()) {
 				Text Pname = new Text(highScoreRecord.getName());
@@ -75,7 +78,7 @@ public class HighScorePane extends GridPane {
 				Pscore.setFill(Color.WHITE);
 				Pscore.setStroke(Color.BLACK);
 				Pscore.setStrokeWidth(1);
-				
+
 				container.add(Pname, 0, counter);
 				container.add(Pscore, 1, counter);
 				counter++;
