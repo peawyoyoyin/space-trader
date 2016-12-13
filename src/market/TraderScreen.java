@@ -87,7 +87,7 @@ public class TraderScreen extends StackPane{
 		
 		Canvas back = new Canvas(400,400);
 		back.getGraphicsContext2D().setEffect(new Glow(1));
-		back.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND, 0, 0, 400 ,400);
+		back.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND_M, 0, 0, 400 ,400);
 		back.getGraphicsContext2D().setEffect(null);
 		
 		this.getChildren().addAll(back,front);

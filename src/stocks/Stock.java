@@ -12,6 +12,14 @@ public class Stock {
 	
 	public static final int MAX_HISTORY_SIZE = 40;
 	
+	public static void initializeGameStocks() {
+		GAME_STOCKS.clear();
+		GAME_STOCKS.add(new Stock("JTC",15,10,50));
+		GAME_STOCKS.add(new Stock("PGMTH",12,9,23));
+		GAME_STOCKS.add(new Stock("CPS",40,32,70));
+		System.out.println("GameStocks initialized");
+	}
+	
 	private String name;
 	private int price;
 	
@@ -22,13 +30,7 @@ public class Stock {
 	private int minPrice;
 	private int maxPrice;
 	
-	public static void initializeGameStocks() {
-		GAME_STOCKS.clear();
-		GAME_STOCKS.add(new Stock("JTC",15,10,50));
-		GAME_STOCKS.add(new Stock("PGMTH",12,9,23));
-		GAME_STOCKS.add(new Stock("CPS",40,32,70));
-		System.out.println("GameStocks initialized");
-	}
+
 	
 	public Stock(String name, int basePrice, int minPrice, int maxPrice) {
 		this.name = name;
