@@ -1,17 +1,14 @@
 package game.logic;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+import constants.ConfigConstant;
 import game.model.Item;
-import game.model.PlayerShip;
 import game.model.Item.ItemType;
+import game.model.PlayerShip;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.MapProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleMapProperty;
 
 public class Player {
 	public static Player instance = new Player();
@@ -34,6 +31,7 @@ public class Player {
 	private IntegerProperty bulletDamageProperty;
 	
 	public Player() {
+		this.playerName = ConfigConstant.PLAYER_NAME;
 		this.money = 0;
 		this.sectionX = 0;
 		this.sectionY = 0;

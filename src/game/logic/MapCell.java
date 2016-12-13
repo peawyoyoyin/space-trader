@@ -14,6 +14,7 @@ import game.model.Item;
 import game.model.PlayerShip;
 import game.model.Ship;
 import game.model.SpaceStationEntity;
+import highscore.HighScore;
 import input.Input;
 import input.KeyCodeConstants;
 import javafx.scene.Node;
@@ -97,6 +98,7 @@ public class MapCell {
 				}
 				if (entities.get(i) instanceof PlayerShip){
 					GameScreen.instance.changeCenter(new GameOverPane());
+					
 				}
 				entities.remove(i);
 				i--;

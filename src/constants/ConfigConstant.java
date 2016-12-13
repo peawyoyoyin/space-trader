@@ -2,9 +2,13 @@ package constants;
 
 import java.io.File;
 import java.io.FilePermission;
+<<<<<<< HEAD
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+=======
+import java.io.InputStream;
+>>>>>>> origin/master
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -18,8 +22,11 @@ import javafx.scene.text.FontPosture;
 public class ConfigConstant {
 	public static final String GAME_NAME = "GAME NAME";
 	
-	public static double volumeMusic = 1;
-	public static double volumeSFX = 1;
+	public static String PLAYER_NAME = "< blank name >";
+	public static double volumeMusic = 1.00;
+	public static double volumeSFX = 1.00;
+	
+	public static final String HIGHSCORE_FILE = "highscores/highscore";
 
 	public static int startScreenHeight = 630;
 	public static int startScreenWidth = 1120;
@@ -41,7 +48,7 @@ public class ConfigConstant {
 	public static int gameScreen_left_width = 250;
 
 	public static String serverURL = "http://127.0.0.1:7777/";
-	public static String version = "# progmeth-project";
+	public static String version = "old version";
 
 	public static class Resource {
 		public static AudioClip LASER_SOUND = new AudioClip(ClassLoader.getSystemResource("sfx_laser1.wav").toString());
@@ -80,4 +87,5 @@ public class ConfigConstant {
 		}
 		return null;
 	}
+	
 }
