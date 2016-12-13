@@ -22,12 +22,6 @@ public class StockPriceController {
 		this.random = new Random();
 	}
 	
-	public StockPriceController(Stock stock, int priceChangeModifier, Random random) {
-		this.stock = stock;
-		this.random = random;
-		this.priceChangeModifier = priceChangeModifier;
-	}
-	
 	public void updateStockPrice() {
 		this.step = this.random.nextInt(this.maxStep+1);
 		int[] temp = {DIRECTION_UP,DIRECTION_DOWN};

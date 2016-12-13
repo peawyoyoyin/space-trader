@@ -20,6 +20,15 @@ public class News {
 		randomNews.add(new News("kp666-pun","I'm the best programmer in SE."));
 		randomNews.add(new News("dev team","this game is full of bugs."));
 		randomNews.add(new News("levitate","progmeth's project is too hard."));
+		randomNews.add(new News("Drump","make galaxy great again."));
+		randomNews.add(new News("GA games","Space Football 3012 is out now on horizon!"));
+		randomNews.add(new News("dev","spaghetti code ftw"));
+		randomNews.add(new News("Unicode","%kfdo$9dak#kd!"));
+		randomNews.add(new News("DOPA2","DOPA 9.00 is now live!"));
+		randomNews.add(new News("Imperial","I found my son and he kissed my daughter! #blessed"));
+		randomNews.add(new News("Zulu","why are we not warping?"));
+		randomNews.add(new News("roy","will I ever get a girlfriend?"));
+		randomNews.add(new News("regLucha","regLucha is down due to heavy load."));
 	}
 	
 	public static News getRandomNews() {

@@ -31,7 +31,6 @@ public class Stock {
 	private int maxPrice;
 	
 
-	
 	public Stock(String name, int basePrice, int minPrice, int maxPrice) {
 		this.name = name;
 		this.minPrice = minPrice;
@@ -92,11 +91,11 @@ public class Stock {
 		this.priceProperty.set(price);
 	}
 
-	public double getMaxPrice() {
+	public int getMaxPrice() {
 		return this.maxPrice;
 	}
 
-	public double getMinPrice() {
+	public int getMinPrice() {
 		return this.minPrice;
 	}
 	
