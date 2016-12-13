@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
+import com.sun.javafx.tk.FontLoader;
+import com.sun.javafx.tk.Toolkit;
+
 import constants.ConfigConstant;
 import game.gui.GameOverPane;
 import game.gui.GameScreen;
@@ -21,7 +25,9 @@ import javafx.scene.Node;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import market.Market;
 import market.TraderScreen;
+import stocks.StocksScreen;
 
 public class MapCell {
 	private List<Entity> entities;
@@ -56,6 +62,19 @@ public class MapCell {
 		if (!Player.instance.isPause()) {
 			for (int i = 0; i < entities.size(); i++) {
 				entities.get(i).update();
+			}
+		}
+		
+		for (Entity entity : entities) {
+			if(entity instanceof SpaceStationEntity) {
+				if(Player.instance.getPlayerShip().isCollideWith(entity) && !Player.instance.isPause()) {
+					gc.setFill(Color.WHITE);
+					gc.setFont(ConfigConstant.Resource.HUD_FONT);
+					String text = "Trader : " + ((SpaceStationEntity) entity).getTrader().getName();
+					FontLoader fl = Toolkit.getToolkit().getFontLoader();
+					double textX = (ConfigConstant.gameScreenWidth - fl.computeStringWidth(text, ConfigConstant.Resource.HUD_FONT)) / 2;
+					gc.fillText(text, textX, 100);
+				}
 			}
 		}
 
@@ -98,7 +117,8 @@ public class MapCell {
 				}
 				if (entities.get(i) instanceof PlayerShip){
 					GameScreen.instance.changeCenter(new GameOverPane());
-					
+					StocksScreen.instance.getStockTradePanel().setDisableTrade(true);
+					Market.finalizeMarket();
 				}
 				entities.remove(i);
 				i--;

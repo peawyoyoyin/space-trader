@@ -26,8 +26,7 @@ public class TraderScreen extends StackPane{
 	public class TraderScreenTop extends BorderPane {
 		public TraderScreenTop(Trader trader) {
 			super();
-			this.setStyle("-fx-background-color: green;");
-			Label name = new Label(trader.getName());
+			Label name = new Label("Trader : " + trader.getName());
 			name.setFont(ConfigConstant.Resource.HUD_FONT);
 			BorderPane.setAlignment(name, Pos.CENTER);
 			this.setCenter(name);
@@ -50,12 +49,12 @@ public class TraderScreen extends StackPane{
 		public TraderScreenItemCell(Item item, Trader trader) {
 			super();
 			this.setPrefHeight(50);
-			this.setStyle("-fx-background-color: gray");
 			this.item = item;
 			this.setAlignment(Pos.CENTER);
 			this.setSpacing(5);
 			this.itemCellIcon = new ItemCellIcon(item);
-			this.priceLabel = new Label("Price: "+Integer.toString((int) (trader.getBuyPriceMultipliers().get(item.getItemType())*Market.getItemPrice(item.getItemType()))));
+			this.priceLabel = new Label(Integer.toString((int) (trader.getBuyPriceMultipliers().get(item.getItemType())*Market.getItemPrice(item.getItemType()))));
+			priceLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 			
 			this.getChildren().addAll(itemCellIcon, priceLabel);
 		}
@@ -72,7 +71,7 @@ public class TraderScreen extends StackPane{
 		front.setCenter(new BorderPane());
 		
 		this.itemsOnSale = new VBox();
-		this.itemsOnSale.setStyle("-fx-background-color: gray;");
+		this.itemsOnSale.setAlignment(Pos.TOP_CENTER);
 		
 		((BorderPane) front.getCenter()).setCenter(itemsOnSale);
 		((BorderPane) front.getCenter()).setRight(this.priceList);
@@ -82,12 +81,19 @@ public class TraderScreen extends StackPane{
 		TraderScreenTop top = new TraderScreenTop(trader);
 		front.setTop(top);
 		
-		this.getChildren().add(front);
+		Canvas back = new Canvas(400,400);
+		back.getGraphicsContext2D().setFill(Color.RED);
+		back.getGraphicsContext2D().fillRect(0, 0, 400, 400);
+		
+		this.getChildren().addAll(back,front);
 	}
 	
 	public void updateItemList() {
 		this.itemCells.clear();
 		this.itemsOnSale.getChildren().clear();
+		Label buyLabel = new Label("Buy");
+		buyLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		this.itemsOnSale.getChildren().add(buyLabel);
 		for (Item item : trader.getItemsOnSale()) {
 			TraderScreenItemCell itemCell = new TraderScreenItemCell(item, trader);
 			itemCell.setOnMouseClicked(event -> {

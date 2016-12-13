@@ -13,84 +13,76 @@ import javafx.beans.property.SimpleIntegerProperty;
 public class Player {
 	public static Player instance = new Player();
 	private String playerName;
-	private int money;
-	private int sectionX;
-	private int sectionY;
 	private boolean isPause;
 	private double bulletSpeed;
-	private int bulletDamage;
 	private PlayerShip playerShip;
-	
+
 	private IntegerProperty sectionXProperty;
 	private IntegerProperty sectionYProperty;
-	
+
 	private Map<ItemType, Integer> inventory;
 	private Map<ItemType, IntegerProperty> inventoryProperties;
-	
+
 	private IntegerProperty moneyProperty;
 	private IntegerProperty bulletDamageProperty;
-	
+
 	public Player() {
 		this.playerName = ConfigConstant.PLAYER_NAME;
-		this.money = 0;
-		this.sectionX = 0;
-		this.sectionY = 0;
 		this.bulletSpeed = 20;
-		this.bulletDamage = 5;
 		this.inventory = new HashMap<>();
 		this.inventoryProperties = new HashMap<>();
 		for (ItemType type : ItemType.values()) {
 			inventory.put(type, 0);
 			inventoryProperties.put(type, new SimpleIntegerProperty(0));
 		}
-		this.moneyProperty = new SimpleIntegerProperty();
+		this.moneyProperty = new SimpleIntegerProperty(0);
 		this.isPause = false;
-		this.sectionXProperty = new SimpleIntegerProperty(this.sectionX);
-		this.sectionYProperty = new SimpleIntegerProperty(this.sectionY);
-		this.bulletDamageProperty = new SimpleIntegerProperty(this.bulletDamage);
+		this.sectionXProperty = new SimpleIntegerProperty(0);
+		this.sectionYProperty = new SimpleIntegerProperty(0);
+		this.bulletDamageProperty = new SimpleIntegerProperty(5);
 	}
-	
+
 	public IntegerProperty getBulletDamageProperty() {
 		return this.bulletDamageProperty;
 	}
-	
+
 	public IntegerProperty getSectionXProperty() {
 		return this.sectionXProperty;
 	}
-	
+
 	public IntegerProperty getSectionYProperty() {
 		return this.sectionYProperty;
 	}
-	
+
 	public IntegerProperty getMoneyProperty() {
 		return this.moneyProperty;
 	}
-	
+
 	public void addItemtoInventory(Item item) {
 		int old = this.inventory.get(item.getItemType());
-		this.inventory.put(item.getItemType(), old+1);
-		this.inventoryProperties.get(item.getItemType()).set(old+1);
+		this.inventory.put(item.getItemType(), old + 1);
+		this.inventoryProperties.get(item.getItemType()).set(old + 1);
 	}
-	
+
 	public void removeItemFromInventory(ItemType type) {
 		int old = this.inventory.get(type);
-		if(old > 0) {
-			this.inventory.put(type, old-1);
-			this.inventoryProperties.get(type).set(old-1);;
+		if (old > 0) {
+			this.inventory.put(type, old - 1);
+			this.inventoryProperties.get(type).set(old - 1);
+			;
 		}
 	}
-	
+
 	public Map<ItemType, IntegerProperty> getInventoryProperties() {
 		return this.inventoryProperties;
 	}
-	
+
 	public Map<ItemType, Integer> getInventory() {
 		return this.inventory;
 	}
-	
 
 	public int getBulletDamage() {
-		return bulletDamage;
+		return this.bulletDamageProperty.get();
 	}
 
 	public PlayerShip getPlayerShip() {
@@ -102,37 +94,30 @@ public class Player {
 	}
 
 	public void setBulletDamage(int bulletDamage) {
-		this.playerShip.setBulletDamage(bulletDamage);
-		this.bulletDamage = bulletDamage;
+		this.bulletDamageProperty.set(bulletDamage);
 	}
-
 
 	public double getBulletSpeed() {
 		return bulletSpeed;
 	}
 
-
 	public void setBulletSpeed(int bulletSpeed) {
-		this.playerShip.setBulletSpeed(bulletSpeed);
 		this.bulletSpeed = bulletSpeed;
 	}
 
-
 	public int getSectionX() {
-		return sectionX;
+		return this.sectionXProperty.get();
 	}
 
 	public int getSectionY() {
-		return sectionY;
+		return this.sectionYProperty.get();
 	}
 
 	public void setSectionX(int sectionX) {
-		this.sectionX = sectionX;
 		this.sectionXProperty.set(sectionX);
 	}
 
 	public void setSectionY(int sectionY) {
-		this.sectionY = sectionY;
 		this.sectionYProperty.set(sectionY);
 	}
 
@@ -145,21 +130,20 @@ public class Player {
 	}
 
 	public synchronized void addMoney(int amount) {
-		this.money += amount;
-		this.moneyProperty.set(this.money);
+		int old = this.moneyProperty.get();
+		this.moneyProperty.set(old + amount);
 	}
-	
+
 	public synchronized void removeMoney(int amount) {
-		this.money -= amount;
-		this.moneyProperty.set(this.money);
+		int old = this.moneyProperty.get();
+		this.moneyProperty.set(old - amount);
 	}
-	
+
 	public int getMoney() {
-		return money;
+		return this.moneyProperty.get();
 	}
 
 	public synchronized void setMoney(int money) {
-		this.money = money;
 		this.moneyProperty.set(money);
 	}
 
@@ -170,7 +154,8 @@ public class Player {
 	public void pause() {
 		this.isPause = true;
 	}
-	public void resume(){
+
+	public void resume() {
 		this.isPause = false;
 	}
 }

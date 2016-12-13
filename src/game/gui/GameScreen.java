@@ -4,6 +4,7 @@ import constants.ConfigConstant;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
@@ -38,8 +39,14 @@ public class GameScreen extends BorderPane {
 		this.rightPane = new BorderPane();
 		this.centerPane = new StackPane();
 
-		Label changeToNewsFeed = new Label("News");
-		Label changeToShipStatus = new Label("Status");
+		StackPane changeToNewsFeed = new StackPane();
+		Label newsFeedLabel = new Label("News");
+		newsFeedLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		changeToNewsFeed.getChildren().add(newsFeedLabel);
+		StackPane changeToShipStatus = new StackPane();
+		Label statusLabel = new Label("Status");
+		statusLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		changeToShipStatus.getChildren().add(statusLabel);
 
 		changeToNewsFeed.setOnMouseClicked(event -> {
 			changeLeft(NewsPane.instance);
@@ -50,6 +57,8 @@ public class GameScreen extends BorderPane {
 		});
 
 		HBox leftTabControl = new HBox();
+		leftTabControl.setAlignment(Pos.CENTER);
+		leftTabControl.setSpacing(10);
 		leftTabControl.getChildren().addAll(changeToNewsFeed, changeToShipStatus);
 
 		this.leftPane.setTop(leftTabControl);

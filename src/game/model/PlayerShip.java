@@ -1,7 +1,5 @@
 package game.model;
 
-import java.util.Random;
-
 import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
@@ -29,7 +27,7 @@ public class PlayerShip extends Ship implements Friendly {
 	public PlayerShip(int x, int y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
 			int direction) {
 		super(x, y, hp, maxHp, speed, maxSpeed, accelerate, turnRate, direction);
-		// TODO Auto-generated constructor stub
+
 		this.radius = 25;
 		this.image = ConfigConstant.Resource.SHIP_IMAGE;
 		this.delayShoot = 10;
@@ -39,11 +37,12 @@ public class PlayerShip extends Ship implements Friendly {
 		this.maxHpProperty = new SimpleIntegerProperty();
 		this.maxHpProperty.set(maxHp);
 		this.speedProperty = new SimpleDoubleProperty(this.maxSpeed);
+		this.z = 5;
 	}
 
 	@Override
 	public void setMaxSpeed(int maxSpeed) {
-		// TODO Auto-generated method stub
+
 		super.setMaxSpeed(maxSpeed);
 		this.speedProperty.set(maxSpeed);
 	}
@@ -68,7 +67,7 @@ public class PlayerShip extends Ship implements Friendly {
 
 	@Override
 	public void render(GraphicsContext gc) {
-		// TODO Auto-generated method stub
+
 		gc.translate(x, y);
 		gc.rotate(this.direction + 90);
 		gc.drawImage(image, -image.getWidth() / 2, -image.getHeight() / 2);
@@ -79,24 +78,21 @@ public class PlayerShip extends Ship implements Friendly {
 
 	@Override
 	public void setMaxHp(int maxHp) {
-		// TODO Auto-generated method stub
+
 		super.setMaxHp(maxHp);
 		this.maxHpProperty.set(maxHp);
 	}
 
 	@Override
 	public void hit(int damage) {
-		// TODO Auto-generated method stub
+
 		super.hit(damage);
 		this.hpProperty.set(this.getHp());
 	}
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		boolean isSpawnEnemy = true;
-		boolean isChangeSec = false;
-
+		
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		if (this.x <= radius && Player.instance.getSectionX() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() - 1,
@@ -106,12 +102,6 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
 
 		} else if (this.y <= radius && Player.instance.getSectionY() > 0) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
@@ -121,12 +111,6 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
 
 		}
 		if (this.x >= ConfigConstant.mapCellWidth - radius && Player.instance.getSectionX() < 4) {
@@ -137,12 +121,6 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
 
 		} else if (this.y >= ConfigConstant.mapCellHeight - radius && Player.instance.getSectionY() < 4) {
 			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
@@ -152,22 +130,6 @@ public class PlayerShip extends Ship implements Friendly {
 			mc.getEntities().remove(Player.instance.getPlayerShip());
 			mc.clear();
 			mcNext.getEntities().add(Player.instance.getPlayerShip());
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
-		}
-
-		if (isSpawnEnemy && isChangeSec) {
-			Random rd = new Random();
-			MapCell mc2 = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
-			for (int i = 0; i < rd.nextInt(3)+2; i++) {
-				mc2.getEntities().add(new EnemyShip(rd.nextDouble() * ConfigConstant.mapCellWidth,
-						rd.nextDouble() * ConfigConstant.mapCellHeight, 50, 50, 0, 3, 0.1, 1, rd.nextInt(360)));
-			}
-			
 		}
 
 		super.update();

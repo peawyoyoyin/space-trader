@@ -22,7 +22,7 @@ public class StockTradePanel extends GridPane {
 		this.setPadding(new Insets(5));
 		this.setHgap(20);
 		this.setMinHeight(70);
-		this.setAlignment(Pos.CENTER_LEFT);
+		this.setAlignment(Pos.CENTER);
 		this.setStyle("-fx-background-color: gray;");
 		this.buyButton = new Button("Buy");
 		this.buyButton.setOnAction(event -> {
@@ -39,6 +39,11 @@ public class StockTradePanel extends GridPane {
 		this.add(stockNameLabel, 0, 0, 2, 1);
 		this.add(buyButton, 2, 0);
 		this.add(sellButton, 3, 0);
+	}
+	
+	public void setDisableTrade(boolean disable) {
+		this.buyButton.setDisable(disable);
+		this.sellButton.setDisable(disable);
 	}
 	
 	public void setStock(Stock stock) {

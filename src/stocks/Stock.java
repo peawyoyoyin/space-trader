@@ -8,7 +8,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public class Stock {
 	
-	public static final List<Stock> GAME_STOCKS = new ArrayList<>();
+	private static final List<Stock> GAME_STOCKS = new ArrayList<>();
 	
 	public static final int MAX_HISTORY_SIZE = 40;
 	
@@ -21,9 +21,6 @@ public class Stock {
 	
 	private int minPrice;
 	private int maxPrice;
-	
-	private boolean sellable;
-	private boolean buyable;
 	
 	public static void initializeGameStocks() {
 		GAME_STOCKS.clear();
@@ -38,31 +35,13 @@ public class Stock {
 		this.minPrice = minPrice;
 		this.maxPrice = maxPrice;
 		this.priceHistory = new ArrayList<Integer>();
-		this.buyable = true;
-		this.sellable = true;
 		this.priceProperty = new SimpleIntegerProperty();
 		this.setNewPrice(basePrice);
 		StockHolder.instance.getStocks().add(this);
 	}
 	
-	public boolean isBuyable() {
-		return this.buyable;
-	}
-	
 	public List<Integer> getPriceHistory() {
 		return priceHistory;
-	}
-
-	public boolean isSellable() {
-		return this.sellable;
-	}
-	
-	public void setSellable(boolean sellable) {
-		this.sellable = sellable;
-	}
-	
-	public void setBuyable(boolean buyable) {
-		this.buyable = buyable;
 	}
 	
 	public void setName(String name) {

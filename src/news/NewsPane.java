@@ -9,12 +9,10 @@ import javafx.scene.layout.StackPane;
 class NewsPaneTop extends StackPane {
 	public NewsPaneTop() {
 		super();
-//		Label name = new Label("News Feed");
-//		this.getChildren().add(name);
-//		this.setPrefHeight(40);
+		this.setPrefHeight(40);
 		Image logo = new Image(ClassLoader.getSystemResource("logo.png").toString());
-		Canvas logoCanvas = new Canvas(50, 50);
-		logoCanvas.getGraphicsContext2D().drawImage(logo, 0, 0, 50, 50);
+		Canvas logoCanvas = new Canvas(60, 60);
+		logoCanvas.getGraphicsContext2D().drawImage(logo, 0, 0, 60, 60);
 		this.getChildren().add(logoCanvas);
 	}
 }
@@ -41,7 +39,7 @@ public class NewsPane extends BorderPane {
 	}
 
 	public void clearFeed() {
-		// TODO Auto-generated method stub
+
 		this.newsFeed.getChildren().clear();
 	}
 }

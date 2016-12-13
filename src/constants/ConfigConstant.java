@@ -52,15 +52,17 @@ public class ConfigConstant {
 
 	public static class Resource {
 		public static AudioClip LASER_SOUND = new AudioClip(ClassLoader.getSystemResource("sfx_laser1.wav").toString());
-		public static AudioClip BOOM_SOUND = new AudioClip(ClassLoader.getSystemResource("DeathFlash.wav").toString());
-
+		public static Image HPBAR_BACK = new Image(ClassLoader.getSystemResource("hpbar-bg.png").toString());
+		public static Image HPBAR_FRONT = new Image(ClassLoader.getSystemResource("hpbar-front.png").toString());
 		public static Image BULLET_IMAGE = new Image(
 				ClassLoader.getSystemResource("Lasers/laserGreen12.png").toString());
+		public static AudioClip BOOM_SOUND = new AudioClip(ClassLoader.getSystemResource("DeathFlash.wav").toString());
+
 		public static Image BULLET_ENEMY_IMAGE = new Image(
 				ClassLoader.getSystemResource("Lasers/laserRed06.png").toString());
 		public static Image HIT_IMAGE = new Image(ClassLoader.getSystemResource("laserGreenShot.png").toString());
-		public static Image HIT_ENEMY_IMAGE = new Image(
-				ClassLoader.getSystemResource("laserRedShot.png").toString());
+		public static Image HIT_ENEMY_IMAGE = new Image(ClassLoader.getSystemResource("laserRedShot.png").toString());
+
 		public static Image SHIP_IMAGE = new Image(ClassLoader.getSystemResource("playerShip1_red.png").toString());
 		public static Image ENEMY_IMAGE = new Image(ClassLoader.getSystemResource("Enemies/enemyRed1.png").toString());
 		public static Image MAP_BACKGROUND = new Image(ClassLoader.getSystemResource("purple.png").toString());
