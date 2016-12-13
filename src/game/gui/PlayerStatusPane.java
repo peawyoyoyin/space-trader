@@ -62,7 +62,6 @@ public class PlayerStatusPane extends BorderPane {
 
 	public PlayerStatusPane() {
 		super();
-		// this.setStyle("-fx-background-color: gray;");
 		this.playerStatus = new PlayerStatus();
 		this.setCenter(playerStatus);
 	}

@@ -100,6 +100,7 @@ public class TraderScreen extends StackPane {
 		Canvas back = new Canvas(400, 400);
 		back.getGraphicsContext2D().setEffect(new Glow(1));
 		back.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND_M, 0, 0, 400, 400);
+
 		back.getGraphicsContext2D().setEffect(null);
 
 		this.getChildren().addAll(back, front);
@@ -108,11 +109,6 @@ public class TraderScreen extends StackPane {
 	public static void togglePane() {
 		if (front.getCenter().equals(TradePane)) {
 			front.setCenter(upgradePane);
-//			ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), upgradePane);
-//			scaleTransition.setFromX(0);
-//			scaleTransition.setFromY(0);
-//			scaleTransition.setToX(1);
-//			scaleTransition.setToY(1);
 			FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), upgradePane);
 			fadeTransition.setFromValue(0);
 			fadeTransition.setToValue(1);
@@ -121,11 +117,6 @@ public class TraderScreen extends StackPane {
 			parallelTransition.play();
 		} else {
 			front.setCenter(TradePane);
-//			ScaleTransition scaleTransition = new ScaleTransition(Duration.seconds(0.5), TradePane);
-//			scaleTransition.setFromX(0);
-//			scaleTransition.setFromY(0);
-//			scaleTransition.setToX(1);
-//			scaleTransition.setToY(1);
 			FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), TradePane);
 			fadeTransition.setFromValue(0);
 			fadeTransition.setToValue(1);
