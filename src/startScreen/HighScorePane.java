@@ -72,6 +72,7 @@ public class HighScorePane extends GridPane {
 			score.setStrokeWidth(2);
 			container.add(name, 0, 0);
 			container.add(score, 1, 0);
+			container.getColumnConstraints().clear();
 			ColumnConstraints column1 = new ColumnConstraints();
 			column1.setPercentWidth(50);
 			container.getColumnConstraints().add(column1);

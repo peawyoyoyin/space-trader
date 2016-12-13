@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
 import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
@@ -32,10 +31,30 @@ import stocks.StocksScreen;
 public class MapCell {
 	private List<Entity> entities;
 	private List<Entity> newEffect;
+	private int enemyHp;
+	private int enemyDmg;
 
 	public MapCell() {
 		this.entities = new ArrayList<Entity>();
 		this.newEffect = new ArrayList<>();
+		enemyHp = 50;
+		enemyDmg = 3;
+	}
+
+	public void upgradeEnemyHp(int value) {
+		enemyHp += value;
+	}
+
+	public void upgradeEnemyDmg(int value) {
+		enemyDmg += value;
+	}
+
+	public int getEnemyHp() {
+		return enemyHp;
+	}
+
+	public int getEnemyDmg() {
+		return enemyDmg;
 	}
 
 	public List<Entity> getEntities() {
@@ -64,15 +83,16 @@ public class MapCell {
 				entities.get(i).update();
 			}
 		}
-		
+
 		for (Entity entity : entities) {
-			if(entity instanceof SpaceStationEntity) {
-				if(Player.instance.getPlayerShip().isCollideWith(entity) && !Player.instance.isPause()) {
+			if (entity instanceof SpaceStationEntity) {
+				if (Player.instance.getPlayerShip().isCollideWith(entity) && !Player.instance.isPause()) {
 					gc.setFill(Color.WHITE);
 					gc.setFont(ConfigConstant.Resource.HUD_FONT);
 					String text = "Trader : " + ((SpaceStationEntity) entity).getTrader().getName();
 					FontLoader fl = Toolkit.getToolkit().getFontLoader();
-					double textX = (ConfigConstant.gameScreenWidth - fl.computeStringWidth(text, ConfigConstant.Resource.HUD_FONT)) / 2;
+					double textX = (ConfigConstant.gameScreenWidth
+							- fl.computeStringWidth(text, ConfigConstant.Resource.HUD_FONT)) / 2;
 					gc.fillText(text, textX, 100);
 				}
 			}
@@ -85,11 +105,12 @@ public class MapCell {
 						if (!Player.instance.isPause()) {
 							Player.instance.pause();
 							((SpaceStationEntity) entity).getTrader().setAccessing(true);
-							GameScreen.instance.changeCenter(new TraderScreen(((SpaceStationEntity) entity).getTrader()));
+							GameScreen.instance
+									.changeCenter(new TraderScreen(((SpaceStationEntity) entity).getTrader()));
 						} else {
 							Node target = null;
 							for (Node node : ((Pane) GameScreen.instance.getCenter()).getChildren()) {
-								if(node instanceof TraderScreen){
+								if (node instanceof TraderScreen) {
 									target = node;
 								}
 							}
@@ -101,7 +122,7 @@ public class MapCell {
 				}
 			}
 		}
-		
+
 		this.entities.addAll(newEffect);
 		this.newEffect.clear();
 
@@ -111,11 +132,11 @@ public class MapCell {
 					this.entities.add(new BombEffect(entities.get(i).getX(), entities.get(i).getY()));
 					ConfigConstant.Resource.BOOM_SOUND.play(ConfigConstant.volumeSFX);
 				}
-				if (entities.get(i) instanceof EnemyShip){
-					Player.instance.addMoney(new Random().nextInt(50)+25);
+				if (entities.get(i) instanceof EnemyShip) {
+					Player.instance.addMoney(new Random().nextInt(50) + 25);
 					this.entities.add(Item.generateEnitity(entities.get(i).getX(), entities.get(i).getY()));
 				}
-				if (entities.get(i) instanceof PlayerShip){
+				if (entities.get(i) instanceof PlayerShip) {
 					GameScreen.instance.changeCenter(new GameOverPane());
 					StocksScreen.instance.getStockTradePanel().setDisableTrade(true);
 					Market.finalizeMarket();
@@ -124,9 +145,6 @@ public class MapCell {
 				i--;
 			}
 		}
-		
-		gc.setFill(Color.BROWN);
-		gc.fillText(Player.instance.getSectionX() + " - " + Player.instance.getSectionY(), 5, 20);
 
 	}
 

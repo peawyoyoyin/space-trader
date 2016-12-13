@@ -1,6 +1,7 @@
 package news;
 
 import constants.ConfigConstant;
+import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -19,21 +20,28 @@ class NewsPaneTop extends StackPane {
 
 public class NewsPane extends BorderPane {
 	public static NewsPane instance = new NewsPane();
-	
+	private NewsFeedPane newsFeedPane;
+
 	NewsFeed newsFeed;
+
 	public NewsPane() {
 		super();
 		this.setTop(new NewsPaneTop());
-		NewsFeedPane newsFeedPane = new NewsFeedPane();
+		newsFeedPane = new NewsFeedPane();
 		this.newsFeed = newsFeedPane.getNewsFeed();
+		this.setPadding(new Insets(10,0,0,0));
 		this.setCenter(newsFeedPane);
 		this.setMaxWidth(ConfigConstant.gameScreen_left_width);
 	}
-	
+
+	public NewsFeedPane getNewsFeedPane() {
+		return newsFeedPane;
+	}
+
 	public NewsFeed getNewsFeed() {
 		return this.newsFeed;
 	}
-	
+
 	public void addNews(News news) {
 		this.newsFeed.addNews(news);
 	}

@@ -17,7 +17,7 @@ public class EnemyShip extends Ship implements Enemy {
 			int direction) {
 		super(x, y, hp, maxHp, speed, maxSpeed, accelerate, turnRate, direction);
 		// TODO Auto-generated constructor stub
-		this.radius = 25;
+		this.radius = 35;
 		this.counterdelay = 0;
 		this.delayShoot = 10;
 		this.image = ConfigConstant.Resource.ENEMY_IMAGE;

@@ -13,12 +13,12 @@ public abstract class Ship extends Entity implements Renderable {
 	protected int hp;
 	protected int maxHp;
 	protected double speed;
-	protected int maxSpeed;
+	protected double maxSpeed;
 	protected double accelerate;
 	protected int turnRate;
 	protected int direction;
 
-	public Ship(double x, double y, int hp, int maxHp, double speed, int maxSpeed, double accelerate, int turnRate,
+	public Ship(double x, double y, int hp, int maxHp, double speed, double maxSpeed, double accelerate, int turnRate,
 			int direction) {
 		this.x = x;
 		this.y = y;
@@ -60,7 +60,7 @@ public abstract class Ship extends Entity implements Renderable {
 		this.maxHp = maxHp;
 	}
 
-	public void setMaxSpeed(int maxSpeed) {
+	public void setMaxSpeed(double maxSpeed) {
 		this.maxSpeed = maxSpeed;
 	}
 
@@ -97,6 +97,9 @@ public abstract class Ship extends Entity implements Renderable {
 			this.destroyed = true;
 		}
 	}
+	public void heal(){
+		this.hp = this.maxHp;
+	}
 
 	public void shoot() {
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
@@ -104,10 +107,6 @@ public abstract class Ship extends Entity implements Renderable {
 				.add(new Bullet(this.x + Math.cos(Math.toRadians(this.direction)) * 30,
 						this.y + Math.sin(Math.toRadians(this.direction)) * 30, this.bulletSpeed,
 						this.direction, this.bulletDamage, this));
-	}
-
-	public void healMaxHp() {
-		this.hp = this.maxHp;
 	}
 
 	@Override

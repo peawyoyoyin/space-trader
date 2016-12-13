@@ -1,6 +1,5 @@
 package game.logic;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -90,9 +89,11 @@ public class RenderableHolder {
 			track(0, Player.instance.getPlayerShip().getY(), Color.LAWNGREEN, gc);
 		} else if (Player.instance.getPlayerShip().getY() == Collections.min(distanceList)) {
 			track(Player.instance.getPlayerShip().getX(), 0, Color.LAWNGREEN, gc);
-		} else if (ConfigConstant.mapCellWidth - Player.instance.getPlayerShip().getX()  == Collections.min(distanceList)) {
+		} else if (ConfigConstant.mapCellWidth - Player.instance.getPlayerShip().getX() == Collections
+				.min(distanceList)) {
 			track(ConfigConstant.mapCellWidth, Player.instance.getPlayerShip().getY(), Color.LAWNGREEN, gc);
-		} else if (ConfigConstant.mapCellHeight - Player.instance.getPlayerShip().getY()  == Collections.min(distanceList)) {
+		} else if (ConfigConstant.mapCellHeight - Player.instance.getPlayerShip().getY() == Collections
+				.min(distanceList)) {
 			track(Player.instance.getPlayerShip().getX(), ConfigConstant.mapCellHeight, Color.LAWNGREEN, gc);
 		}
 	}

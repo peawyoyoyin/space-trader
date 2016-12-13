@@ -2,8 +2,8 @@ package game.gui;
 
 import constants.ConfigConstant;
 import javafx.animation.FadeTransition;
-import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
@@ -18,10 +18,9 @@ import stocks.StocksScreen;
 
 public class GameScreen extends BorderPane {
 
-	public static final GameScreen instance = new GameScreen();
+	public static GameScreen instance = new GameScreen();
 
 	private Node left;
-	private Node center;
 	private Node right;
 
 	private BorderPane leftPane;
@@ -49,12 +48,15 @@ public class GameScreen extends BorderPane {
 
 		StackPane changeToNewsFeed = new StackPane();
 		Label newsFeedLabel = new Label("News");
+		newsFeedLabel.setPrefWidth(85);
 		newsFeedLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 		newsFeedLabel.setTextFill(Color.BLACK);
 		newsFeedLabel.setOpacity(0.5);
 		changeToNewsFeed.getChildren().add(newsFeedLabel);
 		StackPane changeToShipStatus = new StackPane();
 		Label statusLabel = new Label("Status");
+		statusLabel.setAlignment(Pos.CENTER);
+		statusLabel.setPrefWidth(85);
 		statusLabel.setTextFill(Color.WHITE);
 		statusLabel.setOpacity(0.5);
 		statusLabel.setFont(ConfigConstant.Resource.HUD_FONT);
@@ -76,14 +78,14 @@ public class GameScreen extends BorderPane {
 
 		HBox leftTabControl = new HBox();
 		leftTabControl.setAlignment(Pos.CENTER);
-		leftTabControl.setSpacing(60);
+		leftTabControl.setSpacing(20);
 		leftTabControl.setMinHeight(30);
+		leftTabControl.setPadding(new Insets(10));
 		leftTabControl.getChildren().addAll(changeToNewsFeed, changeToShipStatus);
 
 		this.leftPane.setTop(leftTabControl);
 
 		this.left = left;
-		this.center = center;
 		this.right = right;
 		this.setLeft(leftContainer);
 		this.setCenter(this.centerPane);
@@ -142,6 +144,5 @@ public class GameScreen extends BorderPane {
 				fts.play();
 			}
 		});
-		this.center = center;
 	}
 }

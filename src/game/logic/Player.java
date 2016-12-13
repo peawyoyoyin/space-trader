@@ -95,6 +95,7 @@ public class Player {
 
 	public void setBulletDamage(int bulletDamage) {
 		this.bulletDamageProperty.set(bulletDamage);
+		this.playerShip.setBulletDamage(bulletDamage);
 	}
 
 	public double getBulletSpeed() {

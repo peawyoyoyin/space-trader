@@ -1,20 +1,21 @@
 package game.gui;
 
 import constants.ConfigConstant;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 public class PlayerInfoPane extends BorderPane {
-	
+
 	public static PlayerInfoPane instance = new PlayerInfoPane();
-	
+
 	private PlayerStatusPane playerStatusPane;
-	
-	private PlayerInfoPane() {
+
+	public PlayerInfoPane() {
 		super();
-//		this.setStyle("-fx-background-color: gray;");
+		this.setPadding(new Insets(20, 0, 20, 0));
 		this.setPrefSize(ConfigConstant.gameScreen_left_width, ConfigConstant.gameScreenHeight);
 		this.playerStatusPane = new PlayerStatusPane();
 		this.setTop(MinimapPane.instance);

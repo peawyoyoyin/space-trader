@@ -3,6 +3,9 @@ package main;
 import constants.ConfigConstant;
 import game.gui.GamePane;
 import game.gui.GameScreen;
+import game.gui.MinimapPane;
+import game.gui.PlayerInfoPane;
+import game.gui.PlayerInventoryPane;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
 import game.logic.Player;
@@ -31,17 +34,18 @@ public class Main extends Application {
 		MapCellHolder.instance = new MapCellHolder();
 
 		Trader.InitiailizeTraders();
-
+		GameScreen.instance = new GameScreen();
 		Player.instance = new Player();
 		PlayerShip playerShip = new PlayerShip(3000, 3000, 5, 100, 0, 10, 1, 3, 0);
 		Player.instance.setPlayerShip(playerShip);
 		Player.instance.addMoney(500);
 		Player.instance.setSectionX(1);
 		Player.instance.setSectionY(1);
-
+		MinimapPane.initializeMinimap();
+		PlayerInfoPane.instance = new PlayerInfoPane();
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities().add(playerShip);
-
+		
 		GamePane gamePane = new GamePane(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 		GameScreen.instance.changeCenter(gamePane);
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
@@ -52,7 +56,7 @@ public class Main extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-				//playerShip.hit(100);
+				// playerShip.hit(100);
 				if (Input.isKeyPressed(KeyCode.N)) {
 
 					System.out.println("new game");
@@ -65,6 +69,8 @@ public class Main extends Application {
 
 		gameRunner.start();
 		scene.setRoot(GameScreen.instance);
+		
+		
 	}
 
 	public static void toStartScreen() {
@@ -84,11 +90,12 @@ public class Main extends Application {
 			primaryStage.setScene(scene); // Place the scene
 			primaryStage.setResizable(false);
 			primaryStage.show();
+			scene.getStylesheets().add(this.getClass().getResource("/main/style.css").toExternalForm());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public void stop() throws Exception {
 		// TODO Auto-generated method stub

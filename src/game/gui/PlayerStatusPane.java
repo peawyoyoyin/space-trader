@@ -31,29 +31,38 @@ public class PlayerStatusPane extends BorderPane {
 			HBox shipDamageLabels = new HBox();
 			shipDamageLabels.setPadding(new Insets(15, 0, 0, 5));
 			Label shipDamageLabel = new Label();
+			shipDamageLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 			shipDamageLabel.textProperty().bind(Player.instance.getBulletDamageProperty().asString());
-			shipDamageLabels.getChildren().addAll(new Label("Ship Weapon Damage : "), shipDamageLabel);
+			Label text1 = new Label("Ship Damage : ");
+			text1.setFont(ConfigConstant.Resource.HUD_FONT);
+			shipDamageLabels.getChildren().addAll(text1, shipDamageLabel);
 
 			HBox shipSpeedLabels = new HBox();
 			shipSpeedLabels.setPadding(new Insets(15, 0, 0, 5));
 			Label shipSpeedLabel = new Label();
+			shipSpeedLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 			shipSpeedLabel.textProperty().bind(Player.instance.getPlayerShip().getSpeedProperty().asString());
-			shipSpeedLabels.getChildren().addAll(new Label("Ship Speed : "), shipSpeedLabel);
+			Label text2 = new Label("Ship Speed : ");
+			text2.setFont(ConfigConstant.Resource.HUD_FONT);
+			shipSpeedLabels.getChildren().addAll(text2, shipSpeedLabel);
 
 			HBox moneyLabels = new HBox();
 			Label moneyLabel = new Label("1245645");
+			moneyLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 			moneyLabel.textProperty().bind(Player.instance.getMoneyProperty().asString());
 			moneyLabel.setTextFill(Color.SANDYBROWN);
 
 			moneyLabels.setPadding(new Insets(15, 0, 0, 5));
-			moneyLabels.getChildren().addAll(new Label("Money :  "), moneyLabel);
+			Label text3 = new Label("Money :  ");
+			text3.setFont(ConfigConstant.Resource.HUD_FONT);
+			moneyLabels.getChildren().addAll(text3, moneyLabel);
 			this.getChildren().addAll(shipDamageLabels, shipSpeedLabels, moneyLabels);
 		}
 	}
 
 	public PlayerStatusPane() {
 		super();
-//		this.setStyle("-fx-background-color: gray;");
+		// this.setStyle("-fx-background-color: gray;");
 		this.playerStatus = new PlayerStatus();
 		this.setCenter(playerStatus);
 	}
@@ -88,14 +97,14 @@ class PlayerHealthBar extends Canvas {
 		gc.drawImage(ConfigConstant.Resource.HPBAR_BACK, 0, 0, WIDTH, HEIGHT);
 		double percentage = (double) this.hp.get() / this.maxHp.get();
 		WritableImage hpbar = new WritableImage(ConfigConstant.Resource.HPBAR_FRONT.getPixelReader(), 0, 0,
-				(int) (ConfigConstant.Resource.HPBAR_FRONT.getWidth() * percentage),
+				(int) (percentage > 0 ? ConfigConstant.Resource.HPBAR_FRONT.getWidth() * percentage : 1),
 				(int) ConfigConstant.Resource.HPBAR_FRONT.getHeight());
-		gc.drawImage(hpbar,0,0, WIDTH*percentage, HEIGHT);
+		gc.drawImage(hpbar, 0, 0, WIDTH * percentage, HEIGHT);
 		gc.setFont(ConfigConstant.Resource.HUD_FONT);
 		String hp = this.hp.get() + "/" + this.maxHp.get();
 		FontLoader fl = Toolkit.getToolkit().getFontLoader();
 		double hpTextWidth = fl.computeStringWidth(hp, ConfigConstant.Resource.HUD_FONT);
 		double hpTextHeight = fl.getFontMetrics(ConfigConstant.Resource.HUD_FONT).getLineHeight();
-		gc.fillText(hp, (WIDTH-hpTextWidth)/2, HEIGHT-(hpTextHeight/2));
+		gc.fillText(hp, (WIDTH - hpTextWidth) / 2, HEIGHT - (hpTextHeight / 2));
 	}
 }

@@ -3,10 +3,15 @@ package market;
 import constants.ConfigConstant;
 import game.logic.Player;
 import game.model.Item.ItemType;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class TraderItemPricesList extends VBox {
@@ -48,6 +53,15 @@ public class TraderItemPricesList extends VBox {
 			});
 			this.getChildren().add(priceCell);
 		}
+		VBox space = new VBox();
+		this.getChildren().add(space);
+		VBox.setVgrow(space, Priority.ALWAYS);
+		this.setPadding(new Insets(0,0,50,0));
+		Button upgrade = new Button("Upgrade");
+		this.getChildren().add(upgrade);
+		upgrade.setOnAction(e -> {
+			TraderScreen.togglePane();
+		});
 	}
 	
 }
