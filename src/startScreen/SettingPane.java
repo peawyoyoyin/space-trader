@@ -41,7 +41,7 @@ public class SettingPane extends GridPane {
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
 		textBack.setOnMouseClicked(e -> {
-			StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
+			StartScreen.getInstance().changePane(StartScreen.getInstance().getStartPane());
 		});
 		textBack.setOnMouseEntered(e -> {
 			textBack.setEffect(new Glow(0.5));
@@ -96,6 +96,8 @@ public class SettingPane extends GridPane {
 		sliderMusic.setOnMouseReleased(e -> {
 			ConfigConstant.volumeMusic = sliderMusic.getValue();
 			sliderMusic.setTooltip(new Tooltip(Integer.toString((int) (sliderMusic.getValue() * 100))));
+			ConfigConstant.Resource.MENU_MUSIC.stop();
+			ConfigConstant.Resource.MENU_MUSIC.play(ConfigConstant.volumeMusic);
 		});
 		sliderSFX.setOnMouseReleased(e -> {
 			ConfigConstant.volumeSFX = sliderSFX.getValue();

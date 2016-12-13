@@ -52,7 +52,9 @@ public class ConfigConstant {
 		public static Image BULLET_IMAGE = new Image(
 				ClassLoader.getSystemResource("Lasers/laserGreen12.png").toString());
 		public static AudioClip BOOM_SOUND = new AudioClip(ClassLoader.getSystemResource("DeathFlash.wav").toString());
-
+		public static AudioClip GAME_MUSIC = new AudioClip(ClassLoader.getSystemResource("MyVeryOwnDeadShip.wav").toString());
+		public static AudioClip MENU_MUSIC = new AudioClip(ClassLoader.getSystemResource("space.wav").toString());
+		
 		public static Image BULLET_ENEMY_IMAGE = new Image(
 				ClassLoader.getSystemResource("Lasers/laserRed06.png").toString());
 		public static Image HIT_IMAGE = new Image(ClassLoader.getSystemResource("laserGreenShot.png").toString());
@@ -87,6 +89,10 @@ public class ConfigConstant {
 				24);
 		public static Font HUD_HEADER_FONT = loadFont(ClassLoader.getSystemResource("kenvector_future.ttf").toString(),
 				36);
+		static{
+			GAME_MUSIC.setCycleCount(AudioClip.INDEFINITE);
+			MENU_MUSIC.setCycleCount(AudioClip.INDEFINITE);
+		}
 	}
 
 	public static Font loadFont(String url, double size) {

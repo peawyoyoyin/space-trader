@@ -11,7 +11,7 @@ import javafx.util.Duration;
 
 public class StartScreen extends StackPane {
 
-	private static final StartScreen instace = new StartScreen();
+	private static final StartScreen instance = new StartScreen();
 
 	private BackgroundStartScreen backgroundStartScreen;
 	private StartPane startPane;
@@ -19,8 +19,8 @@ public class StartScreen extends StackPane {
 	private SettingPane settingPane;
 	private UpdatingPane updatingPane;
 
-	public static StartScreen getInstace() {
-		return instace;
+	public static StartScreen getInstance() {
+		return instance;
 	}
 
 	public BackgroundStartScreen getBackgroundStartScreen() {

@@ -79,8 +79,8 @@ public class StartPane extends GridPane {
 		});
 		
 		textHighScore.setOnMouseClicked(e -> {
-			StartScreen.getInstace().changePane(StartScreen.getInstace().getHighScorePane());
-			StartScreen.getInstace().getHighScorePane().loadHighScore();
+			StartScreen.getInstance().changePane(StartScreen.getInstance().getHighScorePane());
+			StartScreen.getInstance().getHighScorePane().loadHighScore();
 		});
 		textHighScore.setOnMouseEntered(e -> {
 			textHighScore.setEffect(new Glow(0.5));
@@ -90,7 +90,7 @@ public class StartPane extends GridPane {
 		});
 		
 		textSetting.setOnMouseClicked(e -> {
-			StartScreen.getInstace().changePane(StartScreen.getInstace().getSettingPane());
+			StartScreen.getInstance().changePane(StartScreen.getInstance().getSettingPane());
 		});
 		textSetting.setOnMouseEntered(e -> {
 			textSetting.setEffect(new Glow(0.5));
@@ -100,8 +100,8 @@ public class StartPane extends GridPane {
 		});
 		
 		textUpdating.setOnMouseClicked(e -> {
-			StartScreen.getInstace().changePane(StartScreen.getInstace().getUpdatingPane());
-			StartScreen.getInstace().getUpdatingPane().startUpdate();
+			StartScreen.getInstance().changePane(StartScreen.getInstance().getUpdatingPane());
+			StartScreen.getInstance().getUpdatingPane().startUpdate();
 		});
 		textUpdating.setOnMouseEntered(e -> {
 			textUpdating.setEffect(new Glow(0.5));

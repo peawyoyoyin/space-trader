@@ -35,6 +35,8 @@ public class Main extends Application {
 	private static AnimationTimer gameRunner;
 
 	public static void newGame() {
+		ConfigConstant.Resource.MENU_MUSIC.stop();
+		ConfigConstant.Resource.GAME_MUSIC.play(ConfigConstant.volumeMusic);
 		Input.Initialize(scene);
 		Market.InitializeMarket();
 		MapCellHolder.instance = new MapCellHolder();
@@ -42,7 +44,7 @@ public class Main extends Application {
 		Trader.InitiailizeTraders();
 		GameScreen.instance = new GameScreen();
 		Player.instance = new Player();
-		PlayerShip playerShip = new PlayerShip(3000, 3000, 5, 100, 0, 10, 1, 3, 0);
+		PlayerShip playerShip = new PlayerShip(3000, 3000, 100, 100, 0, 8, 1, 3, 0);
 		Player.instance.setPlayerShip(playerShip);
 		Player.instance.addMoney(500);
 		Player.instance.setSectionX(1);
@@ -98,15 +100,18 @@ public class Main extends Application {
 
 	public static void toStartScreen() {
 		gameRunner.stop();
-		StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
+		StartScreen.getInstance().changePane(StartScreen.getInstance().getStartPane());
 		BackgroundStartScreen.reBackground();
-		scene.setRoot(StartScreen.getInstace());
+		scene.setRoot(StartScreen.getInstance());
+		ConfigConstant.Resource.GAME_MUSIC.stop();
+		ConfigConstant.Resource.MENU_MUSIC.play(ConfigConstant.volumeMusic);
 	}
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			StartScreen startScreen = StartScreen.getInstace();
+			StartScreen startScreen = StartScreen.getInstance();
+			ConfigConstant.Resource.MENU_MUSIC.play(ConfigConstant.volumeMusic);
 			scene = new Scene(startScreen, ConfigConstant.startScreenWidth, ConfigConstant.startScreenHeight);
 			// primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.setTitle(ConfigConstant.GAME_NAME); // Set the stage

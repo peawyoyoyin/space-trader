@@ -53,7 +53,7 @@ public class UpdatingPane extends GridPane {
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
 		textBack.setOnMouseClicked(e -> {
-			StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
+			StartScreen.getInstance().changePane(StartScreen.getInstance().getStartPane());
 			container.getChildren().clear();
 			textlog = "";
 		});

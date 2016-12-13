@@ -39,7 +39,7 @@ public class HighScorePane extends GridPane {
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
 		textBack.setOnMouseClicked(e -> {
-			StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
+			StartScreen.getInstance().changePane(StartScreen.getInstance().getStartPane());
 		});
 		textBack.setOnMouseEntered(e -> {
 			textBack.setEffect(new Glow(0.5));
