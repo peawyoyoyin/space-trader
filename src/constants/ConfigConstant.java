@@ -58,8 +58,9 @@ public class ConfigConstant {
 		public static Image MAP_BACKGROUND = new Image(ClassLoader.getSystemResource("purple.png").toString());
 		public static Image SPACE_STATION = new Image(ClassLoader.getSystemResource("starbase-tex.png").toString());
 		public static Image BOOM_IMAGE = new Image(ClassLoader.getSystemResource("explosion_sp.png").toString());
-		public static Image PANEL_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_corners.png").toString());
-		public static Image BUTTON_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_projection.png").toString());
+		public static Image PANEL_BACKGROUND_L = new Image(ClassLoader.getSystemResource("glassPanel_L.png").toString());
+		public static Image PANEL_BACKGROUND_M = new Image(ClassLoader.getSystemResource("glassPanel_M.png").toString());
+		public static Image BUTTON_BACKGROUND = new Image(ClassLoader.getSystemResource("glassPanel_Button.png").toString());
 		
 		public static Image TRADER_FACE = new Image(ClassLoader.getSystemResource("trader/traderface.jpg").toString());
 		public static Image ITEM_GEM = new Image(ClassLoader.getSystemResource("itemicon/itemgem.png").toString());

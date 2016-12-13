@@ -6,6 +6,8 @@ import highscore.HighScoreParsingException;
 import highscore.HighScoreRecord;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.Glow;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -32,11 +34,18 @@ public class HighScorePane extends GridPane {
 		textBack.setFill(Color.WHITE);
 		textBack.setStroke(Color.BLACK);
 		textBack.setStrokeWidth(2);
+		textBack.setEffect(new DropShadow());
 		this.add(textBack, 0, 2);
 		GridPane.setMargin(textBack, new Insets(20, 0, 80, 80));
 
 		textBack.setOnMouseClicked(e -> {
 			StartScreen.getInstace().changePane(StartScreen.getInstace().getStartPane());
+		});
+		textBack.setOnMouseEntered(e -> {
+			textBack.setEffect(new Glow(0.5));
+		});
+		textBack.setOnMouseExited(e -> {
+			textBack.setEffect(new DropShadow());
 		});
 
 		container = new GridPane();

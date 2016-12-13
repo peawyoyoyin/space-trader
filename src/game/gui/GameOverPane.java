@@ -19,6 +19,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import main.Main;
 
 public class GameOverPane extends StackPane {
@@ -31,26 +32,28 @@ public class GameOverPane extends StackPane {
 
 		VBox container = new VBox(25);
 		container.setAlignment(Pos.CENTER);
-		Label gameOver = new Label("Game Over");
+		Text gameOver = new Text("Game Over");
 		gameOver.setFont(ConfigConstant.Resource.HUD_HEADER_FONT);
-		gameOver.setTextFill(Color.WHITE);
+		gameOver.setFill(Color.WHITE);
+		//gameOver.setStroke(Color.BLACK);
+		gameOver.setEffect(new DropShadow());
 		container.getChildren().add(gameOver);
 		if (HighScore.isInHighScore(Player.instance.getMoney())) {
-			Label highScore = new Label("Your score is High Score!");
-			highScore.setTextFill(Color.WHITE);
+			Text highScore = new Text("Your score is High Score!");
+			highScore.setFill(Color.WHITE);
 			highScore.setFont(ConfigConstant.Resource.HUD_FONT);
 			container.getChildren().add(highScore);
 			height += 50;
 		}
-		Label score = new Label("Your score is : " + Integer.toString(Player.instance.getMoney()));
-		score.setTextFill(Color.WHITE);
+		Text score = new Text("Your score is : " + Integer.toString(Player.instance.getMoney()));
+		score.setFill(Color.WHITE);
 		score.setFont(ConfigConstant.Resource.HUD_FONT);
 		container.getChildren().add(score);
 		Canvas bg = new Canvas(width, height);
 		this.getChildren().add(bg);
 		StackPane buttonContainer = new StackPane();
 		Canvas bgButton = new Canvas(150, 50);
-		bgButton.getGraphicsContext2D().drawImage(ConfigConstant.Resource.BUTTON_BACKGROUND, 0, 0, 150, 50);
+		bgButton.getGraphicsContext2D().drawImage(ConfigConstant.Resource.BUTTON_BACKGROUND, 0, 0);
 		buttonContainer.getChildren().add(bgButton);
 		Button mainMenuButton = new Button("Main Menu");
 		mainMenuButton.setPrefSize(150, 50);
@@ -74,11 +77,14 @@ public class GameOverPane extends StackPane {
 			}
 			Main.toStartScreen();
 		});
-		System.out.println(this.getWidth());
-
-		bg.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND, 0, 0, bg.getWidth(),
-				bg.getHeight());
-
+		buttonContainer.setEffect(new DropShadow());
+		
+		if (height == 250) {
+			bg.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND_M, 0, 0);
+		}else {
+			bg.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND_L, 0, 0);
+		}
+		this.setEffect(new DropShadow());
 	}
 
 }
