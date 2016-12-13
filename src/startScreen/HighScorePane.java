@@ -25,7 +25,7 @@ public class HighScorePane extends GridPane {
 		textName.setStroke(Color.BLACK);
 		textName.setStrokeWidth(2);
 		this.add(textName, 0, 0);
-		GridPane.setMargin(textName, new Insets(20, 0, 0, 80));
+		GridPane.setMargin(textName, new Insets(20, 0, 30, 80));
 
 		Text textBack = new Text("Back");
 		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
