@@ -44,7 +44,7 @@ public class StocksScreen extends StackPane {
 		this.container.setTop(topContainer);
 		this.container.setCenter(stocksGraph);
 		this.container.setBottom(stockTradePanel);
-		this.container.setPadding(new Insets(5));
+		this.container.setPadding(new Insets(5,20,20,20));
 		this.getChildren().addAll(back, container);
 	}
 

@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
@@ -65,6 +66,10 @@ public class StockCell extends GridPane {
 		this.stockPriceLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.instockLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.stockChangeLabel.setFont(ConfigConstant.Resource.HUD_FONT);
+		this.getColumnConstraints().add(new ColumnConstraints(30));
+		this.getColumnConstraints().add(new ColumnConstraints(25));
+		this.getColumnConstraints().add(new ColumnConstraints(25));
+		this.getColumnConstraints().add(new ColumnConstraints(25));
 	}
 	
 	public Stock getStock() {

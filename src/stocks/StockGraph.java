@@ -3,6 +3,7 @@ package stocks;
 import java.util.List;
 
 import javafx.scene.Node;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -22,7 +23,10 @@ public class StockGraph extends StackPane {
 	
 	public StockGraph() {
 		super();
-		
+		Canvas back = new Canvas(200,200);
+		back.getGraphicsContext2D().setFill(Color.BLACK);
+		back.getGraphicsContext2D().fillRect(0, 0, 200, 200);
+		this.getChildren().add(back);
 		this.setMaxWidth(250);
 		this.setMaxHeight(200);
 		this.setEffect(new Glow(5));
