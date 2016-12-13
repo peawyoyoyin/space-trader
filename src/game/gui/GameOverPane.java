@@ -6,16 +6,8 @@ import constants.ConfigConstant;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
-import javafx.scene.image.WritableImage;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -35,7 +27,7 @@ public class GameOverPane extends StackPane {
 		Text gameOver = new Text("Game Over");
 		gameOver.setFont(ConfigConstant.Resource.HUD_HEADER_FONT);
 		gameOver.setFill(Color.WHITE);
-		//gameOver.setStroke(Color.BLACK);
+		// gameOver.setStroke(Color.BLACK);
 		gameOver.setEffect(new DropShadow());
 		container.getChildren().add(gameOver);
 		if (HighScore.isInHighScore(Player.instance.getMoney())) {
@@ -78,10 +70,10 @@ public class GameOverPane extends StackPane {
 			Main.toStartScreen();
 		});
 		buttonContainer.setEffect(new DropShadow());
-		
+
 		if (height == 250) {
 			bg.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND_M, 0, 0);
-		}else {
+		} else {
 			bg.getGraphicsContext2D().drawImage(ConfigConstant.Resource.PANEL_BACKGROUND_L, 0, 0);
 		}
 		this.setEffect(new DropShadow());

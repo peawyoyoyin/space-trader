@@ -1,7 +1,6 @@
 package startScreen;
 
 import constants.ConfigConstant;
-import game.logic.Player;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Slider;
@@ -13,9 +12,7 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class SettingPane extends GridPane {
@@ -24,7 +21,7 @@ public class SettingPane extends GridPane {
 		super();
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("Setting");
-		textName.setFont(ConfigConstant.START_SCREEN_FONT);
+		textName.setFont(ConfigConstant.Resource.START_SCREEN_FONT);
 		textName.setFill(Color.WHITE);
 		textName.setStroke(Color.BLACK);
 		textName.setStrokeWidth(2);
@@ -32,7 +29,7 @@ public class SettingPane extends GridPane {
 		GridPane.setMargin(textName, new Insets(20, 0, 0, 80));
 
 		Text textBack = new Text("Back");
-		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textBack.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textBack.setFill(Color.WHITE);
 		textBack.setStroke(Color.BLACK);
 		textBack.setStrokeWidth(2);

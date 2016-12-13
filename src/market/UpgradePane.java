@@ -7,7 +7,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.scene.text.Text;
 
 public class UpgradePane extends GridPane {
@@ -18,25 +17,32 @@ public class UpgradePane extends GridPane {
 		Text upgrade = new Text("Upgrade");
 		upgrade.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.add(upgrade, 0, 0, 2, 1);
+		
 		Text hp = new Text("Upgrade HP");
 		hp.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.add(hp, 0, 1);
+		
 		Button upHp = new Button("+ 20");
 		this.add(upHp, 1, 1);
+		
 		Text dmg = new Text("Upgrade Damage");
 		dmg.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.add(dmg, 0, 2);
+		
 		Button upDmg = new Button("+ 2");
 		this.add(upDmg, 1, 2);
+		
 		Text speed = new Text("Upgrade Speed");
 		speed.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.add(speed, 0, 3);
+		
 		Button upSpeed = new Button("+ 2");
 		this.add(upSpeed, 1, 3);
-		this.setAlignment(Pos.CENTER);
+		
 		Button back = new Button("Buy / Sell");
 		this.add(back, 1, 4);
 
+		this.setAlignment(Pos.CENTER);
 		this.getColumnConstraints().add(new ColumnConstraints(250));
 		GridPane.setMargin(upgrade, new Insets(20, 0, 20, 0));
 		GridPane.setMargin(hp, new Insets(10, 0, 10, 20));

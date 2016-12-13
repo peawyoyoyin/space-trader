@@ -3,11 +3,9 @@ package main;
 import java.util.Random;
 
 import constants.ConfigConstant;
-import game.gui.GamePane;
 import game.gui.GameScreen;
 import game.gui.MinimapPane;
 import game.gui.PlayerInfoPane;
-import game.gui.PlayerInventoryPane;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
 import game.logic.Player;
@@ -18,9 +16,8 @@ import input.Input;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import market.Market;
 import market.Trader;
@@ -40,7 +37,6 @@ public class Main extends Application {
 		Input.Initialize(scene);
 		Market.InitializeMarket();
 		MapCellHolder.instance = new MapCellHolder();
-
 		Trader.InitiailizeTraders();
 		GameScreen.instance = new GameScreen();
 		Player.instance = new Player();
@@ -53,12 +49,9 @@ public class Main extends Application {
 		PlayerInfoPane.instance = new PlayerInfoPane();
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		mc.getEntities().add(playerShip);
-
-		GamePane gamePane = new GamePane(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
+		Canvas gamePane = new Canvas(ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 		GameScreen.instance.changeCenter(gamePane);
 		GraphicsContext gc = gamePane.getGraphicsContext2D();
-		gc.setFill(Color.RED);
-		gc.fillRect(0, 0, 200, 200);
 
 		gameRunner = new AnimationTimer() {
 			int counter = 0;
@@ -114,9 +107,8 @@ public class Main extends Application {
 			ConfigConstant.Resource.MENU_MUSIC.play(ConfigConstant.volumeMusic);
 			scene = new Scene(startScreen, ConfigConstant.startScreenWidth, ConfigConstant.startScreenHeight);
 			// primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.setTitle(ConfigConstant.GAME_NAME); // Set the stage
-																// title
-			primaryStage.setScene(scene); // Place the scene
+			primaryStage.setTitle(ConfigConstant.GAME_NAME);
+			primaryStage.setScene(scene); 
 			primaryStage.setResizable(false);
 			primaryStage.show();
 			scene.getStylesheets().add(this.getClass().getResource("/main/style.css").toExternalForm());
