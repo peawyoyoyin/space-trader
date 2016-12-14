@@ -74,12 +74,12 @@ public class Main extends Application {
 				MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 				gc.clearRect(0, 0, ConfigConstant.gameScreenWidth, ConfigConstant.gameScreenHeight);
 				mc.update(gc);
-				Input.inputUpdate();
-				counter++;
-				//for testing purposes
+				//for testing
 				if(Input.isKeyPressed(KeyCode.G)) {
 					Player.instance.addMoney(500);
 				}
+				Input.inputUpdate();
+				counter++;
 				//every 1000 ticks one mapCell generate stronger enemies
 				if (counter % 1000 == 0) {
 					Random rd = new Random();
