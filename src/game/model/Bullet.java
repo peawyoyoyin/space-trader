@@ -3,7 +3,6 @@ package game.model;
 import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
-import game.logic.Player;
 import game.logic.Renderable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -51,7 +50,7 @@ public class Bullet extends Entity implements Renderable {
 				|| y < -radius) {
 			this.destroyed = true;
 		}
-		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		MapCell mc = MapCellHolder.instance.getPlayerCell();
 		for (Entity entity : mc.getEntities()) {
 			if (entity instanceof Ship && entity != this.getShooter() && this.isCollideWith(entity)) {
 				this.destroyed = true;

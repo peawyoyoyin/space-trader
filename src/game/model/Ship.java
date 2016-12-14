@@ -3,13 +3,12 @@ package game.model;
 import constants.ConfigConstant;
 import game.logic.MapCell;
 import game.logic.MapCellHolder;
-import game.logic.Player;
 import game.logic.Renderable;
 
 public abstract class Ship extends Entity implements Renderable {
 
-	protected double bulletSpeed = 20;
-	protected int bulletDamage = 5;
+	protected double bulletSpeed;
+	protected int bulletDamage;
 	protected int hp;
 	protected int maxHp;
 	protected double speed;
@@ -30,6 +29,8 @@ public abstract class Ship extends Entity implements Renderable {
 		this.turnRate = turnRate;
 		this.direction = direction;
 		this.z = 2;
+		this.bulletDamage = 5;
+		this.bulletSpeed = 20;
 	}
 	
 	public double getBulletSpeed() {
@@ -102,7 +103,7 @@ public abstract class Ship extends Entity implements Renderable {
 	}
 
 	public void shoot() {
-		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		MapCell mc = MapCellHolder.instance.getPlayerCell();
 		mc.getEntities()
 				.add(new Bullet(this.x + Math.cos(Math.toRadians(this.direction)) * 30,
 						this.y + Math.sin(Math.toRadians(this.direction)) * 30, this.bulletSpeed,
@@ -112,7 +113,7 @@ public abstract class Ship extends Entity implements Renderable {
 	@Override
 	public void update() {
 
-		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
+		MapCell mc = MapCellHolder.instance.getPlayerCell();
 		mc.addNewEffect(new TailShipEffect(this.x + Math.cos(Math.toRadians(this.direction + 180)) * 10,
 				this.y + Math.sin(Math.toRadians(this.direction + 180)) * 10, 40, this.direction));
 		this.x += Math.cos(Math.toRadians(this.direction)) * speed;

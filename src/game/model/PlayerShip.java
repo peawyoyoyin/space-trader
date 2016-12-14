@@ -93,6 +93,9 @@ public class PlayerShip extends Ship implements Friendly {
 		MapCellHolder.instance.getPlayerCell().getEntities().add(Player.instance.getPlayerShip());
 		if (!MapCellHolder.instance.getPlayerCell().hasSpaceStation()) {
 			MapCellHolder.instance.getPlayerCell().spawnEnemy();
+		} else {
+			MapCellHolder.instance.getPlayerCell().getSpaceStation().getTrader().resetItemsOnSale();
+			MapCellHolder.instance.getPlayerCell().getSpaceStation().getTrader().generateItems();
 		}
 	}
 

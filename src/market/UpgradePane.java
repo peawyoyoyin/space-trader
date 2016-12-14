@@ -67,7 +67,7 @@ public class UpgradePane extends GridPane {
 				Player.instance.getPlayerShip().getShipProperty("hp")
 						.set(Player.instance.getPlayerShip().getShipProperty("maxHp").get());
 				Player.instance.getPlayerShip().heal();
-				Player.instance.setMoney(Player.instance.getMoney() - 2000);
+				Player.instance.removeMoney(2000);
 			} else {
 				fd.play();
 			}
@@ -75,7 +75,7 @@ public class UpgradePane extends GridPane {
 		upDmg.setOnAction(e -> {
 			if (Player.instance.getMoney() >= 4000) {
 				Player.instance.setBulletDamage(Player.instance.getBulletDamage() + 2);
-				Player.instance.setMoney(Player.instance.getMoney() - 4000);
+				Player.instance.removeMoney(4000);
 			} else {
 				fd.play();
 			}
@@ -84,7 +84,7 @@ public class UpgradePane extends GridPane {
 			if (Player.instance.getMoney() >= 4000) {
 				Player.instance.getPlayerShip()
 						.setMaxSpeed(Player.instance.getPlayerShip().getSpeedProperty().get() + 2);
-				Player.instance.setMoney(Player.instance.getMoney() - 4000);
+				Player.instance.removeMoney(4000);
 			} else {
 				fd.play();
 			}
