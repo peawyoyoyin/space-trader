@@ -130,9 +130,7 @@ public class Item extends Entity implements Renderable {
 	public void render(GraphicsContext gc) {
 		// TODO Auto-generated method stub
 		gc.translate(x, y);
-		gc.rotate(this.direction);
 		gc.drawImage(getItemIcon(), -getItemIcon().getWidth()/2, -getItemIcon().getHeight()/2);
-		gc.rotate(-this.direction);
 		gc.translate(-x, -y);
 	}
 }
