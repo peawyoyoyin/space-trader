@@ -9,7 +9,6 @@ import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.InnerShadow;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -22,29 +21,25 @@ public class StockTradePanel extends GridPane {
 			// TODO Auto-generated constructor stub
 			this.setPrefSize(50, 20);
 
-			Canvas background = new Canvas(60, 30);
+			Canvas background = new Canvas(62, 32);
 			background.getGraphicsContext2D().setFill(Color.rgb(201, 208, 217));
-			background.getGraphicsContext2D().fillRoundRect(0, 0, 60, 30, 10, 5);
+			background.getGraphicsContext2D().fillRoundRect(1, 1, 60, 30, 10, 5);
+			background.getGraphicsContext2D().setStroke(Color.rgb(20, 21, 23));
+			background.getGraphicsContext2D().strokeRoundRect(0, 0, 60, 30, 10, 5);
 			this.getChildren().add(background);
 
 			Text name = new Text(value);
 			name.setFont(ConfigConstant.Resource.HUD_FONT);
-			name.setFill(Color.rgb(70, 72, 78));
+			name.setFill(Color.rgb(20, 21, 23));
 			this.getChildren().add(name);
 
-			this.setEffect(new DropShadow());
+			this.setEffect(new DropShadow(5,Color.rgb(20, 21, 23)));
 
-			this.setOnMouseEntered(event -> {
-				this.setEffect(new DropShadow(0.1, Color.BLACK));
-			});
-			this.setOnMouseExited(event -> {
-				this.setEffect(new DropShadow());
-			});
 			this.setOnMousePressed(event -> {
-				this.setEffect(new InnerShadow());
+				this.setEffect(null);
 			});
 			this.setOnMouseReleased(event -> {
-				this.setEffect(new DropShadow(0.1, Color.BLACK));
+				this.setEffect(new DropShadow(5,Color.rgb(20, 21, 23)));
 			});
 		}
 	}

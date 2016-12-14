@@ -22,9 +22,9 @@ public class StockGraph extends StackPane {
 	public StockGraph() {
 		super();
 		//create a canvas to draw background
-		Canvas background = new Canvas(200,200);
+		Canvas background = new Canvas(225,200);
 		background.getGraphicsContext2D().setFill(Color.rgb(201	,208,217));
-		background.getGraphicsContext2D().fillRoundRect(0, 0, 200, 200,20,20);
+		background.getGraphicsContext2D().fillRoundRect(0, 0, 225, 200,20,20);
 		background.setEffect(new InnerShadow());
 		this.getChildren().add(background);
 		this.setMaxWidth(250);
@@ -51,7 +51,6 @@ public class StockGraph extends StackPane {
 		this.lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color: transparent;");
 		this.lineChart.lookup(".chart-horizontal-grid-lines").setVisible(false);
 		this.lineChart.lookup(".chart-vertical-grid-lines").setVisible(false);
-		this.lineChart.setStyle("CHART_COLOR_1: #000;");
 		
 		this.getChildren().add(this.lineChart);
 		this.stock = null;
