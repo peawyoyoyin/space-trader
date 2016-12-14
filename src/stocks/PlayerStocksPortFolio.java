@@ -1,10 +1,7 @@
-package gamedata;
+package stocks;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import stocks.Stock;
-import stocks.StockHolder;
 
 public class PlayerStocksPortFolio {
 	

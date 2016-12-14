@@ -2,8 +2,6 @@ package stocks;
 
 import constants.ConfigConstant;
 import game.logic.Player;
-import gamedata.PlayerStocksPortFolio;
-import gamedata.StockTradeData;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -15,35 +13,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class StockTradePanel extends GridPane {
-
-	class ButtonStock extends StackPane {
-		public ButtonStock(String value) {
-			// TODO Auto-generated constructor stub
-			this.setPrefSize(50, 20);
-
-			Canvas background = new Canvas(62, 32);
-			background.getGraphicsContext2D().setFill(Color.rgb(201, 208, 217));
-			background.getGraphicsContext2D().fillRoundRect(1, 1, 60, 30, 10, 5);
-			background.getGraphicsContext2D().setStroke(Color.rgb(20, 21, 23));
-			background.getGraphicsContext2D().strokeRoundRect(0, 0, 60, 30, 10, 5);
-			this.getChildren().add(background);
-
-			Text name = new Text(value);
-			name.setFont(ConfigConstant.Resource.HUD_FONT);
-			name.setFill(Color.rgb(20, 21, 23));
-			this.getChildren().add(name);
-
-			this.setEffect(new DropShadow(5,Color.rgb(20, 21, 23)));
-
-			this.setOnMousePressed(event -> {
-				this.setEffect(null);
-			});
-			this.setOnMouseReleased(event -> {
-				this.setEffect(new DropShadow(5,Color.rgb(20, 21, 23)));
-			});
-		}
-	}
-
 	private ButtonStock buyButton;
 	private ButtonStock sellButton;
 	private Label stockNameLabel;
@@ -104,6 +73,34 @@ public class StockTradePanel extends GridPane {
 			Player.instance.addMoney(price);
 		} else {
 			System.out.println("No stock to sell");
+		}
+	}
+	
+	class ButtonStock extends StackPane {
+		public ButtonStock(String value) {
+			// TODO Auto-generated constructor stub
+			this.setPrefSize(50, 20);
+
+			Canvas background = new Canvas(62, 32);
+			background.getGraphicsContext2D().setFill(Color.rgb(201, 208, 217));
+			background.getGraphicsContext2D().fillRoundRect(1, 1, 60, 30, 10, 5);
+			background.getGraphicsContext2D().setStroke(Color.rgb(20, 21, 23));
+			background.getGraphicsContext2D().strokeRoundRect(0, 0, 60, 30, 10, 5);
+			this.getChildren().add(background);
+
+			Text name = new Text(value);
+			name.setFont(ConfigConstant.Resource.HUD_FONT);
+			name.setFill(Color.rgb(20, 21, 23));
+			this.getChildren().add(name);
+
+			this.setEffect(new DropShadow(5,Color.rgb(20, 21, 23)));
+
+			this.setOnMousePressed(event -> {
+				this.setEffect(null);
+			});
+			this.setOnMouseReleased(event -> {
+				this.setEffect(new DropShadow(5,Color.rgb(20, 21, 23)));
+			});
 		}
 	}
 }

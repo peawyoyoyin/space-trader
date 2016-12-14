@@ -1,8 +1,7 @@
-package gamedata;
+package stocks;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import stocks.Stock;
 
 public class StockTradeData {
 	private Stock stock;

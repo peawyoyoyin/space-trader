@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
 public class Item extends Entity implements Renderable {
+	
 	public enum ItemType {
 		MATERIAL, WEAPON, GEM, PARTS, JUNK;
 
@@ -116,7 +117,6 @@ public class Item extends Entity implements Renderable {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		for (Entity entity : mc.getEntities()) {
 			if (entity instanceof PlayerShip && this.isCollideWith(entity)) {
