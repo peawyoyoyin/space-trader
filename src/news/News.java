@@ -29,6 +29,7 @@ public class News {
 		randomNews.add(new News("regLucha","regLucha is down due to heavy load."));
 		randomNews.add(new News("waiiboy69","ONE PUUUUUUUUUUNCHHHHHHHHHHH!!!"));
 		randomNews.add(new News("blead","haven't slept for 3 days. life is good!"));
+		randomNews.add(new News("Panyawut","Prog Meth is very hard"));
 	}
 	
 	public static News getRandomNews() {

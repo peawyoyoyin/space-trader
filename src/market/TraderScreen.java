@@ -107,8 +107,6 @@ public class TraderScreen extends StackPane {
 	}
 
 	public class TraderScreenItemCell extends HBox {
-		Item item;
-
 		class ItemCellIcon extends Canvas {
 			public ItemCellIcon(Item item) {
 				super(40, 40);
@@ -118,6 +116,7 @@ public class TraderScreen extends StackPane {
 			}
 		}
 
+		Item item;
 		private ItemCellIcon itemCellIcon;
 		private Label priceLabel;
 

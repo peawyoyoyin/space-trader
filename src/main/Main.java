@@ -75,7 +75,6 @@ public class Main extends Application {
 				mc.update(gc);
 				Input.inputUpdate();
 				counter++;
-				
 				//every 1000 ticks one mapCell generate stronger enemies
 				if (counter % 1000 == 0) {
 					Random rd = new Random();

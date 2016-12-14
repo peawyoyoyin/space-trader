@@ -30,7 +30,6 @@ public class Stock {
 	private int minPrice;
 	private int maxPrice;
 	
-
 	public Stock(String name, int basePrice, int minPrice, int maxPrice) {
 		this.name = name;
 		this.minPrice = minPrice;

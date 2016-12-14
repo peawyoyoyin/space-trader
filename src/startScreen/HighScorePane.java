@@ -96,7 +96,10 @@ public class HighScorePane extends GridPane {
 		} catch (HighScoreParsingException e) {
 			// TODO Auto-generated catch block
 			Text loadError = new Text("Load High Score Error");
-			loadError.setFont(Font.font(48));
+			loadError.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
+			loadError.setFill(Color.WHITE);
+			loadError.setStroke(Color.BLACK);
+			loadError.setStrokeWidth(2);
 			container.add(loadError, 0, 0);
 		}
 

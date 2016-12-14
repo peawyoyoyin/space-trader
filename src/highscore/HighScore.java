@@ -115,19 +115,14 @@ public class HighScore {
 			sortHighScoreRecords();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-			throw new HighScoreParsingException("highscore not found");
+			new HighScoreRecord("AAA", 500);
+			new HighScoreRecord("BBB", 500);
+			new HighScoreRecord("CCC", 500);
+			new HighScoreRecord("DDD", 500);
+			new HighScoreRecord("EEE", 500);
+			saveHighScore();
 		} catch (IOException e) {
 			throw new HighScoreParsingException("io");
-		}
-	}
-	
-	public static void main(String[] args) {
-		try {
-			loadHighScore();
-			saveHighScore();
-		} catch (HighScoreParsingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 }

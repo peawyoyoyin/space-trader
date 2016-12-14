@@ -22,7 +22,6 @@ public class NewsPane extends BorderPane {
 	public static NewsPane instance = new NewsPane();
 	
 	private NewsFeedPane newsFeedPane;
-
 	NewsFeed newsFeed;
 
 	public NewsPane() {
