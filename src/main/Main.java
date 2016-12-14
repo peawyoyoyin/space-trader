@@ -18,6 +18,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import market.Market;
 import market.Trader;
@@ -75,6 +76,10 @@ public class Main extends Application {
 				mc.update(gc);
 				Input.inputUpdate();
 				counter++;
+				//for testing purposes
+				if(Input.isKeyPressed(KeyCode.G)) {
+					Player.instance.addMoney(500);
+				}
 				//every 1000 ticks one mapCell generate stronger enemies
 				if (counter % 1000 == 0) {
 					Random rd = new Random();
