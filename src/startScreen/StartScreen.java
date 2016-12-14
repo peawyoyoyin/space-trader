@@ -41,8 +41,7 @@ public class StartScreen extends StackPane {
 
 	public StartScreen() {
 		super();
-		// TODO Auto-generated constructor stub
-		
+
 		this.backgroundStartScreen = new BackgroundStartScreen();
 		this.getChildren().add(backgroundStartScreen);
 
