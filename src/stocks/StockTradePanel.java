@@ -2,8 +2,6 @@ package stocks;
 
 import constants.ConfigConstant;
 import game.logic.Player;
-import gamedata.PlayerStocksPortFolio;
-import gamedata.StockTradeData;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;

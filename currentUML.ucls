@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="gamedata.PlayerStocksPortFolio" project="progmeth-project" 
-    file="/progmeth-project/src/gamedata/PlayerStocksPortFolio.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="stocks.PlayerStocksPortFolio" project="progmeth-project" 
+    file="/progmeth-project/src/stocks/PlayerStocksPortFolio.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="276" x="4951" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -190,16 +190,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="market.TraderScreenTest" project="progmeth-project" 
-    file="/progmeth-project/src/market/TraderScreenTest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="142" width="153" x="1536" y="-8"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="startScreen.StartPane" project="progmeth-project" 
+  <class id="22" language="java" name="startScreen.StartPane" project="progmeth-project" 
     file="/progmeth-project/src/startScreen/StartPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="104" x="5444" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -208,7 +199,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="game.gui.GameOverPane" project="progmeth-project" 
+  <class id="23" language="java" name="game.gui.GameOverPane" project="progmeth-project" 
     file="/progmeth-project/src/game/gui/GameOverPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="137" x="1729" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -217,7 +208,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="game.gui.PlayerInventoryPane" project="progmeth-project" 
+  <class id="24" language="java" name="game.gui.PlayerInventoryPane" project="progmeth-project" 
     file="/progmeth-project/src/game/gui/PlayerInventoryPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="171" x="1906" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -226,7 +217,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="constants.ConfigConstant.Resource" project="progmeth-project" 
+  <class id="25" language="java" name="constants.ConfigConstant.Resource" project="progmeth-project" 
     file="/progmeth-project/src/constants/ConfigConstant.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="592" width="228" x="7251" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -235,7 +226,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="startScreen.HighScorePane" project="progmeth-project" 
+  <class id="26" language="java" name="startScreen.HighScorePane" project="progmeth-project" 
     file="/progmeth-project/src/startScreen/HighScorePane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="124" width="144" x="5588" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -244,7 +235,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="game.model.HitEffect" project="progmeth-project" 
+  <class id="27" language="java" name="game.model.HitEffect" project="progmeth-project" 
     file="/progmeth-project/src/game/model/HitEffect.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="178" width="230" x="4257" y="1581"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -253,7 +244,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="game.model.Ship" project="progmeth-project" 
+  <class id="28" language="java" name="game.model.Ship" project="progmeth-project" 
     file="/progmeth-project/src/game/model/Ship.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="519" width="314" x="4689" y="2061"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -262,7 +253,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="input.KeyCodeConstants" project="progmeth-project" 
+  <class id="29" language="java" name="input.KeyCodeConstants" project="progmeth-project" 
     file="/progmeth-project/src/input/KeyCodeConstants.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="196" width="165" x="2127" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -271,7 +262,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="31" language="java" name="market.TraderItemPricesList" project="progmeth-project" 
+  <class id="30" language="java" name="market.TraderItemPricesList" project="progmeth-project" 
     file="/progmeth-project/src/market/TraderItemPricesList.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="189" x="6477" y="2061"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -280,7 +271,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="32" language="java" name="game.logic.Player" project="progmeth-project" 
+  <class id="31" language="java" name="game.logic.Player" project="progmeth-project" 
     file="/progmeth-project/src/game/logic/Player.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="736" width="351" x="5109" y="2061"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -289,7 +280,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="33" language="java" name="market.Trader" project="progmeth-project" 
+  <class id="32" language="java" name="market.Trader" project="progmeth-project" 
     file="/progmeth-project/src/market/Trader.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="538" width="305" x="5531" y="2061"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -298,7 +289,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="34" language="java" name="stocks.Stock" project="progmeth-project" 
+  <class id="33" language="java" name="stocks.Stock" project="progmeth-project" 
     file="/progmeth-project/src/stocks/Stock.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="430" width="223" x="6212" y="1581"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -307,7 +298,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="stocks.StockChangeLabel" project="progmeth-project" 
+  <class id="34" language="java" name="stocks.StockChangeLabel" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StockCell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="160" width="181" x="6485" y="1581"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -316,7 +307,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="stocks.StocksScreen.StocksList" project="progmeth-project" 
+  <class id="35" language="java" name="stocks.StocksScreen.StocksList" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StocksScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="193" x="6739" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -325,7 +316,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="stocks.StockCell" project="progmeth-project" 
+  <class id="36" language="java" name="stocks.StockCell" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StockCell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="178" width="162" x="6491" y="1148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -334,7 +325,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="highscore.HighScore" project="progmeth-project" 
+  <class id="37" language="java" name="highscore.HighScore" project="progmeth-project" 
     file="/progmeth-project/src/highscore/HighScore.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="250" width="224" x="2332" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -343,7 +334,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="39" language="java" name="highscore.HighScoreParsingException" project="progmeth-project" 
+  <class id="38" language="java" name="highscore.HighScoreParsingException" project="progmeth-project" 
     file="/progmeth-project/src/highscore/HighScoreParsingException.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="230" x="2596" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -352,7 +343,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="40" language="java" name="game.logic.RenderableHolder" project="progmeth-project" 
+  <class id="39" language="java" name="game.logic.RenderableHolder" project="progmeth-project" 
     file="/progmeth-project/src/game/logic/RenderableHolder.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="214" width="303" x="2866" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -361,7 +352,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="41" language="java" name="constants.ConfigConstant" project="progmeth-project" 
+  <class id="40" language="java" name="constants.ConfigConstant" project="progmeth-project" 
     file="/progmeth-project/src/constants/ConfigConstant.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="484" width="251" x="7251" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -370,7 +361,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="42" language="java" name="news.NewsFeed" project="progmeth-project" 
+  <class id="41" language="java" name="news.NewsFeed" project="progmeth-project" 
     file="/progmeth-project/src/news/NewsFeedPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="124" width="145" x="6972" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -379,7 +370,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="43" language="java" name="market.TraderScreen.TraderScreenItemCell" project="progmeth-project" 
+  <class id="42" language="java" name="market.TraderScreen.TraderScreenItemCell" project="progmeth-project" 
     file="/progmeth-project/src/market/TraderScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="223" x="6706" y="2061"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -388,7 +379,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="44" language="java" name="game.gui.PlayerInventoryCell" project="progmeth-project" 
+  <class id="43" language="java" name="game.gui.PlayerInventoryCell" project="progmeth-project" 
     file="/progmeth-project/src/game/gui/PlayerInventoryPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="196" x="3219" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -397,7 +388,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="45" language="java" name="news.News" project="progmeth-project" file="/progmeth-project/src/news/News.java" 
+  <class id="44" language="java" name="news.News" project="progmeth-project" file="/progmeth-project/src/news/News.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="214" width="168" x="3455" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -406,7 +397,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="46" language="java" name="market.StockUpdater" project="progmeth-project" 
+  <class id="45" language="java" name="market.StockUpdater" project="progmeth-project" 
     file="/progmeth-project/src/market/StockUpdater.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="160" width="249" x="5923" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -415,7 +406,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="47" language="java" name="game.gui.GamePane" project="progmeth-project" 
+  <class id="46" language="java" name="game.gui.GamePane" project="progmeth-project" 
     file="/progmeth-project/src/game/gui/GamePane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="179" x="3673" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -424,7 +415,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="48" language="java" name="game.model.Item" project="progmeth-project" 
+  <class id="47" language="java" name="game.model.Item" project="progmeth-project" 
     file="/progmeth-project/src/game/model/Item.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="232" width="230" x="5491" y="2847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -433,7 +424,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="49" language="java" name="startScreen.BackgroundStartScreen" project="progmeth-project" 
+  <class id="48" language="java" name="startScreen.BackgroundStartScreen" project="progmeth-project" 
     file="/progmeth-project/src/startScreen/BackgroundStartScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="178" width="195" x="4527" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -442,7 +433,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="50" language="java" name="game.model.Entity" project="progmeth-project" 
+  <class id="49" language="java" name="game.model.Entity" project="progmeth-project" 
     file="/progmeth-project/src/game/model/Entity.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="393" width="193" x="4527" y="1148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -451,7 +442,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="51" language="java" name="game.logic.MapCellHolder" project="progmeth-project" 
+  <class id="50" language="java" name="game.logic.MapCellHolder" project="progmeth-project" 
     file="/progmeth-project/src/game/logic/MapCellHolder.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="142" width="231" x="3892" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -460,7 +451,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="52" language="java" name="game.model.PlayerShip" project="progmeth-project" 
+  <class id="51" language="java" name="game.model.PlayerShip" project="progmeth-project" 
     file="/progmeth-project/src/game/model/PlayerShip.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="322" width="303" x="5109" y="2847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -469,7 +460,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="53" language="java" name="market.Market" project="progmeth-project" 
+  <class id="52" language="java" name="market.Market" project="progmeth-project" 
     file="/progmeth-project/src/market/Market.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="286" width="258" x="5923" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -478,7 +469,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="54" language="java" name="stocks.StockHolder" project="progmeth-project" 
+  <class id="53" language="java" name="stocks.StockHolder" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StockHolder.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="168" x="6273" y="1148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -487,7 +478,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="55" language="java" name="input.Input" project="progmeth-project" 
+  <class id="54" language="java" name="input.Input" project="progmeth-project" 
     file="/progmeth-project/src/input/Input.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="232" width="223" x="4173" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -496,8 +487,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="56" language="java" name="gamedata.StockTradeData" project="progmeth-project" 
-    file="/progmeth-project/src/gamedata/StockTradeData.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="55" language="java" name="stocks.StockTradeData" project="progmeth-project" 
+    file="/progmeth-project/src/stocks/StockTradeData.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="250" width="235" x="5582" y="1148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -505,7 +496,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="57" language="java" name="game.model.DemoEnemy" project="progmeth-project" 
+  <class id="56" language="java" name="game.model.DemoEnemy" project="progmeth-project" 
     file="/progmeth-project/src/game/model/DemoEnemy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="178" width="363" x="4269" y="2847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -514,7 +505,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="58" language="java" name="game.model.Enemy" project="progmeth-project" 
+  <interface id="57" language="java" name="game.model.Enemy" project="progmeth-project" 
     file="/progmeth-project/src/game/model/Enemy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="70" width="120" x="4693" y="3209"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -523,7 +514,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="59" language="java" name="game.model.Friendly" project="progmeth-project" 
+  <interface id="58" language="java" name="game.model.Friendly" project="progmeth-project" 
     file="/progmeth-project/src/game/model/Friendly.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="70" width="120" x="5109" y="3209"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -532,7 +523,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="60" language="java" name="game.model.EnemyShip" project="progmeth-project" 
+  <class id="59" language="java" name="game.model.EnemyShip" project="progmeth-project" 
     file="/progmeth-project/src/game/model/EnemyShip.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="250" width="355" x="4693" y="2847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -541,7 +532,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="61" language="java" name="news.NewsPane" project="progmeth-project" 
+  <class id="60" language="java" name="news.NewsPane" project="progmeth-project" 
     file="/progmeth-project/src/news/NewsPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="142" width="178" x="7023" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -550,7 +541,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="62" language="java" name="stocks.StockPriceController" project="progmeth-project" 
+  <class id="61" language="java" name="stocks.StockPriceController" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StockPriceController.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="250" width="257" x="5934" y="1148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -559,7 +550,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="63" language="java" name="game.gui.MinimapPane" project="progmeth-project" 
+  <class id="62" language="java" name="game.gui.MinimapPane" project="progmeth-project" 
     file="/progmeth-project/src/game/gui/MinimapPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="178" width="172" x="4436" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -568,7 +559,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="64" language="java" name="startScreen.SettingPane" project="progmeth-project" 
+  <class id="63" language="java" name="startScreen.SettingPane" project="progmeth-project" 
     file="/progmeth-project/src/startScreen/SettingPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="111" x="5772" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -577,7 +568,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="65" language="java" name="game.gui.PlayerHealthBar" project="progmeth-project" 
+  <class id="64" language="java" name="game.gui.PlayerHealthBar" project="progmeth-project" 
     file="/progmeth-project/src/game/gui/PlayerStatusPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="178" width="163" x="4658" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -586,7 +577,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="66" language="java" name="market.TraderScreen.TraderScreenItemCell.ItemCellIcon" project="progmeth-project" 
+  <class id="65" language="java" name="market.TraderScreen.TraderScreenItemCell.ItemCellIcon" project="progmeth-project" 
     file="/progmeth-project/src/market/TraderScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="130" x="6706" y="2847"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -595,7 +586,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="67" language="java" name="stocks.StocksScreen" project="progmeth-project" 
+  <class id="66" language="java" name="stocks.StocksScreen" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StocksScreen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="160" width="254" x="6501" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -604,7 +595,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="68" language="java" name="game.model.Bullet" project="progmeth-project" 
+  <class id="67" language="java" name="game.model.Bullet" project="progmeth-project" 
     file="/progmeth-project/src/game/model/Bullet.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="232" width="255" x="4527" y="1581"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -613,7 +604,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="69" language="java" name="news.NewsPaneTop" project="progmeth-project" 
+  <class id="68" language="java" name="news.NewsPaneTop" project="progmeth-project" 
     file="/progmeth-project/src/news/NewsPane.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="88" width="126" x="4861" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -622,7 +613,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="70" language="java" name="main.Main" project="progmeth-project" file="/progmeth-project/src/main/Main.java" 
+  <class id="69" language="java" name="main.Main" project="progmeth-project" file="/progmeth-project/src/main/Main.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="214" width="196" x="5027" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -631,7 +622,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="71" language="java" name="stocks.StockTradePanel" project="progmeth-project" 
+  <class id="70" language="java" name="stocks.StockTradePanel" project="progmeth-project" 
     file="/progmeth-project/src/stocks/StockTradePanel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="214" width="198" x="6501" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -640,768 +631,756 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="72">    
-    <end type="SOURCE" refId="46" navigable="false">      
-      <attribute id="73" name="stockPriceController">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="74" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="62" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="75">    
+  <realization id="71">    
+    <bendpoint x="4217" y="2061"/>    
+    <bendpoint x="4217" y="2847"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <nesting id="72">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="7"/>  
   </nesting>  
-  <association id="76">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="77" name="newEffect">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="78" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="50" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="79">    
-    <end type="SOURCE" refId="67" navigable="false">      
-      <attribute id="80" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="81" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="67" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="82">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="83" name="startPane">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="84" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="85">    
-    <end type="SOURCE" refId="67" navigable="false">      
-      <attribute id="86" name="stocksGraph">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="87" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="88">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="89" name="instace">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="90" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="91">    
-    <bendpoint x="3990" y="2061"/>    
-    <bendpoint x="3990" y="2847"/>    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <association id="92">    
-    <end type="SOURCE" refId="43" navigable="false">      
-      <attribute id="93" name="item">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="94" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="48" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="95">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="96" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="97" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="98">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="99" name="settingPane">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="100" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="64" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="101">    
+  <association id="73">    
     <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="102" name="playerStatus">        
+      <attribute id="74" name="playerStatus">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="103" minimum="0" maximum="1">        
+      <multiplicity id="75" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="104">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <association id="105">    
-    <end type="SOURCE" refId="40" navigable="false">      
-      <attribute id="106" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="107" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="40" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="108">    
-    <bendpoint x="6242" y="1148"/>    
-    <end type="SOURCE" refId="71" navigable="false">      
-      <attribute id="109" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="110" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="111">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="112" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="113" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="32" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="114">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="9"/>  
-  </nesting>  
-  <association id="115">    
-    <end type="SOURCE" refId="56" navigable="false">      
-      <attribute id="116" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="117" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="118">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="119" name="trader">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="120" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="33" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="121">    
-    <bendpoint x="5500" y="2061"/>    
-    <bendpoint x="5500" y="1581"/>    
-    <end type="SOURCE" refId="48"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <generalization id="122">    
-    <end type="SOURCE" refId="57"/>    
-    <end type="TARGET" refId="29"/>  
-  </generalization>  
-  <association id="123">    
-    <end type="SOURCE" refId="37" navigable="false">      
-      <attribute id="124" name="stockChangeLabel">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="125" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="35" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="126">    
-    <end type="SOURCE" refId="33" navigable="false">      
-      <attribute id="127" name="itemsOnSale">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="128" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="48" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="129">    
-    <end type="SOURCE" refId="43"/>    
-    <end type="TARGET" refId="66"/>  
-  </nesting>  
-  <association id="130">    
-    <end type="SOURCE" refId="53" navigable="false">      
-      <attribute id="131" name="stockUpdaters">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="132" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="46" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="133">    
-    <bendpoint x="4662" y="2847"/>    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <association id="134">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="135" name="highScoreRecords">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="136" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="137">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <nesting id="138">    
-    <end type="SOURCE" refId="67"/>    
-    <end type="TARGET" refId="36"/>  
-  </nesting>  
-  <association id="139">    
-    <end type="SOURCE" refId="43" navigable="false">      
-      <attribute id="140" name="itemCellIcon">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="141" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="66" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="142">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="143" name="itemCells">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="144" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="43" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="145">    
-    <end type="SOURCE" refId="52"/>    
-    <end type="TARGET" refId="59"/>  
-  </realization>  
-  <association id="146">    
-    <end type="SOURCE" refId="45" navigable="false">      
-      <attribute id="147" name="randomNews">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="148" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="149">    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="150" name="priceList">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="151" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="31" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="152">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="153" name="trader">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="154" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="33" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="155">    
-    <end type="SOURCE" refId="49" navigable="false">      
-      <attribute id="156" name="entities">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="157" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="50" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="158">    
-    <end type="SOURCE" refId="54" navigable="false">      
-      <attribute id="159" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="160" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="54" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="161">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="162" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="163" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="164">    
-    <end type="SOURCE" refId="62" navigable="false">      
-      <attribute id="165" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="166" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="167">    
-    <end type="SOURCE" refId="60"/>    
-    <end type="TARGET" refId="29"/>  
-  </generalization>  
-  <realization id="168">    
-    <bendpoint x="4238" y="2061"/>    
-    <bendpoint x="4238" y="2847"/>    
-    <end type="SOURCE" refId="68"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <realization id="169">    
-    <end type="SOURCE" refId="57"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <association id="170">    
-    <end type="SOURCE" refId="37" navigable="false">      
-      <attribute id="171" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="172" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="173">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="174" name="currentCell">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="175" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="176">    
+  <association id="76">    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="177" name="backgroundStartScreen">        
+      <attribute id="77" name="startPane">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="178" minimum="0" maximum="1">        
+      <multiplicity id="78" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="49" navigable="true"/>    
+    <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="179">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="180" name="playerStatusPane">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="181" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="182">    
-    <end type="SOURCE" refId="68" navigable="false">      
-      <attribute id="183" name="shooter">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="184" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="185">    
-    <end type="SOURCE" refId="33" navigable="false">      
-      <attribute id="186" name="allTraders">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="187" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="33" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="188">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="189" name="allTradeData">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="190" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="56" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="191">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <nesting id="192">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="20"/>  
-  </nesting>  
-  <generalization id="193">    
-    <end type="SOURCE" refId="68"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <association id="194">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="195" name="newsFeed">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="196" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="42" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="197">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="43"/>  
-  </nesting>  
-  <realization id="198">    
-    <bendpoint x="4217" y="2061"/>    
-    <bendpoint x="4217" y="2847"/>    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <association id="199">    
-    <end type="SOURCE" refId="61" navigable="false">      
-      <attribute id="200" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="201" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="61" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="202">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="203" name="playerShip">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="204" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="52" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="205">    
-    <end type="SOURCE" refId="48"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <nesting id="206">    
-    <end type="SOURCE" refId="41"/>    
-    <end type="TARGET" refId="26"/>  
-  </nesting>  
-  <association id="207">    
+  <association id="79">    
     <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="208" name="highScorePane">        
+      <attribute id="80" name="updatingPane">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="209" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="210">    
-    <end type="SOURCE" refId="48" navigable="false">      
-      <attribute id="211" name="itemType">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="212" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="213">    
-    <end type="SOURCE" refId="61" navigable="false">      
-      <attribute id="214" name="newsFeed">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="215" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="42" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="216">    
-    <bendpoint x="5078" y="2061"/>    
-    <bendpoint x="5078" y="2847"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <association id="217">    
-    <bendpoint x="6221" y="1148"/>    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="218" name="stock">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="219" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="220">    
-    <end type="SOURCE" refId="52"/>    
-    <end type="TARGET" refId="29"/>  
-  </generalization>  
-  <association id="221">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="222" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="223" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="224">    
-    <end type="SOURCE" refId="34" navigable="false">      
-      <attribute id="225" name="GAME_STOCKS">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="226" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="227">    
-    <end type="SOURCE" refId="60"/>    
-    <end type="TARGET" refId="58"/>  
-  </realization>  
-  <association id="228">    
-    <end type="SOURCE" refId="51" navigable="false">      
-      <attribute id="229" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="230" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="51" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="231">    
-    <end type="SOURCE" refId="67" navigable="false">      
-      <attribute id="232" name="stockTradePanel">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="233" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="71" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="234">    
-    <end type="SOURCE" refId="48"/>    
-    <end type="TARGET" refId="18"/>  
-  </nesting>  
-  <association id="235">    
-    <end type="SOURCE" refId="67" navigable="false">      
-      <attribute id="236" name="stocksList">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="237" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="36" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="238">    
-    <bendpoint x="4136" y="2061"/>    
-    <bendpoint x="4136" y="2847"/>    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <generalization id="239">    
-    <bendpoint x="4812" y="1581"/>    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <generalization id="240">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="50"/>  
-  </generalization>  
-  <association id="241">    
-    <end type="SOURCE" refId="63" navigable="false">      
-      <attribute id="242" name="instance">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="243" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="63" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="244">    
-    <end type="SOURCE" refId="54" navigable="false">      
-      <attribute id="245" name="stocks">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="246" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="247">    
-    <end type="SOURCE" refId="49" navigable="false">      
-      <attribute id="248" name="newEffect">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="249" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="50" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="250">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="251" name="updatingPane">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="252" minimum="0" maximum="1">        
+      <multiplicity id="81" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="253">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="254" name="instance">        
+  <association id="82">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="83" name="GAME_STOCKS">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="255" minimum="0" maximum="1">        
+      <multiplicity id="84" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="85">    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <generalization id="86">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="87">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="88" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="89" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="53" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="90">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="91">    
+    <end type="SOURCE" refId="62" navigable="false">      
+      <attribute id="92" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="93" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="62" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="94">    
+    <bendpoint x="3990" y="2061"/>    
+    <bendpoint x="3990" y="2847"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <realization id="95">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="96">    
+    <end type="SOURCE" refId="61" navigable="false">      
+      <attribute id="97" name="stock">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="98" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="99">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="58"/>  
+  </realization>  
+  <association id="100">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="101" name="newEffect">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="102" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="103">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="104" name="allTraders">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="105" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="106">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="107" name="itemCells">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="108" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="110" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="111" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="113" name="item">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="114" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="115">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="20"/>  
+  </nesting>  
+  <association id="116">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="117" name="highScoreRecords">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="119">    
+    <end type="SOURCE" refId="66"/>    
+    <end type="TARGET" refId="35"/>  
+  </nesting>  
+  <association id="120">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="121" name="currentCell">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="122" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="124" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="125" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="256">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="257" name="entities">        
+  <association id="126">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="127" name="stockPriceController">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="258" minimum="0" maximum="2147483647">        
+      <multiplicity id="128" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="61" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="129">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="130" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="131" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="66" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="132">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <association id="133">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="134" name="entities">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="135" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="136">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="137" name="trader">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="138" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="139">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="140" name="stockTradePanel">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="141" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="70" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="142">    
+    <bendpoint x="6221" y="1148"/>    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="143" name="stock">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="144" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="145">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="146" name="playerStatusPane">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="147" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="148">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="18"/>  
+  </nesting>  
+  <association id="149">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="150" name="itemsOnSale">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="151" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="152">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="153">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="154" name="entities">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="155" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="156">    
+    <end type="SOURCE" refId="44" navigable="false">      
+      <attribute id="157" name="randomNews">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="158" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="159">    
+    <bendpoint x="4662" y="2847"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="160">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="161" name="settingPane">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="162" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="63" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="163">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="164" name="playerShip">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="165" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="51" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="166">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="57"/>  
+  </realization>  
+  <association id="167">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="168" name="highScorePane">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="169" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="170">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="171" name="trader">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="172" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="173">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="174" name="newsFeed">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="175" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="176">    
+    <bendpoint x="5078" y="2061"/>    
+    <bendpoint x="5078" y="2847"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <generalization id="177">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <generalization id="178">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="179">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="180" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="181" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="182">    
+    <bendpoint x="4238" y="2061"/>    
+    <bendpoint x="4238" y="2847"/>    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="183">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="184" name="stocksGraph">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="185" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="186">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="187">    
+    <end type="SOURCE" refId="67" navigable="false">      
+      <attribute id="188" name="shooter">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="189" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="190">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="28"/>  
+  </generalization>  
+  <association id="191">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="192" name="stocks">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="193" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="194">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="42"/>  
+  </nesting>  
+  <association id="195">    
+    <end type="SOURCE" refId="55" navigable="false">      
+      <attribute id="196" name="stock">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="197" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="198">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="199" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="200" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="50" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="201">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="202" name="backgroundStartScreen">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="203" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="204">    
+    <end type="SOURCE" refId="60" navigable="false">      
+      <attribute id="205" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="206" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="60" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="207">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="208" name="stockChangeLabel">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="209" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="210">    
+    <end type="SOURCE" refId="52" navigable="false">      
+      <attribute id="211" name="stockUpdaters">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="212" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="213">    
+    <bendpoint x="4812" y="1581"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="214">    
+    <end type="SOURCE" refId="66" navigable="false">      
+      <attribute id="215" name="stocksList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="216" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="217">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="65"/>  
+  </nesting>  
+  <association id="218">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="219" name="itemType">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="220" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="221">    
+    <bendpoint x="5500" y="2061"/>    
+    <bendpoint x="5500" y="1581"/>    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="49"/>  
+  </generalization>  
+  <association id="222">    
+    <bendpoint x="6242" y="1148"/>    
+    <end type="SOURCE" refId="70" navigable="false">      
+      <attribute id="223" name="stock">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="224" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="225">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="226" name="newsFeed">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="227" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="228">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="25"/>  
+  </nesting>  
+  <association id="229">    
+    <end type="SOURCE" refId="42" navigable="false">      
+      <attribute id="230" name="itemCellIcon">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="231" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="65" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="232">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="233" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="234" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="235">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="236" name="allTradeData">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="237" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="55" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="238">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="239" name="priceList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="240" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="241">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="242">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="243" name="stock">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="244" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="245">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="246" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="247" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="248">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="249" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="250" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="251">    
+    <bendpoint x="4136" y="2061"/>    
+    <bendpoint x="4136" y="2847"/>    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="252">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="253" name="newEffect">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="254" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="49" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

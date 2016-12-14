@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.Random;
 
 import game.model.Item.ItemType;
-import gamedata.PlayerStocksPortFolio;
 import javafx.application.Platform;
 import news.News;
 import news.NewsPane;
+import stocks.PlayerStocksPortFolio;
 import stocks.Stock;
 import stocks.StockCell;
 import stocks.StockHolder;

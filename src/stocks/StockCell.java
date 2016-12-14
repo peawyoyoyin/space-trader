@@ -1,8 +1,6 @@
 package stocks;
 
 import constants.ConfigConstant;
-import gamedata.PlayerStocksPortFolio;
-import gamedata.StockTradeData;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

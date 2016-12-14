@@ -14,7 +14,6 @@ public class UpgradePane extends GridPane {
 
 	public UpgradePane() {
 		super();
-		// TODO Auto-generated constructor stub
 		Text upgrade = new Text("Upgrade");
 		upgrade.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.add(upgrade, 0, 0, 2, 1);

@@ -10,7 +10,7 @@ public class News {
 	
 	static {
 		randomNews.add(new News("peawyoyoyin","progmeth final is too hard for me."));
-		randomNews.add(new News("roy lek","You call this an exam?"));
+		randomNews.add(new News("roy lek","Dig logic : You call this an exam?"));
 		randomNews.add(new News("naisk133", "Hope I get Rank 1 on discrete again."));
 		randomNews.add(new News("enginex", "enginex co-working space is now open! 6th floor, 100th year building"));
 		randomNews.add(new News("moomoo", "bought a new board game"));
@@ -27,6 +27,8 @@ public class News {
 		randomNews.add(new News("Zulu","why are we not warping?"));
 		randomNews.add(new News("roy","will I ever get a girlfriend?"));
 		randomNews.add(new News("regLucha","regLucha is down due to heavy load."));
+		randomNews.add(new News("waiiboy69","ONE PUUUUUUUUUUNCHHHHHHHHHHH!!!"));
+		randomNews.add(new News("blead","haven't slept for 3 days. life is good!"));
 	}
 	
 	public static News getRandomNews() {
