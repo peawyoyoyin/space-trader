@@ -16,12 +16,14 @@ import javafx.util.Duration;
 import news.NewsPane;
 import stocks.StocksScreen;
 
-public class GameScreen extends BorderPane {
+public class GameScreen extends StackPane {
 
 	public static GameScreen instance = new GameScreen();
 
 	private Node left;
 	private Node right;
+	
+	private BorderPane frame;
 
 	private BorderPane leftPane;
 	private StackPane centerPane;
@@ -37,6 +39,8 @@ public class GameScreen extends BorderPane {
 
 	public GameScreen(Node left, Node center, Node right) {
 		super();
+		this.frame = new BorderPane();
+		this.frame.setMaxSize(ConfigConstant.startScreenWidth, ConfigConstant.gameScreenHeight);
 		this.leftPane = new BorderPane();
 		this.rightPane = new BorderPane();
 		this.centerPane = new StackPane();
@@ -87,13 +91,19 @@ public class GameScreen extends BorderPane {
 
 		this.left = left;
 		this.right = right;
-		this.setLeft(leftContainer);
-		this.setCenter(this.centerPane);
-		this.setRight(this.rightPane);
+		frame.setLeft(leftContainer);
+		frame.setCenter(this.centerPane);
+		frame.setRight(this.rightPane);
 
 		this.leftPane.setCenter(left);
 		this.rightPane.setCenter(right);
 		this.centerPane.getChildren().add(center);
+		
+		this.getChildren().add(frame);
+	}
+	
+	public Node getCenter(){
+		return frame.getCenter();
 	}
 
 	public void changeLeft(Node left) {

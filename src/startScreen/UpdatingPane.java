@@ -7,8 +7,6 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-import com.sun.media.jfxmedia.events.NewFrameEvent;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -16,15 +14,10 @@ import javafx.geometry.Pos;
 import javafx.scene.control.TextArea;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Glow;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 public class UpdatingPane extends GridPane {
@@ -36,7 +29,7 @@ public class UpdatingPane extends GridPane {
 		super();
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("Update");
-		textName.setFont(ConfigConstant.START_SCREEN_FONT);
+		textName.setFont(ConfigConstant.Resource.START_SCREEN_FONT);
 		textName.setFill(Color.WHITE);
 		textName.setStroke(Color.BLACK);
 		textName.setStrokeWidth(2);
@@ -44,7 +37,7 @@ public class UpdatingPane extends GridPane {
 		GridPane.setMargin(textName, new Insets(20, 0, 20, 80));
 
 		Text textBack = new Text("Back");
-		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textBack.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textBack.setFill(Color.WHITE);
 		textBack.setStroke(Color.BLACK);
 		textBack.setStrokeWidth(2);
@@ -73,7 +66,7 @@ public class UpdatingPane extends GridPane {
 
 	public void startUpdate() {
 		Text textStatus = new Text("Connecting to server");
-		textStatus.setFont(ConfigConstant.START_SCREEN_SMALL_FONT);
+		textStatus.setFont(ConfigConstant.Resource.START_SCREEN_SMALL_FONT);
 		textStatus.setFill(Color.WHITE);
 		textStatus.setStroke(Color.BLACK);
 		textStatus.setStrokeWidth(2);

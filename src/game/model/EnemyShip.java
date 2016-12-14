@@ -1,9 +1,7 @@
 package game.model;
 
 import constants.ConfigConstant;
-import game.logic.MapCell;
 import game.logic.MapCellHolder;
-import game.logic.Player;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -94,10 +92,9 @@ public class EnemyShip extends Ship implements Enemy {
 	}
 
 	public Entity getEnemyNearest() {
-		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		double nearestEnemyDistance = 1000;
 		Entity nearestEnemy = null;
-		for (Entity entity : mc.getEntities()) {
+		for (Entity entity : MapCellHolder.instance.getPlayerCell().getEntities()) {
 			if (entity instanceof Friendly) {
 				if (Math.hypot(entity.x - this.x, entity.y - this.y) < nearestEnemyDistance) {
 					nearestEnemy = entity;

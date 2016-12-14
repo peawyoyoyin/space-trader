@@ -22,7 +22,7 @@ public class HighScorePane extends GridPane {
 		super();
 		// TODO Auto-generated constructor stub
 		Text textName = new Text("High Score");
-		textName.setFont(ConfigConstant.START_SCREEN_FONT);
+		textName.setFont(ConfigConstant.Resource.START_SCREEN_FONT);
 		textName.setFill(Color.WHITE);
 		textName.setStroke(Color.BLACK);
 		textName.setStrokeWidth(2);
@@ -30,7 +30,7 @@ public class HighScorePane extends GridPane {
 		GridPane.setMargin(textName, new Insets(20, 0, 30, 80));
 
 		Text textBack = new Text("Back");
-		textBack.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textBack.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textBack.setFill(Color.WHITE);
 		textBack.setStroke(Color.BLACK);
 		textBack.setStrokeWidth(2);

@@ -7,7 +7,6 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Glow;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import main.Main;
 
@@ -16,7 +15,7 @@ public class StartPane extends GridPane {
 		super();
 		// TODO Auto-generated constructor stub
 		Text textName = new Text(ConfigConstant.GAME_NAME);
-		textName.setFont(ConfigConstant.START_SCREEN_FONT);
+		textName.setFont(ConfigConstant.Resource.START_SCREEN_FONT);
 		textName.setFill(Color.WHITE);
 		textName.setStroke(Color.BLACK);
 		textName.setStrokeWidth(2);
@@ -24,7 +23,7 @@ public class StartPane extends GridPane {
 		GridPane.setMargin(textName, new Insets(40,0,0,80));
 		
 		Text textStart = new Text("Start");
-		textStart.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textStart.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textStart.setFill(Color.WHITE);
 		textStart.setStroke(Color.BLACK);
 		textStart.setStrokeWidth(2);
@@ -33,7 +32,7 @@ public class StartPane extends GridPane {
 		GridPane.setMargin(textStart, new Insets(30,0,10,200));
 		
 		Text textHighScore = new Text("High Score");
-		textHighScore.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textHighScore.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textHighScore.setFill(Color.WHITE);
 		textHighScore.setStroke(Color.BLACK);
 		textHighScore.setStrokeWidth(2);
@@ -42,7 +41,7 @@ public class StartPane extends GridPane {
 		GridPane.setMargin(textHighScore, new Insets(10,0,10,200));
 		
 		Text textSetting = new Text("Setting");
-		textSetting.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textSetting.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textSetting.setFill(Color.WHITE);
 		textSetting.setStroke(Color.BLACK);
 		textSetting.setStrokeWidth(2);
@@ -51,7 +50,7 @@ public class StartPane extends GridPane {
 		GridPane.setMargin(textSetting, new Insets(10,0,10,200));
 		
 		Text textUpdating = new Text("Update");
-		textUpdating.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textUpdating.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textUpdating.setFill(Color.WHITE);
 		textUpdating.setStroke(Color.BLACK);
 		textUpdating.setStrokeWidth(2);
@@ -60,7 +59,7 @@ public class StartPane extends GridPane {
 		GridPane.setMargin(textUpdating, new Insets(10,0,10,200));
 		
 		Text textExit = new Text("Exit");
-		textExit.setFont(ConfigConstant.START_SCREEN_ITEM_FONT);
+		textExit.setFont(ConfigConstant.Resource.START_SCREEN_ITEM_FONT);
 		textExit.setFill(Color.WHITE);
 		textExit.setStroke(Color.BLACK);
 		textExit.setStrokeWidth(2);

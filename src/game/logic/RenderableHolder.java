@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.sun.javafx.tk.FontLoader;
 import com.sun.javafx.tk.Toolkit;
 
 import constants.ConfigConstant;
@@ -11,6 +12,7 @@ import game.model.Enemy;
 import game.model.Entity;
 import game.model.SpaceStationEntity;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
@@ -51,6 +53,7 @@ public class RenderableHolder {
 		}
 		drawInterface(gc, mc);
 		gc.translate(x, y);
+		drawNameTrader(gc);
 	}
 
 	public void drawBackground(GraphicsContext gc) {
@@ -95,6 +98,20 @@ public class RenderableHolder {
 		} else if (ConfigConstant.mapCellHeight - Player.instance.getPlayerShip().getY() == Collections
 				.min(distanceList)) {
 			track(Player.instance.getPlayerShip().getX(), ConfigConstant.mapCellHeight, Color.LAWNGREEN, gc);
+		}
+	}
+
+	public void drawNameTrader(GraphicsContext gc) {
+		if (MapCellHolder.instance.getPlayerCell().isPlayerColideWithSpacestation() && !Player.instance.isPause()) {
+			gc.setFill(Color.WHITE);
+			gc.setFont(ConfigConstant.Resource.HUD_FONT);
+			gc.setEffect(new DropShadow());
+			String text = "Trader : " + MapCellHolder.instance.getPlayerCell().getSpaceStation().getTrader().getName();
+			FontLoader fl = Toolkit.getToolkit().getFontLoader();
+			double textX = (ConfigConstant.gameScreenWidth
+					- fl.computeStringWidth(text, ConfigConstant.Resource.HUD_FONT)) / 2;
+			gc.fillText(text, textX, 100);
+			gc.setEffect(null);
 		}
 	}
 

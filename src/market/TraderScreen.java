@@ -7,8 +7,6 @@ import constants.ConfigConstant;
 import game.logic.Player;
 import game.model.Item;
 import javafx.animation.FadeTransition;
-import javafx.animation.ParallelTransition;
-import javafx.animation.ScaleTransition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -21,7 +19,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class TraderScreen extends StackPane {
@@ -36,17 +33,13 @@ public class TraderScreen extends StackPane {
 			FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), upgradePane);
 			fadeTransition.setFromValue(0);
 			fadeTransition.setToValue(1);
-			ParallelTransition parallelTransition = new ParallelTransition();
-			parallelTransition.getChildren().addAll(fadeTransition);
-			parallelTransition.play();
+			fadeTransition.play();
 		} else {
 			front.setCenter(TradePane);
 			FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), TradePane);
 			fadeTransition.setFromValue(0);
 			fadeTransition.setToValue(1);
-			ParallelTransition parallelTransition = new ParallelTransition();
-			parallelTransition.getChildren().addAll(fadeTransition);
-			parallelTransition.play();
+			fadeTransition.play();
 		}
 	}
 
@@ -93,12 +86,12 @@ public class TraderScreen extends StackPane {
 		Label buyLabel = new Label("Buy");
 		buyLabel.setFont(ConfigConstant.Resource.HUD_FONT);
 		this.itemsOnSale.getChildren().add(buyLabel);
-		
+
 		for (Item item : trader.getItemsOnSale()) {
-			//create a TraderScreenItemCell(see below) for the item
+			// create a TraderScreenItemCell(see below) for the item
 			TraderScreenItemCell itemCell = new TraderScreenItemCell(item, trader);
-			
-			//player can click the cell to buy item
+
+			// player can click the cell to buy item
 			itemCell.setOnMouseClicked(event -> {
 				Item product = trader.playerBuyItem(item);
 				if (product != null) {
@@ -107,12 +100,12 @@ public class TraderScreen extends StackPane {
 					System.out.println(Player.instance.getInventory() + " " + Player.instance.getMoney());
 				}
 			});
-			
+
 			this.itemCells.add(itemCell);
 			this.itemsOnSale.getChildren().add(itemCell);
 		}
 	}
-	
+
 	public class TraderScreenItemCell extends HBox {
 		Item item;
 

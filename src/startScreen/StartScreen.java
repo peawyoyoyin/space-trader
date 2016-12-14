@@ -1,12 +1,8 @@
 package startScreen;
 
-import javafx.animation.FillTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class StartScreen extends StackPane {
@@ -58,8 +54,6 @@ public class StartScreen extends StackPane {
 		this.settingPane = new SettingPane();
 
 		this.updatingPane = new UpdatingPane();
-
-
 	}
 
 	public void changePane(GridPane pane) {

@@ -1,9 +1,6 @@
 package game.model;
 
-import java.util.Random;
-
 import constants.ConfigConstant;
-import game.logic.MapCell;
 import game.logic.MapCellHolder;
 import game.logic.Player;
 import input.Input;
@@ -14,7 +11,6 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 
 public class PlayerShip extends Ship implements Friendly {
 
@@ -67,6 +63,39 @@ public class PlayerShip extends Ship implements Friendly {
 		return this.speedProperty;
 	}
 
+	public void changeSector(String direction) {
+		MapCellHolder.instance.getPlayerCell().getEntities().remove(Player.instance.getPlayerShip());
+		MapCellHolder.instance.getPlayerCell().clear();
+		switch (direction) {
+		case "right":
+			Player.instance.setSectionX(Player.instance.getSectionX() + 1);
+			this.x = radius + 1;
+			break;
+
+		case "left":
+			Player.instance.setSectionX(Player.instance.getSectionX() - 1);
+			this.x = ConfigConstant.mapCellWidth - radius - 1;
+			break;
+
+		case "up":
+			Player.instance.setSectionY(Player.instance.getSectionY() - 1);
+			this.y = ConfigConstant.mapCellHeight - radius - 1;
+			break;
+
+		case "down":
+			Player.instance.setSectionY(Player.instance.getSectionY() + 1);
+			this.y = radius + 1;
+			break;
+
+		default:
+			break;
+		}
+		MapCellHolder.instance.getPlayerCell().getEntities().add(Player.instance.getPlayerShip());
+		if (!MapCellHolder.instance.getPlayerCell().hasSpaceStation()) {
+			MapCellHolder.instance.getPlayerCell().spawnEnemy();
+		}
+	}
+
 	@Override
 	public void render(GraphicsContext gc) {
 
@@ -95,88 +124,20 @@ public class PlayerShip extends Ship implements Friendly {
 	@Override
 	public void update() {
 
-		boolean isSpawnEnemy = true;
-		boolean isChangeSec = false;
-
-		MapCell mc = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
 		if (this.x <= radius && Player.instance.getSectionX() > 0) {
-			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() - 1,
-					Player.instance.getSectionY());
-			Player.instance.setSectionX(Player.instance.getSectionX() - 1);
-			this.x = ConfigConstant.mapCellWidth - radius - 1;
-			mc.getEntities().remove(Player.instance.getPlayerShip());
-			mc.clear();
-			mcNext.getEntities().add(Player.instance.getPlayerShip());
-
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
+			changeSector("left");
 
 		} else if (this.y <= radius && Player.instance.getSectionY() > 0) {
-			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
-					Player.instance.getSectionY() - 1);
-			Player.instance.setSectionY(Player.instance.getSectionY() - 1);
-			this.y = ConfigConstant.mapCellHeight - radius - 1;
-			mc.getEntities().remove(Player.instance.getPlayerShip());
-			mc.clear();
-			mcNext.getEntities().add(Player.instance.getPlayerShip());
-
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
+			changeSector("up");
 
 		}
 		if (this.x >= ConfigConstant.mapCellWidth - radius && Player.instance.getSectionX() < 4) {
-			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX() + 1,
-					Player.instance.getSectionY());
-			Player.instance.setSectionX(Player.instance.getSectionX() + 1);
-			this.x = radius + 1;
-			mc.getEntities().remove(Player.instance.getPlayerShip());
-			mc.clear();
-			mcNext.getEntities().add(Player.instance.getPlayerShip());
-
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
+			changeSector("right");
 
 		} else if (this.y >= ConfigConstant.mapCellHeight - radius && Player.instance.getSectionY() < 4) {
-			MapCell mcNext = MapCellHolder.instance.get(Player.instance.getSectionX(),
-					Player.instance.getSectionY() + 1);
-			Player.instance.setSectionY(Player.instance.getSectionY() + 1);
-			this.y = radius + 1;
-			mc.getEntities().remove(Player.instance.getPlayerShip());
-			mc.clear();
-			mcNext.getEntities().add(Player.instance.getPlayerShip());
-
-			isChangeSec = true;
-			for (Entity entity : mcNext.getEntities()) {
-				if (entity instanceof SpaceStationEntity) {
-					isSpawnEnemy = false;
-				}
-			}
+			changeSector("down");
 		}
 
-		if (isSpawnEnemy && isChangeSec) {
-			Random rd = new Random();
-			MapCell mc2 = MapCellHolder.instance.get(Player.instance.getSectionX(), Player.instance.getSectionY());
-			for (int i = 0; i < rd.nextInt(3) + 2; i++) {
-				Ship enemy = new EnemyShip(rd.nextDouble() * ConfigConstant.mapCellWidth,
-						rd.nextDouble() * ConfigConstant.mapCellHeight, mc.getEnemyHp(), mc.getEnemyHp(), 0, 3, 0.1, 1,
-						rd.nextInt(360));
-				enemy.setBulletDamage(mc.getEnemyDmg());
-				mc2.getEntities().add(enemy);
-			}
-
-		}
 		super.update();
 
 		if (Input.isKeyDown(KeyCodeConstants.KEY_UP)) {
